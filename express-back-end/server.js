@@ -14,10 +14,12 @@ App.use(Express.static('public'));
 const transactionsRoutes = require('./routes/transactions');
 const plantgoalsRoutes = require('./routes/plantgoals');
 const settingsRoutes = require('./routes/settings');
+const gardenRoutes = require('./routes/garden');
 
 App.use('/transactions', transactionsRoutes);
 App.use('/plantgoals', plantgoalsRoutes);
 App.use('/settings', settingsRoutes);
+App.use('/garden', gardenRoutes);
 
 
 // homepage route (example below - change when working on homepage)
