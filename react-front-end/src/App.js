@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+// import axios from 'axios';
+// import './styles/App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -10,26 +10,28 @@ class App extends Component {
     }
   }
 
-  fetchData = () => {
-    axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
 
-      console.log(response.data.message) // Just the message
-      this.setState({
-        message: response.data.message
-      });
-    }) 
-  }
 
   render() {
     return (
       <div className="App">
-        <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
+        <nav className="navBar">
+          <span className="logo">
+            <img src="" alt=""/>
+          </span>
+          <div className="Summary">
+            <button>Overview</button>
+          </div>
+          <div className="budget">
+            <button>My Budget</button>
+          </div>
+          <div className="garden">
+            <button>My Garden</button>
+          </div>
+          <div className="Account">
+            <button>My Account</button>
+          </div>
+        </nav>
       </div>
     );
   }
