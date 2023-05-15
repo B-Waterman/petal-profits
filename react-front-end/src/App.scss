@@ -1,15 +1,29 @@
+$maincolor: #8fd1a5;
+
 .App{
   display: flex;
   flex-direction: column;
-  background: rgb(1,108,56);
-  background: linear-gradient(90deg, rgba(1,108,56,1) 0%, rgba(143,209,165,1) 35%);
+  width: 250px;
+  height: 100vh;
+  background: rgb(106,159,124);
+  background: linear-gradient(0deg, rgba(106,159,124,1) 0%, rgba(143,209,165,1) 100%);
 }
 
-nav{
- color: violet
+.navBar{
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    width: 200px;
+    border: 220px;
+    padding-top: 50px;
+  }
 
-}
+  .Summary{
+    color:rgb(84, 173, 70);
+    border-radius:50%;
+  }
 
-.Summary{
-  color: azure;
+img{
+  max-height: 20%;
+  padding-bottom: 50px;
 }
