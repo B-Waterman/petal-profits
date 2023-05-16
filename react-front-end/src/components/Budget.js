@@ -1,3 +1,5 @@
+import './Budget.scss';
+
 export default function Budget(props) {
 
   return (
