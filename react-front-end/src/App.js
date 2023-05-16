@@ -40,6 +40,9 @@ export default function App(props){
         <Route path='/account' Component={Settings}/>
         <Route path='/plantgoals' Component={PlantGoal}></Route>
       </Routes>
+
+      </div>
+
       
       </div>
 
