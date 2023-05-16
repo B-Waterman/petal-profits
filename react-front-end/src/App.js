@@ -42,10 +42,6 @@ export default function App(props){
       </Routes>
 
       </div>
-
-      
-      </div>
-
       
       </BrowserRouter>
     )
