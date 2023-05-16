@@ -42,43 +42,44 @@ App.get('/', (req, res) => res.json({
 }));
 
 
-//create test access token to be used in session
-App.get('/login', async (req, res) => {
-  const institutionID = "ins_3"
-  const initialProducts = ['transactions']
+//Use if needing to create test access token 
+// App.get('/login', async (req, res) => {
+//   const institutionID = "ins_3"
+//   const initialProducts = ['transactions']
 
-  const publicTokenRequest = {
-    institution_id: institutionID,
-    initial_products: initialProducts,
-  };
-  try {
-    const publicTokenResponse = await client.sandboxPublicTokenCreate(
-      publicTokenRequest,
-    );
-    const publicToken = publicTokenResponse.data.public_token;
-    // The generated public_token can now be exchanged
-    // for an access_token
-    const exchangeRequest = {
-      public_token: publicToken,
-    };
-    const exchangeTokenResponse = await client.itemPublicTokenExchange(
-      exchangeRequest,
-    );
-    // ACCESS_TOKEN = exchangeTokenResponse.data.access_token;
-    res.json({message: "access token created and received!"})
-  } catch (error) {
-    console.log(error)
-  }
+//   const publicTokenRequest = {
+//     institution_id: institutionID,
+//     initial_products: initialProducts,
+//   };
+//   try {
+//     const publicTokenResponse = await client.sandboxPublicTokenCreate(
+//       publicTokenRequest,
+//     );
+//     const publicToken = publicTokenResponse.data.public_token;
+//     // The generated public_token can now be exchanged
+//     // for an access_token
+//     const exchangeRequest = {
+//       public_token: publicToken,
+//     };
+//     const exchangeTokenResponse = await client.itemPublicTokenExchange(
+//       exchangeRequest,
+//     );
+//     ACCESS_TOKEN = exchangeTokenResponse.data.access_token;
+//     res.json({message: "access token created and received!"})
+//     console.log(ACCESS_TOKEN)
+//   } catch (error) {
+//     console.log(error)
+//   }
   
-})
+// })
 
 App.get('/api/transactions', (req, res) => {
   Promise.resolve()
     .then(async function () {
       //pull transactions from last 30 days
       const configs = {
-        access_token: process.env.ACCESS_TOKEN,
-        start_date: '2023-04-14',
+        access_token: process.env.ACCESS_TOKEN, //using this for consistent data
+        start_date: '2023-01-01',
         end_date: '2023-05-14'
       }
       const transactionsResponse = await client.transactionsGet(configs)
