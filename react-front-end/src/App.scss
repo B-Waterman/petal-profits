@@ -1,29 +1,63 @@
 $maincolor: #8fd1a5;
 
-.App{
+// .App {
+//   display: flex;
+//   flex-direction: column;
+//   width: 250px;
+//   height: 100vh;
+//   background: rgb(106, 159, 124);
+//   background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
+// }
+
+nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 250px;
   height: 100vh;
-  background: rgb(106,159,124);
-  background: linear-gradient(0deg, rgba(106,159,124,1) 0%, rgba(143,209,165,1) 100%);
-}
 
-.navBar{
+  background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
+  // border: 220px;
+  padding: 15px 32px;
+  padding-top: 50px;
+  font-size: 16px;
+  color: white;
+
+
+  .logo {
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+
+    img{
+      max-width: 250px;
+    }
+  }
+  
+  .navButton {
+    background-color: maincolor;
+    border: none;
     color: white;
     padding: 15px 32px;
-    font-size: 16px;
-    width: 200px;
-    border: 220px;
-    padding-top: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+    border-radius: 15px;
+    text-decoration: none;
+
+    
+  }
+  .navButton:hover {
+    background-color: #547860;
+
   }
 
-  .Summary{
-    color:rgb(84, 173, 70);
-    border-radius:50%;
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
   }
 
-img{
-  max-height: 20%;
-  padding-bottom: 50px;
 }
