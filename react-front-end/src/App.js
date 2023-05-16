@@ -9,7 +9,7 @@ export default function App(props){
 
 
 
- 
+
     return (
       <BrowserRouter>
 
@@ -20,16 +20,16 @@ export default function App(props){
           </span>
           <div className="navButton">
             {/* <button onClick={axios.get('/')}>Overview</button> */}
-              <Link to="/">Overview</Link>
+              <Link to="/">OVERVIEW</Link>
           </div>
           <div className="navButton">
-            <Link to="/transactions">My Budget</Link>
+            <Link to="/transactions">MY BUDGET</Link>
           </div>
           <div className="navButton">
-            <Link to="/garden">My Garden</Link>
+            <Link to="/garden">MY GARDEN</Link>
           </div>
           <div className="navButton">
-            <Link to="/account">My Account</Link>
+            <Link to="/account">MY ACCOUNT</Link>
           </div>
         </nav>
       </div>

@@ -4,6 +4,7 @@ require('dotenv').config();
 const Express = require('express');
 const morgan = require('morgan');
 
+const morgan = require('morgan');
 const App = Express();
 const PORT = process.env.DB_PORT || 8080
 const BodyParser = require('body-parser');
@@ -14,11 +15,14 @@ App.use(BodyParser.json());
 App.use(Express.static('public'));
 App.use(morgan('dev'));
 
+
+//import routers
 const transactionsRoutes = require('./routes/transactions');
 const plantgoalsRoutes = require('./routes/plantgoals');
 const accountsRoutes = require('./routes/account');
 const gardenRoutes = require('./routes/garden');
 
+//use routers
 App.use('/transactions', transactionsRoutes);
 App.use('/plantgoals', plantgoalsRoutes);
 App.use('/account', accountsRoutes);
