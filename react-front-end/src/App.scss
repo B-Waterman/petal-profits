@@ -13,51 +13,44 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 250px;
   height: 100vh;
-
   background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
-  // border: 220px;
   padding: 15px 32px;
-  padding-top: 50px;
   font-size: 16px;
   color: white;
 
 
   .logo {
     display: flex;
-    max-width: 200px;
-    max-height: 200px;
-
-    img{
+    justify-self: center;
+    img {
       max-width: 250px;
     }
   }
-  
+
   .navButton {
-    background-color: maincolor;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-size: 35px;
+    border: none;
     border-radius: 15px;
-    text-decoration: none;
+    padding: 15px 32px;
+    width: 80%;
+    background-color: transparent;
+    text-align: center;
 
-    
-  }
-  .navButton:hover {
-    background-color: #547860;
-
+    :hover {
+      filter: drop-shadow(0.60em 0.60em 0.02em);
+      // transform: scale(0.8)
+      border-radius: 1px;
+    }
   }
 
   a {
     text-decoration: none;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
   }
 
 }
