@@ -64,7 +64,7 @@ App.get('/login', async (req, res) => {
     const exchangeTokenResponse = await client.itemPublicTokenExchange(
       exchangeRequest,
     );
-    ACCESS_TOKEN = exchangeTokenResponse.data.access_token;
+    // ACCESS_TOKEN = exchangeTokenResponse.data.access_token;
     res.json({message: "access token created and received!"})
   } catch (error) {
     console.log(error)
@@ -76,15 +76,14 @@ App.get('/api/transactions', (req, res) => {
   Promise.resolve()
     .then(async function () {
       //pull transactions from last 30 days
-      // const startDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
-      // const endDate = moment().format('YYYY-MM-DD');
       const configs = {
-        access_token: ACCESS_TOKEN,
+        access_token: process.env.ACCESS_TOKEN,
         start_date: '2023-04-14',
         end_date: '2023-05-14'
       }
       const transactionsResponse = await client.transactionsGet(configs)
       res.json(transactionsResponse.data)
+      
     })
 })
 
