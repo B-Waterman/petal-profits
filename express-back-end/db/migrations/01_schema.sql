@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS accounts CASCADE;
+DROP TABLE IF EXISTS plaid_accounts CASCADE;
 DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS transactions CASCADE;
 DROP TABLE IF EXISTS monthly_balances CASCADE;
@@ -18,6 +19,11 @@ CREATE TABLE accounts (
   type VARCHAR(255) NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   current_balance DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE plaid_accounts (
+  id INTEGER REFERENCES accounts(id) ON DELETE CASCADE,
+  plaid_account_id VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE categories (

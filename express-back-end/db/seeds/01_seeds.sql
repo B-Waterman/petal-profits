@@ -9,15 +9,19 @@ INSERT INTO accounts (type, user_id, current_balance) VALUES ('savings', 1, 2000
 INSERT INTO accounts (type, user_id, current_balance) VALUES ('chequing', 2, 100000.00);
 INSERT INTO accounts (type, user_id, current_balance) VALUES ('credit', 2, -44000.00);
 
+-- insert plaid_accounts
+INSERT INTO plaid_accounts () VALUES ();
+
 -- insert categories
-INSERT INTO categories (name) VALUES ('Food & Dining');
-INSERT INTO categories (name) VALUES ('Auto & Transport');
-INSERT INTO categories (name) VALUES ('Bills & Utilities');
-INSERT INTO categories (name) VALUES ('Entertainment');
-INSERT INTO categories (name) VALUES ('Shopping');
+INSERT INTO categories (name) VALUES ('FOOD_AND_DRINK');
+INSERT INTO categories (name) VALUES ('TRANSPORTATION');
+INSERT INTO categories (name) VALUES ('TRANSFER_OUT');
+INSERT INTO categories (name) VALUES ('TRANSFER_IN');
+INSERT INTO categories (name) VALUES ('RENT_AND_UTILITIES');
 INSERT INTO categories (name) VALUES ('Misc');
-INSERT INTO categories (name) VALUES ('Personal Care');
-INSERT INTO categories (name) VALUES ('Travel');
+INSERT INTO categories (name) VALUES ('LOAN_PAYMENTS');
+INSERT INTO categories (name) VALUES ('TRAVEL');
+INSERT INTO categories (name) VALUES ('PERSONAL_CAR');
 
 -- insert transactions
 INSERT INTO transactions (account_id, transaction_date, transaction_amount, merchant_category_code, category_id, is_credit_card)
