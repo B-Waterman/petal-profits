@@ -1,38 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import './App.scss';
+import logo from './petalprofit.png';
+import { Link, BrowserRouter, Routes, Route} from 'react-router-dom';
+import Budget from './components/Budget';
+import Home from './components/Home';
+import Garden from './components/Garden';
+import Settings from './components/Settings';
+import PlantGoal from './components/PlantGoal';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: 'Click the button to load data!'
-    }
-  }
+export default function App(props){
 
-  fetchData = () => {
-    axios.post('http://localhost:8080/api/sandbox/public_token/create') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
-
-      console.log(response.data.message) // Just the message
-      // this.setState({
-      //   message: response.data.message
-      // });
-    }) 
-  }
-
-  render() {
     return (
-      <div className="App">
-        <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
-      </div>
-    );
-  }
-}
+      <BrowserRouter>
 
-export default App;
+      <div className="App">
+        <nav className="navBar">
+          <span className="logo">
+            <img src={logo} alt="Petal Profits" />
+          </span>
+          <div className="navButton">
+              <Link to="/">OVERVIEW</Link>
+          </div>
+          <div className="navButton">
+            <Link to="/transactions">MY BUDGET</Link>
+          </div>
+          <div className="navButton">
+            <Link to="/garden">MY GARDEN</Link>
+          </div>
+          <div className="navButton">
+            <Link to="/account">MY ACCOUNT</Link>
+          </div>
+        </nav>
+      </div>
+
+      <Routes>
+        <Route path='/' exact Component={Home}/>
+        <Route path='/transactions' Component={Budget}/>
+        <Route path='/garden' exact Component={Garden}/>
+        <Route path='/account' Component={Settings}/>
+        <Route path='/plantgoals' Component={PlantGoal}></Route>
+      </Routes>
+      
+      </BrowserRouter>
+    )
+};

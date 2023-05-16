@@ -2,9 +2,12 @@
 require('dotenv').config();
 
 const Express = require('express');
+const morgan = require('morgan');
+
+const morgan = require('morgan');
 const App = Express();
 const BodyParser = require('body-parser');
-const PORT = 8080
+const PORT = process.env.DB_PORT || 8080
 
 //Plaid configuration
 let ACCESS_TOKEN = null;
@@ -22,18 +25,25 @@ const configuration = new Configuration({
 const client = new PlaidApi(configuration);
 
 
+
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static('public'));
+App.use(morgan('dev'));
 
+
+//import routers
 const transactionsRoutes = require('./routes/transactions');
 const plantgoalsRoutes = require('./routes/plantgoals');
-const settingsRoutes = require('./routes/settings');
+const accountsRoutes = require('./routes/account');
+const gardenRoutes = require('./routes/garden');
 
+//use routers
 App.use('/transactions', transactionsRoutes);
 App.use('/plantgoals', plantgoalsRoutes);
-App.use('/settings', settingsRoutes);
+App.use('/account', accountsRoutes);
+App.use('/garden', gardenRoutes);
 
 
 // homepage route (example below - change when working on homepage)

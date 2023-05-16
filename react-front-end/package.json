@@ -6,6 +6,10 @@
     "axios": "^0.18.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+<<<<<<< HEAD
+=======
+    "react-router-dom": "^6.11.1",
+>>>>>>> feature/navbar
     "react-scripts": "^5.0.1",
     "sass": "^1.32.8"
   },
