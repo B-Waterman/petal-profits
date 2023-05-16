@@ -30,7 +30,6 @@ export default function App(props){
             <Link to="/account">MY ACCOUNT</Link>
           </div>
         </nav>
-      </div>
 
       <Routes>
         <Route path='/' exact Component={Home}/>
@@ -39,6 +38,9 @@ export default function App(props){
         <Route path='/account' Component={Settings}/>
         <Route path='/plantgoals' Component={PlantGoal}></Route>
       </Routes>
+
+      </div>
+
       
       </BrowserRouter>
     )
