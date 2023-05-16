@@ -3,11 +3,11 @@ require('dotenv').config();
 
 const Express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
-const morgan = require('morgan');
 const App = Express();
 const BodyParser = require('body-parser');
-const PORT = process.env.DB_PORT || 8080
+const PORT = 8080 || process.env.DB_PORT
 
 //Plaid configuration
 let ACCESS_TOKEN = null;
@@ -31,6 +31,7 @@ App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static('public'));
 App.use(morgan('dev'));
+App.use(cors());
 
 
 //import routers
@@ -90,7 +91,8 @@ App.get('/api/transactions', (req, res) => {
       const configs = {
         access_token: process.env.ACCESS_TOKEN, //using this for consistent data
         start_date: '2023-01-01',
-        end_date: '2023-05-14'
+        end_date: '2023-05-14',
+        options: { include_personal_finance_category: true }
       }
       const transactionsResponse = await client.transactionsGet(configs)
       res.json(transactionsResponse.data)
