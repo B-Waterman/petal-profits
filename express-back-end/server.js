@@ -34,26 +34,10 @@ App.use(morgan('dev'));
 App.use(cors());
 
 //import routers
-<<<<<<< HEAD
 const apiRoutes = require('./routes/API')
 
 //use routers
 App.use('/api', apiRoutes)
-=======
-// const transactionsRoutes = require('./routes/transactions');
-// const plantgoalsRoutes = require('./routes/plantgoals');
-// const accountsRoutes = require('./routes/account');
-// const gardenRoutes = require('./routes/garden');
-const apiRoutes = require('./routes/api')
-
-//use routers
-// App.use('/transactions', transactionsRoutes);
-// App.use('/plantgoals', plantgoalsRoutes);
-// App.use('/account', accountsRoutes);
-// App.use('/garden', gardenRoutes);
-App.use('/api', apiRoutes)
-
->>>>>>> feature/budgetpage
 
 // homepage route (example below - change when working on homepage)
 App.get('/', (req, res) => res.json({
@@ -92,6 +76,7 @@ App.get('/', (req, res) => res.json({
   
 // })
 
+//don't use this for building front end
 App.get('/plaidtransactions', (req, res) => {
   Promise.resolve()
     .then(async function () {
@@ -105,7 +90,7 @@ App.get('/plaidtransactions', (req, res) => {
       const transactionsResponse = await client.transactionsGet(configs)
       res.json(transactionsResponse.data)
     })
-    .catch(error => console.log('AHH', error))
+    .catch(error => console.log(error))
 })
 
 
