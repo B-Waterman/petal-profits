@@ -20,6 +20,9 @@
   background-color: white;
   border-radius: 15px;
   height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .popup-inner .close-btn{
@@ -29,3 +32,10 @@
   color: #8dcfa3;
 }
 
+.innerbutton{
+  border-radius: 15px;
+  justify-content: center;
+  font-size: 30px;
+  width: 350px;
+  text-align: center;
+}

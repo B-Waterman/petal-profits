@@ -22,6 +22,7 @@ export default function Garden(props) {
 
   return (
     <>
+    <div className='banner-1'>
       <div className='banner'>
         My Garden
       </div>
@@ -98,7 +99,7 @@ export default function Garden(props) {
         </Popup>
 
       </div>
-
+      </div>
 
     </>
   )

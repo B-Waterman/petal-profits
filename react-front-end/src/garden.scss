@@ -4,8 +4,9 @@ $maincolor: #8fd1a5;
   display: flex;
   flex-direction: row;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+  width: 50vw;
 }
+
 
 .banner{
   background-color: $maincolor;
@@ -25,8 +26,11 @@ $maincolor: #8fd1a5;
 
 .container{
   background-color: #4e715a;
-  height: 5000px;
-  flex-direction: row;
+  height: 200vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   
 .buttonPulse{
@@ -35,7 +39,6 @@ $maincolor: #8fd1a5;
 }
 }
 
-// @import "compass/css3";
 
 .progress {
   width: 100%;
