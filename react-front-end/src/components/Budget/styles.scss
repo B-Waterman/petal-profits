@@ -1,0 +1,32 @@
+@import '../../App.scss';
+
+.budget {
+  display: flex;
+  margin-left: 314px;
+  flex-direction: column;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
+    padding: 40px;
+    border-radius: 15px;
+
+    .category-item {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
+
+      .dropdown {
+        color: $maincolor
+      }
+    }
+  }
+}

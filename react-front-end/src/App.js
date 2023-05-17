@@ -1,3 +1,5 @@
+import React from 'react';
+// import axios from 'axios';
 import './App.scss';
 import logo from './petalprofit.png';
 import { Link, BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -40,7 +42,6 @@ export default function App(props){
       </Routes>
 
       </div>
-
       
       </BrowserRouter>
     )
