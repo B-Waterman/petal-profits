@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS accounts CASCADE;
+DROP TABLE IF EXISTS plaid_accounts CASCADE;
 DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS transactions CASCADE;
 DROP TABLE IF EXISTS monthly_balances CASCADE;
@@ -20,6 +21,11 @@ CREATE TABLE accounts (
   current_balance DECIMAL(10,2) NOT NULL
 );
 
+CREATE TABLE plaid_accounts (
+  account_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE,
+  plaid_account_id VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL
@@ -30,7 +36,7 @@ CREATE TABLE transactions (
   account_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE,
   transaction_date DATE NOT NULL,
   transaction_amount DECIMAL(10,2) NOT NULL,
-  merchant_category_code VARCHAR(4) NOT NULL,
+  name TEXT,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
   is_credit_card BOOLEAN NOT NULL DEFAULT FALSE
 );
