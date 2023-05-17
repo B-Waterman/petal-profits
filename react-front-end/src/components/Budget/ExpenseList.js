@@ -1,6 +1,7 @@
 import CategoryItem from './CategoryItem';
 import React, {useContext} from 'react';
 import { transactionsContext } from './DataProvider';
+import { FaChevronCircleDown } from "react-icons/fa";
 
 export default function ExpenseList(props) {
 
@@ -49,11 +50,12 @@ export default function ExpenseList(props) {
 
   return (
     <div className="expense-list">
-      <ul>
       <header className="expense-header">
         <h2>Monthly Expenses</h2>
         <h2>{totalExpenses}</h2>
+        <FaChevronCircleDown className="dropdown"/>
       </header>
+      <ul>
         {expenseItems}
       </ul>
     </div>

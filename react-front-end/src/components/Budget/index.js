@@ -4,6 +4,7 @@ import Sankey from './Sankey';
 import ExpenseList from './ExpenseList';
 import DataProvider from './DataProvider';
 import IncomeItem from './IncomeItem';
+import Remainder from './Remainder';
 
 export default function Budget(props) {
 
@@ -14,6 +15,7 @@ export default function Budget(props) {
         <Sankey />
         <IncomeItem/>
         <ExpenseList/>
+        <Remainder/>
       </div>
     </DataProvider>
   )

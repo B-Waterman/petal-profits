@@ -17,7 +17,7 @@ export default function IncomeItem(props) {
       <div className="income-item" key={index}>
         <h2>Monthly Income</h2>
         <h2>{amount}</h2>
-        {/* <FaChevronCircleDown className="dropdown"/> */}
+        <FaChevronCircleDown className="dropdown"/>
       </div> 
     )
   });
