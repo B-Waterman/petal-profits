@@ -7,7 +7,7 @@ const cors = require('cors');
 
 const App = Express();
 const BodyParser = require('body-parser');
-const PORT = 8080
+const PORT = 8080 // || process.env.DB_PORT
 
 //Plaid configuration
 let ACCESS_TOKEN = null;
@@ -46,7 +46,7 @@ const apiRoutes = require('./routes/api')
 // App.use('/plantgoals', plantgoalsRoutes);
 // App.use('/account', accountsRoutes);
 // App.use('/garden', gardenRoutes);
-App.use('./api', apiRoutes)
+App.use('/api', apiRoutes)
 
 
 // homepage route (example below - change when working on homepage)
@@ -86,7 +86,7 @@ App.get('/', (req, res) => res.json({
   
 // })
 
-App.get('/get-plaid-transactions', (req, res) => {
+App.get('/plaidtransactions', (req, res) => {
   Promise.resolve()
     .then(async function () {
       //pull transactions from last 30 days

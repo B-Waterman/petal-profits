@@ -12,7 +12,7 @@ const getMonthlyTransactions = (userId, startDate, endDate) => {
   return db
     .query(queryString, [userId, startDate, endDate])
     .then((data) => {
-      return data.rows
+      return data.rows;
     })
     .catch((err) => {
       console.log(err.message)
