@@ -7,13 +7,38 @@
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+  .income {
+    display: flex;
+    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
+    padding: 20px 40px;
+    border-radius: 15px;
+    margin-top: 50px;
+    width: 50%;
+    color: whitesmoke;
+    flex-direction: column;
+  
+    .income-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
+
+      .dropdown {
+        color: $maincolor
+      }
+    }
+  }
+
   .expense-list {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
+    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
     padding: 20px 40px;
     border-radius: 15px;
-    align-items: center;
+    align-items: stretch;
     color: whitesmoke;
     margin-top: 50px;
     width: 50%;

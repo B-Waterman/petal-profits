@@ -1,4 +1,4 @@
-import ExpenseListItem from './ExpenseListItem';
+import CategoryItem from './CategoryItem';
 import React, {useContext} from 'react';
 import { transactionsContext } from './DataProvider';
 
@@ -37,7 +37,7 @@ export default function ExpenseList(props) {
     const amount = '$' + sum.toLocaleString()
     total += sum;
     return (
-      <ExpenseListItem
+      <CategoryItem
         key={index}
         name={obj.name}
         amount={amount}
