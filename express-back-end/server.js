@@ -7,7 +7,7 @@ const cors = require('cors');
 
 const App = Express();
 const BodyParser = require('body-parser');
-const PORT = 8080 || process.env.DB_PORT
+const PORT = 8080
 
 //Plaid configuration
 let ACCESS_TOKEN = null;
@@ -35,16 +35,18 @@ App.use(cors());
 
 
 //import routers
-const transactionsRoutes = require('./routes/transactions');
-const plantgoalsRoutes = require('./routes/plantgoals');
-const accountsRoutes = require('./routes/account');
-const gardenRoutes = require('./routes/garden');
+// const transactionsRoutes = require('./routes/transactions');
+// const plantgoalsRoutes = require('./routes/plantgoals');
+// const accountsRoutes = require('./routes/account');
+// const gardenRoutes = require('./routes/garden');
+const apiRoutes = require('./routes/api')
 
 //use routers
-App.use('/transactions', transactionsRoutes);
-App.use('/plantgoals', plantgoalsRoutes);
-App.use('/account', accountsRoutes);
-App.use('/garden', gardenRoutes);
+// App.use('/transactions', transactionsRoutes);
+// App.use('/plantgoals', plantgoalsRoutes);
+// App.use('/account', accountsRoutes);
+// App.use('/garden', gardenRoutes);
+App.use('./api', apiRoutes)
 
 
 // homepage route (example below - change when working on homepage)
@@ -84,7 +86,7 @@ App.get('/', (req, res) => res.json({
   
 // })
 
-App.get('/api/transactions', (req, res) => {
+App.get('/get-plaid-transactions', (req, res) => {
   Promise.resolve()
     .then(async function () {
       //pull transactions from last 30 days
@@ -96,8 +98,8 @@ App.get('/api/transactions', (req, res) => {
       }
       const transactionsResponse = await client.transactionsGet(configs)
       res.json(transactionsResponse.data)
-      
     })
+    .catch(error => console.log('AHH', error))
 })
 
 

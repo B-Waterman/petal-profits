@@ -13,7 +13,7 @@ export default function Budget(props) {
     axios.get('http://localhost:8080/api/transactions')
       .then(response => {
         console.log(response.data)
-        setState(prev => ({ ...prev, transactions: response.data.transactions }));
+        // setState(prev => ({ ...prev, transactions: response.data.transactions }));
       })
       .catch(error => {
         console.log(error);
