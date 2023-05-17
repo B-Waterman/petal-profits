@@ -14,19 +14,11 @@ App.use(BodyParser.json());
 App.use(Express.static('public'));
 App.use(morgan('dev'));
 
-
 //import routers
-const transactionsRoutes = require('./routes/transactions');
-const plantgoalsRoutes = require('./routes/plantgoals');
-const accountsRoutes = require('./routes/account');
-const gardenRoutes = require('./routes/garden');
+const apiRoutes = require('./routes/API')
 
 //use routers
-App.use('/transactions', transactionsRoutes);
-App.use('/plantgoals', plantgoalsRoutes);
-App.use('/account', accountsRoutes);
-App.use('/garden', gardenRoutes);
-
+App.use('/api', apiRoutes)
 
 // homepage route (example below - change when working on homepage)
 App.get('/', (req, res) => res.json({
