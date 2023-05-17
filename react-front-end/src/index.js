@@ -4,6 +4,8 @@ import './index.scss';
 import App from './App';
 import './index.scss';
 import './App.scss';
+import './garden'
+import './garden.scss'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
