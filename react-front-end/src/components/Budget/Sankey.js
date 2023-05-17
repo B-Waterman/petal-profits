@@ -4,8 +4,8 @@ import { Chart } from 'react-google-charts'
 export default function Sankey() {
   const data = [
     ["From", "To", "Total"],
-    ["Lighthouse Labs", "Budget", 3000],
-    ["Lighthouse Labs", "Budget", 3000],
+    ["Lighthouse Labs", "Budget", 1100],
+    ["Lighthouse Labs", "Budget", 1100],
     ["Etsy", "Budget", 500],
     ['Budget', 'ENTERTAINMENT', 49.45],
     ['Budget', 'FOOD_AND_DRINK', 683.38],

@@ -3,7 +3,7 @@ import CategoryListItem from "./CategoryListItem";
 export default function CategoryList(props) {
 
   let categories = [
-    {name: 'INCOME', sum: 2700},
+    // {name: 'INCOME', sum: -2700},
     {name: 'ENTERTAINMENT', sum: 49.45},
     {name: 'FOOD_AND_DRINK', sum: 683.38},
     {name: 'GOVERNMENT_AND_NON_PROFIT', sum: 250.00},
@@ -30,8 +30,11 @@ export default function CategoryList(props) {
   )
 
   return (
-    <ul>
-      {items}
-    </ul>
+    <>
+      <h3>Monthly Expenses</h3>
+      <ul className="category-list">
+        {items}
+      </ul>
+    </>
   )
 }
