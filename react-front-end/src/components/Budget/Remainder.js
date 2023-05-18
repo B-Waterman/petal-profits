@@ -10,7 +10,6 @@ export default function Remainder(props) {
   let expense = 0
   for (let transaction of transactions) {
     let num = parseFloat(transaction.transaction_amount)
-    
 
     if (transaction.category === 'INCOME') {
       income += num;
