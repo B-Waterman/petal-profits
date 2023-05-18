@@ -1,7 +1,7 @@
 import Accordion from 'react-bootstrap/Accordion';
 import React, {useContext} from 'react';
 import IncomeTransactionList from './IncomeTransactionList';
-import { categoriesContext } from './CategoriesProvider';
+import { categoriesContext } from './providers/CategoriesProvider';
 
 export default function IncomeItem(props) {
 
@@ -12,19 +12,18 @@ export default function IncomeItem(props) {
 
   let amount = ''
   //figure out why you needs to loop
-  const incomeCategory = income.map((obj, index) => {
+  const incomeCategory = income.map((obj) => {
     let sum = Number(obj.sum) 
     amount = '$' + sum.toLocaleString()
     return (
-      <Accordion flush>
-      <Accordion.Item className="income-item" eventKey={index}>
+      <Accordion.Item className="income-item" eventKey={obj.id} key={obj.id}>
         <Accordion.Header>
         </Accordion.Header>
         <Accordion.Body>
           <IncomeTransactionList/>
         </Accordion.Body>
       </Accordion.Item>
-    </Accordion>
+
     )
   });
 
@@ -35,7 +34,9 @@ export default function IncomeItem(props) {
       <h3>Monthly Income</h3>
       <h3>{amount}</h3>
     </header>
+    <Accordion flush>
     {incomeCategory}
+    </Accordion>
     </div>
   )
 }

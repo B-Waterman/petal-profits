@@ -4,7 +4,8 @@ import Sankey from './Sankey';
 import ExpenseList from './ExpenseList';
 import IncomeItem from './IncomeItem';
 import Remainder from './Remainder';
-import CategoriesProvider from './CategoriesProvider';
+import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
+import CategoriesProvider from './providers/CategoriesProvider';
 
 export default function Budget(props) {
 
@@ -14,7 +15,9 @@ export default function Budget(props) {
           <h1>Budget</h1>
           <Sankey />
           <IncomeItem/>
-          <ExpenseList/>
+          <CategoryGoalsProvider>
+            <ExpenseList/>
+          </CategoryGoalsProvider>
           <Remainder/>
         </div>
       </CategoriesProvider>

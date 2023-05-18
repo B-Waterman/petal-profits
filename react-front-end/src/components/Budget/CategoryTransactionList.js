@@ -12,8 +12,6 @@ export default function CategoryransactionList(props) {
 
   const categoryTransactions = transactions.filter(obj => obj.category === props.category)
 
-  console.log(categoryTransactions)
-
   //loop through the income transactions and return an item for each one 
   const transactionItems = categoryTransactions.map((obj) => {
 
