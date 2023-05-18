@@ -1,5 +1,6 @@
 import { FaChevronCircleDown } from "react-icons/fa";
 import ProgressBar from "../progress-bar";
+import DropDown from "./DropDown";
 
 
 export default function CategoryItem(props) {
@@ -13,7 +14,7 @@ export default function CategoryItem(props) {
         <h5>{props.name}</h5>
         <h5>{props.amount}</h5>
         <h5>Goal: $500</h5>
-        <FaChevronCircleDown className="dropdown"/>
+        <DropDown/>
       </header>
         <ProgressBar bgcolor="green" completed={percentage}/>
     </div>

@@ -1,4 +1,5 @@
 @import '../../App.scss';
+@import "~bootstrap/scss/bootstrap";
 
 .budget {
   display: flex;
@@ -7,29 +8,9 @@
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  .income {
-    display: flex;
-    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
-    padding: 20px 40px;
-    border-radius: 15px;
-    margin-top: 50px;
-    width: 50%;
-    color: whitesmoke;
-    flex-direction: column;
-  
-    .income-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      border-radius: 15px;
-      padding-left: 20px;
-      padding-right: 20px;
-      align-items: center;
-
-      .dropdown {
-        color: $maincolor
-      }
-    }
+  ul {
+    padding: 0;
+    margin-top: 0;
   }
 
   .expense-list {
@@ -49,10 +30,6 @@
       margin-top: 0;
       align-items: center;
     }
-    
-    ul {
-      padding: 0;
-      margin-top: 0;
 
       .category-item {
         display: flex;
@@ -81,8 +58,6 @@
           margin: 0;
         }
       }
-    }
-
   }
 
   .remainder {
@@ -97,3 +72,5 @@
     justify-content: space-between;
   }
 }
+
+
