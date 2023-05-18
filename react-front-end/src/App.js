@@ -39,7 +39,7 @@ export default function App(props){
         <Route path='/' exact Component={Home}/>
         <Route path='/transactions' Component={Budget}/>
         <Route path='/garden' exact Component={Garden}/>
-        <Route path='/account' Component={Settings}/>
+        <Route path='/account' Component={Account}/>
         <Route path='/plantgoals' Component={PlantGoal}/>
       </Routes>
       </TransactionsProvider>
