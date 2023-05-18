@@ -20,7 +20,7 @@ export default function CategoryGoalsProvider(props) {
       });
   }, []);
 
-  const data = {categoryGoals};
+  const data = {categoryGoals, setCategoryGoals};
 
   // We can now use this as a component to wrap anything
   // that needs our state

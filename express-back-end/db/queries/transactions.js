@@ -58,5 +58,21 @@ const getUsersCategoryGoals = (userId) => {
     });
 }
 
+const updateCategoryGoals = (categoryGoalId) => {
+  const queryString = 
+    `UPDATE category_goals
+    SET amount = 500.00
+    WHERE id = $1;`
 
-module.exports = { getMonthlyTransactions, getMonthlyCategoriesSum, getUsersCategoryGoals}
+  return db
+    .query(queryString, [categoryGoalId])
+    .then((data) => {
+      return data.rowCount
+    })
+    .catch((err) => {
+      console.log(err.message)
+    });
+}
+
+
+module.exports = { getMonthlyTransactions, getMonthlyCategoriesSum, getUsersCategoryGoals, updateCategoryGoals}

@@ -11,17 +11,14 @@ export default function ExpenseList(props) {
 
   const { categories } = useContext(categoriesContext);
   const { categoryGoals } = useContext(categoryGoalsContext)
-  const [isOpen, setIsOpen] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState({});
 
-  function save(categoryId, userId) {
-    //update categoryGoals state to reflect new value
-    // makes axios post request (change string into #? first) and return a promise
-    //.then => success message
-    //.catch => error messge
+  function toggleForm(categoryId) {
+    setIsEditOpen(prev => ({
+      ...prev,
+      [categoryId]: !prev[categoryId],
+    }));
   }
-  
-  
-  const percentage = (20 / 40) * 100;
 
   //remove income category
   const expenseCats = categories.filter(obj => obj.name !== 'INCOME')
@@ -35,54 +32,48 @@ export default function ExpenseList(props) {
     const amount = '$' + sum.toLocaleString();
     total += sum;
 
-    //check if user has set a category goal
-    const categoryGoal = categoryGoals.find(goal => goal.id === obj.id);
-    const goalAmount = categoryGoal ? categoryGoal.amount : '';
+    //check user category goal
+    const categoryGoal = categoryGoals.find(goal => goal.category_id === obj.id);
+    const goalAmount = Number(categoryGoal.amount);
+    
+    const edit = isEditOpen[obj.id] || false;
 
     return (
       <Accordion flush key={obj.id}>
-      <Accordion.Item className="category-item" eventKey={obj.id}>
-        <Accordion.Header>
-          <h4>{obj.name}</h4>
-          <h4>{amount}</h4>
-        </Accordion.Header>
-          {goalAmount && (
+        <Accordion.Item className="category-item" eventKey={obj.id}>
+
+          <Accordion.Header>
+           <h4>{obj.name}</h4>
+           <h4>{amount}</h4>
+          </Accordion.Header>
+          <Accordion.Body>
+            <CategoryTransactionList category={obj.name}/>
+          </Accordion.Body>
+  
+          {!edit && goalAmount > 0 &&(
             <>
-              <h5>{'Goal: $' + goalAmount}</h5>
-              <button onClick={() => setIsOpen(true)}>
-                Edit
-              </button>
-              {isOpen && (
-                <EditForm
-                  amount={goalAmount}
-                  category={obj.id}
-                  onCancel={() => setIsOpen(false)}
-                  onSave={save}
-                />
-              )}
-              <ProgressBar bgcolor="green" completed={percentage}/>
+            <h5>{'Goal: $' + goalAmount}</h5>
+            <button onClick={() => toggleForm(obj.id)}>
+              Edit
+            </button>
+            <ProgressBar bgcolor="green" completed={Math.round(sum / goalAmount * 100)}/>
             </>
           )}
-          {!goalAmount && (
-            <>
-              <button onClick={() => setIsOpen(true)}>
-              Set a Spending Goal
-              </button>
-              {isOpen && (
-              <EditForm
-                amount="0"
-                category={obj.id}
-                onCancel={() => setIsOpen(false)}
-                onSave={save}
-              />
-              )}
-            </>
+          {!edit && !goalAmount && (
+            <button onClick={() => toggleForm(obj.id)}>
+            Set a Spending Goal
+            </button>
           )}
 
-        <Accordion.Body>
-          <CategoryTransactionList category={obj.name}/>
-        </Accordion.Body>
-      </Accordion.Item> 
+          {edit && (
+            <EditForm
+              amount={goalAmount}
+              category={obj.id}
+              onClose={() => toggleForm(obj.id)}
+            />
+          )}
+
+        </Accordion.Item> 
       </Accordion>
     )
   });

@@ -88,5 +88,18 @@ INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount,
 INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Pay off tuition', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 5000.00, 14000.00, 1);
 
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (1, 800.00, 1);
-INSERT INTO category_goals (category_id, amount, user_id) VALUES (12, 100.00, 1);
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (2, 150.00, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (3, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (4, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (5, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (6, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (7, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (8, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (9, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (10, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (11, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (12, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (13, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (14, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (15, 0, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (16, 0, 1);
