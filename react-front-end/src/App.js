@@ -7,6 +7,7 @@ import Garden from './components/Garden';
 import Settings from './components/Settings';
 import PlantGoal from './components/PlantGoal';
 
+
 export default function App(props){
 
     return (

@@ -1,3 +1,5 @@
+$maincolor: #8fd1a5;
+
 .popup{
   position: fixed;
   top: 0;
@@ -149,3 +151,20 @@ html::after {
 }
 
 
+.submit{
+  display: flex;
+  font-size: 40px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-color: $maincolor;
+  border-radius: 100px;
+  max-width: 1000px;
+  margin-bottom: 10px;
+
+}
+
+.submit:hover{
+  background-color: #38775b;
+}

@@ -5,14 +5,16 @@ import ProgressBar from "./progress-bar";
 import buttonPulse from '../button-pulse.json'
 import Popup from './Popup';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import 'font-awesome/css/font-awesome.min.css';
 
 export default function Garden(props) {
   const [buttonPopup, setbuttonPopup] = useState(false)
 
-  const testData1 = [
-    { bgcolor: "#6a1b9a", completed: 60 },
-    { bgcolor: "#6a1b9a", completed: 50 },
+  const testData = [
+    { bgcolor: "#6a1b9a", completed: 80 },
     { bgcolor: "#6a1b9a", completed: 30 },
+    { bgcolor: "#6a1b9a", completed: 100 },
   ];
 
 
@@ -33,21 +35,36 @@ export default function Garden(props) {
         <div className='container'>
 
           <div className='plant'>
-            {testData1.map((item, idx) => (<>
+            {testData.map((item, idx) => (<>
+            <div className='goalName'>
+              name of goal
+            </div>
+            <div className='edits'>
+              <div>delete</div>
+            <FontAwesomeIcon icon="fa-solid fa-pen-to-square" />
+            <FontAwesomeIcon icon="fa-regular fa-trash" />
+            </div>
               <Lottie className='plant-img'
                 animationData={lottieJson}
                 play
                 segments={[0, item.completed]}
                 loop={false}
                 style={{ width: 150, height: 150 }}
-
               />
               <div className="progressBar">
-
                 <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
               </div>
+              <div className='amounts'>
+            <div className='tAmount'>
+              tracked amount
+            </div>
+            <div className='gAmount'>
+              goal amount in $
+            </div>
+            </div>
             </>))}
           </div>
+
 
           <div className='addNew' onClick={() => setbuttonPopup(true)} setTrigger={setbuttonPopup}>
             <Lottie className='buttonPulse'
@@ -92,10 +109,11 @@ export default function Garden(props) {
               </span>
             </p>
             <br></br>
+            <div className='submit'>SUBMIT</div>
+            <br></br>
 
 
           </Popup>
-
         </div>
       </div>
 

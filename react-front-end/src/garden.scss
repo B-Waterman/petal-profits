@@ -19,12 +19,17 @@ $maincolor: #8fd1a5;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: #27392d;
+  margin: 5px;
+  border-radius: 30px;
+  color: #ffffff;
 }
 
 .plant-img{
   background-color: #8fd1a5;
   border-radius: 25%;
-margin-top: 10px;}
+  margin-top: 10px;
+}
 
 .banner{
   background-color: $maincolor;
@@ -79,4 +84,32 @@ margin-top: 10px;}
   align-items: center;
   height: 150px;
 
+}
+
+.goalName{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
+}
+
+.tAmount{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.gAmount{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.edits{
+  display: flex;
+  width: 100%;
+  justify-content:space-between;
+  font-size: 20px;
+}
+
+.amounts{
+  display: flex;
+  justify-content:space-between;
+  width: 50%;
 }
