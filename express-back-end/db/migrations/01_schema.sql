@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS transactions CASCADE;
 DROP TABLE IF EXISTS monthly_balances CASCADE;
 DROP TABLE IF EXISTS plant_goals CASCADE;
+DROP TABLE IF EXISTS category_goals;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -54,5 +55,12 @@ CREATE TABLE plant_goals (
   interactive_image VARCHAR(255) NOT NULL,
   tracked_amount DECIMAL(10,2) NOT NULL DEFAULT 0.00,
   target_amount DECIMAL(10,2) NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE category_goals (
+  id SERIAL PRIMARY KEY NOT NULL,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  amount DECIMAL(10,2) NOT NULL DEFAULT 0.00,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
