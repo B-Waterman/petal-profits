@@ -36,6 +36,7 @@ export default function Account(props) {
         <main>
           <div className='account-details'>
             <h2>Account Details</h2>
+            <div className='box'></div>
           </div>
           <div className='notifications'>
             <h2>Notification Settings</h2>
@@ -45,8 +46,12 @@ export default function Account(props) {
           </div>
         </main>
         <footer>
-          <div className=''></div>
-          {/* Report a Problem link, Made by NAMES,*/}
+          <div className='links'>
+            <span className='report'>
+            </span>
+            <span></span>
+            <span></span>
+          </div>
         </footer>
       </body>
     </div>

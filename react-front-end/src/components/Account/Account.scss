@@ -7,28 +7,25 @@
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  .header {};
+  // .header h1 {};
 
-  .main {
+  main {
     display: flex;
-    flex-direction: row;
-    width: 70%;
-
+    flex-direction: column;
+    justify-content: space-between;
     div {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 40px;
       border-radius: 15px;
-      margin: 0px, 50px, 0px, 50px;
+      padding: 20px 40px;
+      margin: 50px 50px;
       background: linear-gradient(0deg, #6a9f7c 0%, #8fd1a5 100%);
       color: whitesmoke;
+    }
 
-      .h2 {
-        justify-self: center;
-      }
+    .h2 {
+      justify-self: center;
     }
   };
 
-  .footer {};
+  // .footer {};
 
 };
