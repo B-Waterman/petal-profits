@@ -45,7 +45,7 @@ VALUES
     (2,'2023-05-01', 76.97, 'BC Liquor #136', 1, true),
     (2,'2023-05-07', 31.63, 'BC Liquor #136', 1, true),
     (2,'2023-05-02', 101.97, 'Zarak by Afghan Kitchen', 1, true),
-    (2,'2023-05-16', 106.60, 'Safewat #4979', 1, true),
+    (2,'2023-05-16', 106.60, 'Safeway #4979', 1, true),
     (2,'2023-05-03', 608.93, 'United Airlines', 4, true),
     (2,'2023-05-06', 345.93, 'Fairmont Hotel Vancouver', 4, true),
     (2,'2023-05-04', 56.78, 'Uber 072515 SF**POOL*', 2, true),
@@ -86,3 +86,7 @@ INSERT INTO monthly_balances (account_id, end_of_month, balance) VALUES (3, '202
 -- insert plant_goals
 INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Trip to Mexico', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 20.00, 3000.00, 1);
 INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Pay off tuition', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 5000.00, 14000.00, 1);
+
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (1, 800.00, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (12, 100.00, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (2, 150.00, 1);

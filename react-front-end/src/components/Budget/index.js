@@ -1,31 +1,25 @@
 import './styles.scss';
-import React, { useEffect, useState} from 'react';
-import axios from 'axios'
+import React from 'react';
 import Sankey from './Sankey';
-import CategoryList from './CategoryList';
-
+import ExpenseList from './ExpenseList';
+import IncomeItem from './IncomeItem';
+import Remainder from './Remainder';
+import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
+import CategoriesProvider from './providers/CategoriesProvider';
 
 export default function Budget(props) {
-  
-
-
-  useEffect(() => {
-    axios.get('http://localhost:8080/api/categories')
-      .then(response => {
-        //get back array of category objects
-        const data = response.data
-       
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
 
   return (
-    <div className='budget'>
-      <h1>Budget</h1>
-      <Sankey />
-      <CategoryList/>
-    </div>
+      <CategoriesProvider>
+        <div className='budget'>
+          <h1>Budget</h1>
+          <Sankey />
+          <IncomeItem/>
+          <CategoryGoalsProvider>
+            <ExpenseList/>
+          </CategoryGoalsProvider>
+          <Remainder/>
+        </div>
+      </CategoriesProvider>
   )
 }

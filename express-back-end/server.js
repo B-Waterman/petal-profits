@@ -11,7 +11,6 @@ const PORT = 8080 // || process.env.DB_PORT
 
 //Plaid configuration
 let ACCESS_TOKEN = null;
-
 const { Configuration, PlaidApi, PlaidEnvironments} = require('plaid');
 const configuration = new Configuration({
   basePath: PlaidEnvironments.sandbox,
@@ -34,7 +33,7 @@ App.use(morgan('dev'));
 App.use(cors());
 
 //import routers
-const apiRoutes = require('./routes/API')
+const apiRoutes = require('./routes/api')
 
 //use routers
 App.use('/api', apiRoutes)
