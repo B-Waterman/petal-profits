@@ -9,6 +9,7 @@ import Settings from './components/Settings';
 import PlantGoal from './components/PlantGoal';
 import TransactionsProvider from './TransactionsProvider';
 
+
 export default function App(props){
 
     return (
