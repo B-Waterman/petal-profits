@@ -1,11 +1,14 @@
-import CategoryItem from './CategoryItem';
 import React, {useContext} from 'react';
 import { transactionsContext } from './DataProvider';
-import DropDown from './DropDown';
+import CategoryTransactionList from './CategoryTransactionList'
+import Accordion from 'react-bootstrap/Accordion';
+import ProgressBar from "../progress-bar";
 
 export default function ExpenseList(props) {
 
   const { state } = useContext(transactionsContext);
+
+  const percentage = (20 / 40) * 100;
 
   //remove income category
   const expenseCats = state.categories.filter(obj => obj.name !== 'INCOME')
@@ -18,11 +21,17 @@ export default function ExpenseList(props) {
     const amount = '$' + sum.toLocaleString()
     total += sum;
     return (
-      <CategoryItem
-        key={index}
-        name={obj.name}
-        amount={amount}
-      />
+      <Accordion.Item className="category-item" eventKey={index}>
+        <Accordion.Header>
+          <h2>{obj.name}</h2>
+          <h2>{amount}</h2>
+          <h5>Goal: $500</h5>
+        </Accordion.Header>
+          <ProgressBar bgcolor="green" completed={percentage}/>
+        <Accordion.Body>
+          <CategoryTransactionList category={obj.name}/>
+        </Accordion.Body>
+      </Accordion.Item> 
     )
   });
   const totalExpenses = '$' + total.toLocaleString()
@@ -35,7 +44,9 @@ export default function ExpenseList(props) {
         <h2>{totalExpenses}</h2>
       </header>
       <ul>
+      <Accordion>
         {expenseItems}
+      </Accordion>
       </ul>
     </div>
   )

@@ -7,8 +7,6 @@ export default function Remainder(props) {
 
   const transactions = state.transactions;
 
-  
-
   let income = 0
   let expense = 0
   for (let transaction of transactions) {
