@@ -3,7 +3,6 @@ import { transactionsContext } from '../../TransactionsProvider';
 import TransactionItem from './TransactionItem';
 import formatDate from './helpers/formatdate';
 
-
 export default function ExpenseTransactions(props) {
 
   const { transactions } = useContext(transactionsContext);

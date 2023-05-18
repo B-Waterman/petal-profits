@@ -10,16 +10,15 @@ export default function IncomeItem(props) {
   //pull out income category
   const income = categories.filter(obj => obj.name === 'INCOME')
 
+  let amount = ''
   //figure out why you needs to loop
   const incomeCategory = income.map((obj, index) => {
     let sum = Number(obj.sum) 
-    const amount = '$' + sum.toLocaleString()
+    amount = '$' + sum.toLocaleString()
     return (
       <Accordion flush>
       <Accordion.Item className="income-item" eventKey={index}>
         <Accordion.Header>
-          <h2>Monthly Income</h2>
-          <h2>{amount}</h2>
         </Accordion.Header>
         <Accordion.Body>
           <IncomeTransactionList/>
@@ -31,8 +30,12 @@ export default function IncomeItem(props) {
 
 
   return (
-    <header className="income">
-      {incomeCategory}
+    <div className="income">
+    <header>
+      <h3>Monthly Income</h3>
+      <h3>{amount}</h3>
     </header>
+    {incomeCategory}
+    </div>
   )
 }

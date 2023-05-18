@@ -7,6 +7,10 @@
   --bs-accordion-btn-focus-box-shadow: transparent;
 }
 
+.accordion-button {
+  padding: 0px;
+}
+
 .accordion-button:not(.collapsed) {
   color: whitesmoke;
   background-color: transparent;
@@ -18,9 +22,14 @@
   padding: 20px 40px;
   border-radius: 15px;
   margin-top: 50px;
-  width: 50%;
+  width: 70%;
   color: whitesmoke;
   flex-direction: column;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .income-item {
     display: flex;

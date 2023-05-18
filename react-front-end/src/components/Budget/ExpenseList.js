@@ -3,6 +3,7 @@ import CategoryTransactionList from './CategoryTransactionList'
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from "../progress-bar";
 import { categoriesContext } from './CategoriesProvider';
+import './ExpenseList.scss'
 
 export default function ExpenseList(props) {
 
@@ -23,10 +24,10 @@ export default function ExpenseList(props) {
     return (
       <Accordion.Item className="category-item" eventKey={index}>
         <Accordion.Header>
-          <h2>{obj.name}</h2>
-          <h2>{amount}</h2>
-          <h5>Goal: $500</h5>
+          <h4>{obj.name}</h4>
+          <h4>{amount}</h4>
         </Accordion.Header>
+          <h5>Goal: $500</h5>
           <ProgressBar bgcolor="green" completed={percentage}/>
         <Accordion.Body>
           <CategoryTransactionList category={obj.name}/>
@@ -40,8 +41,8 @@ export default function ExpenseList(props) {
   return (
     <div className="expense-list">
       <header className="expense-header">
-        <h2>Monthly Expenses</h2>
-        <h2>{totalExpenses}</h2>
+        <h3>Monthly Expenses</h3>
+        <h3>{totalExpenses}</h3>
       </header>
       <ul>
       <Accordion>

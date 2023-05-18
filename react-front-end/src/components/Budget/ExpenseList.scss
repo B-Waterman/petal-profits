@@ -1,0 +1,55 @@
+@import '../../App.scss';
+@import "~bootstrap/scss/bootstrap";
+
+
+
+ .expense-list {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
+    padding: 20px 40px;
+    border-radius: 15px;
+    align-items: stretch;
+    color: whitesmoke;
+    margin-top: 50px;
+    width: 70%;
+
+    .accordion-button:not(.collapsed) {
+      color: black;
+      background-color: transparent;
+    }
+    .expense-header {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0;
+      align-items: center;
+    }
+
+      .category-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: black;
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+
+        header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+        }
+        
+        .dropdown {
+          color: $maincolor
+        }
+
+        .progress-bar {
+          margin: 0;
+        }
+      }
+  }

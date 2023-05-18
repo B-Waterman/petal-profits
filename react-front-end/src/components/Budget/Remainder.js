@@ -23,8 +23,8 @@ export default function Remainder(props) {
   
   return (
    <div className="remainder">
-    <h2>Remaining</h2>
-    <h2>{remainder}</h2>
+    <h3>Remaining</h3>
+    <h3>{remainder}</h3>
    </div>
   )
 }
