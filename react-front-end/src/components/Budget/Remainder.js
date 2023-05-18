@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { transactionsContext } from "./DataProvider";
+import { transactionsContext } from "../../TransactionsProvider";
+
 
 export default function Remainder(props) {
 
-  const { state } = useContext(transactionsContext);
-
-  const transactions = state.transactions;
+  const { transactions } = useContext(transactionsContext);
 
   let income = 0
   let expense = 0

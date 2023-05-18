@@ -1,18 +1,18 @@
 import React, {useContext} from 'react';
-import { transactionsContext } from './DataProvider';
 import TransactionItem from './TransactionItem';
 import formatDate from './helpers/formatdate';
 import './IncomeItem.scss';
+import { transactionsContext } from '../../TransactionsProvider';
 
 export default function IncomeTransactionList(props) {
 
-  const { state } = useContext(transactionsContext);
+  const { transactions } = useContext(transactionsContext);
 
 
-  const income = state.transactions.filter(obj => obj.category === 'INCOME')
+  const income = transactions.filter(obj => obj.category === 'INCOME')
 
   //loop through the income transactions and return an item for each one 
-  const transactions = income.map((obj) => {
+  const transactionItems = income.map((obj) => {
 
     const amount = '$' + obj.transaction_amount.toLocaleString()
     const date = formatDate(obj.transaction_date)
@@ -30,7 +30,7 @@ export default function IncomeTransactionList(props) {
 
   return (
     <ul>
-      {transactions}
+      {transactionItems}
     </ul>
   )
 }

@@ -1,17 +1,17 @@
 import React, {useContext} from 'react';
-import { transactionsContext } from './DataProvider';
 import CategoryTransactionList from './CategoryTransactionList'
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from "../progress-bar";
+import { categoriesContext } from './CategoriesProvider';
 
 export default function ExpenseList(props) {
 
-  const { state } = useContext(transactionsContext);
+  const { categories } = useContext(categoriesContext);
 
   const percentage = (20 / 40) * 100;
 
   //remove income category
-  const expenseCats = state.categories.filter(obj => obj.name !== 'INCOME')
+  const expenseCats = categories.filter(obj => obj.name !== 'INCOME')
 
   //loop through the expenses categories and return an item for each one 
   //calculate the sum as you loop to be display above

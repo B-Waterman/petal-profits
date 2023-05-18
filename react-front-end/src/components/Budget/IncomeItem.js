@@ -1,14 +1,14 @@
 import Accordion from 'react-bootstrap/Accordion';
 import React, {useContext} from 'react';
-import { transactionsContext } from './DataProvider';
 import IncomeTransactionList from './IncomeTransactionList';
+import { categoriesContext } from './CategoriesProvider';
 
 export default function IncomeItem(props) {
 
-  const { state } = useContext(transactionsContext);
+  const { categories } = useContext(categoriesContext)
 
   //pull out income category
-  const income = state.categories.filter(obj => obj.name === 'INCOME')
+  const income = categories.filter(obj => obj.name === 'INCOME')
 
   //figure out why you needs to loop
   const incomeCategory = income.map((obj, index) => {

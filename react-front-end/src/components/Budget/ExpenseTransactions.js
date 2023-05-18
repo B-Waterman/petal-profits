@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { transactionsContext } from './DataProvider';
+import { transactionsContext } from '../../TransactionsProvider';
 import TransactionItem from './TransactionItem';
 import formatDate from './helpers/formatdate';
 

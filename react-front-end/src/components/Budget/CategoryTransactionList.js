@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
-import { transactionsContext } from './DataProvider';
 import TransactionItem from './TransactionItem';
 import formatDate from './helpers/formatdate';
+import { transactionsContext } from '../../TransactionsProvider';
 
 
 export default function CategoryransactionList(props) {
 
-  const { state } = useContext(transactionsContext);
+  const { transactions } = useContext(transactionsContext);
 
   //loop to find transaction associated with props.category
 

@@ -45,7 +45,7 @@ VALUES
     (2,'2023-05-01', 76.97, 'BC Liquor #136', 1, true),
     (2,'2023-05-07', 31.63, 'BC Liquor #136', 1, true),
     (2,'2023-05-02', 101.97, 'Zarak by Afghan Kitchen', 1, true),
-    (2,'2023-05-16', 106.60, 'Safewat #4979', 1, true),
+    (2,'2023-05-16', 106.60, 'Safeway #4979', 1, true),
     (2,'2023-05-03', 608.93, 'United Airlines', 4, true),
     (2,'2023-05-06', 345.93, 'Fairmont Hotel Vancouver', 4, true),
     (2,'2023-05-04', 56.78, 'Uber 072515 SF**POOL*', 2, true),

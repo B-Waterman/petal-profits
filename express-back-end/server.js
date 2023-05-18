@@ -11,7 +11,6 @@ const PORT = 8080 // || process.env.DB_PORT
 
 //Plaid configuration
 let ACCESS_TOKEN = null;
-
 const { Configuration, PlaidApi, PlaidEnvironments} = require('plaid');
 const configuration = new Configuration({
   basePath: PlaidEnvironments.sandbox,

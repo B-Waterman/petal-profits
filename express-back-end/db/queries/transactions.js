@@ -1,6 +1,8 @@
 const db = require('../connection')
 const query = require('express')
 
+//NOTE: both these functions are hard coded for the month of May
+
 const getMonthlyTransactions = (userId) => {
   const queryString = 
   `SELECT transactions.id, transaction_date, transaction_amount, transactions.name as transaction_name, category_id, categories.name as category, accounts.type
