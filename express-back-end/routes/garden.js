@@ -35,7 +35,7 @@ app.get('/garden', async (req, res) => {
 app.get('/garden/:id', async (req, res) => {
   try {
     const { id } = req.params
-    const goal = await pool.query(`SELECT * FROM plant_goals WHERE plant_id = $1`, [id])
+    const goal = await pool.query(`SELECT * FROM plant_goals WHERE id = $1`, [id])
 
     res.json(plant_goals.rows[0])
   } catch (err) {
@@ -49,7 +49,7 @@ app.put('/garden/:id', async (req, res) =>{
   try{
     const { id } = req.params
     const { plant_goals } = req.body
-    const updategoals = await pool.query("UPDATE plant_goals SET name = $1 Where plant_id = $2", 
+    const updategoals = await pool.query("UPDATE plant_goals SET name = $1 Where id = $2", 
     [name, id]);
 
     res.json("plant goal was updated")

@@ -1,23 +1,22 @@
 // import Lottie from 'lottie-react-native';
 import Lottie from 'react-lottie-player'
-import lottieJson from '../plant_animation.json'
-import ProgressBar from "./progress-bar";
+
 import buttonPulse from '../button-pulse.json'
 import Popup from './Popup';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'font-awesome/css/font-awesome.min.css';
 
+
+//components
+import InputGarden from './inputGarden';
+
+//to not show pop up until pressed
 export default function Garden(props) {
   const [buttonPopup, setbuttonPopup] = useState(false)
 
-  const testData = [
-    { bgcolor: "#6a1b9a", completed: 80 },
-    { bgcolor: "#6a1b9a", completed: 30 },
-    { bgcolor: "#6a1b9a", completed: 100 },
-  ];
 
-
+//to make button in popup stay selected.
   const btnEL = document.querySelectorAll('.inputs');
   btnEL.forEach(btnEL => {
     btnEL.addEventListener('click', () => {
@@ -33,39 +32,11 @@ export default function Garden(props) {
           My Garden
         </div>
         <div className='container'>
-
-          <div className='plant'>
-            {testData.map((item, idx) => (<>
-            <div className='goalName'>
-              name of goal
-            </div>
-            <div className='edits'>
-              <div>delete</div>
-            <FontAwesomeIcon icon="fa-solid fa-pen-to-square" />
-            <FontAwesomeIcon icon="fa-regular fa-trash" />
-            </div>
-              <Lottie className='plant-img'
-                animationData={lottieJson}
-                play
-                segments={[0, item.completed]}
-                loop={false}
-                style={{ width: 150, height: 150 }}
-              />
-              <div className="progressBar">
-                <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
-              </div>
-              <div className='amounts'>
-            <div className='tAmount'>
-              tracked amount
-            </div>
-            <div className='gAmount'>
-              goal amount in $
-            </div>
-            </div>
-            </>))}
+          <div> 
+            <InputGarden />
+          
           </div>
-
-
+          
           <div className='addNew' onClick={() => setbuttonPopup(true)} setTrigger={setbuttonPopup}>
             <Lottie className='buttonPulse'
               loop
