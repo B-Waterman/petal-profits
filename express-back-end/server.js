@@ -7,21 +7,21 @@ const cors = require('cors');
 
 const App = Express();
 const BodyParser = require('body-parser');
-const PORT = 8080 // || process.env.DB_PORT
+const PORT = 8080 || process.env.DB_PORT
 
 //Plaid configuration
-let ACCESS_TOKEN = null;
-const { Configuration, PlaidApi, PlaidEnvironments} = require('plaid');
-const configuration = new Configuration({
-  basePath: PlaidEnvironments.sandbox,
-  baseOptions: {
-    headers: {
-      'PLAID-CLIENT-ID': process.env.CLIENT_ID,
-      'PLAID-SECRET': process.env.SECRET,
-    },
-  },
-});
-const client = new PlaidApi(configuration);
+// let ACCESS_TOKEN = null;
+// const { Configuration, PlaidApi, PlaidEnvironments} = require('plaid');
+// const configuration = new Configuration({
+//   basePath: PlaidEnvironments.sandbox,
+//   baseOptions: {
+//     headers: {
+//       'PLAID-CLIENT-ID': process.env.CLIENT_ID,
+//       'PLAID-SECRET': process.env.SECRET,
+//     },
+//   },
+// });
+// const client = new PlaidApi(configuration);
 
 
 
@@ -44,7 +44,7 @@ App.get('/', (req, res) => res.json({
 }));
 
 
-//Use if needing to create test access token 
+//Use if needing to create test access token
 // App.get('/login', async (req, res) => {
 //   const institutionID = "ins_3"
 //   const initialProducts = ['transactions']
@@ -72,7 +72,7 @@ App.get('/', (req, res) => res.json({
 //   } catch (error) {
 //     console.log(error)
 //   }
-  
+
 // })
 
 //don't use this for building front end
