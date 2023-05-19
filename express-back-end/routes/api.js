@@ -7,7 +7,6 @@ router.get("/transactions", (req, res) => {
   getMonthlyTransactions(1) //hardcoding user1 for now
     .then(data => res.json(data))
     .catch(error => console.log(error))
-
 });
 
 router.get("/categories", (req, res) => {

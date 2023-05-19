@@ -6,6 +6,7 @@ import { categoriesContext } from './providers/CategoriesProvider';
 import './ExpenseList.scss'
 import { categoryGoalsContext } from './providers/CategoryGoalsProvider';
 import EditForm from './EditForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ExpenseList(props) {
 

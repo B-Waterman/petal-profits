@@ -1,11 +1,12 @@
 import './styles.scss';
 import React from 'react';
-import Sankey from './Sankey';
 import ExpenseList from './ExpenseList';
+import SankeyE from './Sankey';
 import IncomeItem from './IncomeItem';
 import Remainder from './Remainder';
 import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
 import CategoriesProvider from './providers/CategoriesProvider';
+import Sankey2 from './Sankey2';
 
 export default function Budget(props) {
 
@@ -13,7 +14,8 @@ export default function Budget(props) {
       <CategoriesProvider>
         <div className='budget'>
           <h1>Budget</h1>
-          <Sankey />
+          {/* <SankeyE /> */}
+          <Sankey2/>
           <IncomeItem/>
           <CategoryGoalsProvider>
             <ExpenseList/>
