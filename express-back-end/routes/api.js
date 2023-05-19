@@ -26,7 +26,9 @@ router.get("/category-goals", (req, res) => {
 
 router.put("/category-goals/:id", (req, res) => {
   const id = req.params.id;
-  const amount = req.body.amount;
+  const amountKey = Object.keys(req.body);
+  const amount = amountKey[0]
+
   // update category goals amount
   updateCategoryGoals(id, amount)
     .then((data) => res.json({message: `Category goal updated! ${data} rows affected.`}))

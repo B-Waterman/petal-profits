@@ -19,7 +19,7 @@ export default function EditForm(props) {
     });
     
      //update categoryGoals state to reflect new value
-    return axios.put(`http://localhost:8080/api/category-goals/${categoryGoalId}`, amount)
+    return axios.put(`http://localhost:8080/api/category-goals/${categoryGoalId}`, {'amount': amount})
       .then(() => {
         setCategoryGoals(updatedGoals);
         props.onClose()

@@ -58,16 +58,16 @@ const getUsersCategoryGoals = (userId) => {
     });
 }
 
-const updateCategoryGoals = (categoryGoalId) => {
+const updateCategoryGoals = (categoryGoalId, amount) => {
   const queryString = 
     `UPDATE category_goals
-    SET amount = 500.00
-    WHERE id = $1;`
+    SET amount = $1
+    WHERE id = $2;`
 
   return db
-    .query(queryString, [categoryGoalId])
+    .query(queryString, [amount, categoryGoalId])
     .then((data) => {
-      return data.rowCount
+      console.log(data)
     })
     .catch((err) => {
       console.log(err.message)
