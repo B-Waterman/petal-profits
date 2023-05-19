@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import lottieJson from '../plant_animation.json'
 import ProgressBar from "./progress-bar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'font-awesome/css/font-awesome.min.css';
 import Lottie from 'react-lottie-player'
+import { json } from 'express';
 
 
 const InputGarden = () => {
 
+  // const getGoal = async () => {
+  //   try {
+  //     const response = await fetch ('http://localhost/8080/garden')
+  //     const jsonData = await response.json();
+
+  //     console.log(jsonData)
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // }
+
+
+
+  // useEffect(() =>{
+  //   // getGoal();
+  // })
 
   const testData = [
     { bgcolor: "#6a1b9a", completed: 80 },
@@ -26,10 +43,9 @@ const InputGarden = () => {
           name of goal
         </div>
         <div className='edits'>
-          <div>delete</div>
-          <div>edit</div>
-          
+          <button>edit</button>
         </div>
+        
         <Lottie className='plant-img'
           animationData={lottieJson}
           play
