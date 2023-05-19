@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { categoryGoalsContext } from "./providers/CategoryGoalsProvider";
 import axios from 'axios'
+import './EditForm.scss'
 
 export default function EditForm(props) {
 
@@ -8,7 +9,7 @@ export default function EditForm(props) {
   const [amount, setAmount] = useState(props.amount)
 
   function saveGoal(categoryId) {
-    //recreate categoryGoals with new amnt
+    // recreate categoryGoals with new amnt
     let categoryGoalId = 0;
     const updatedGoals = categoryGoals.map((goal) => {
       if (goal.category_id === categoryId) {
@@ -17,23 +18,22 @@ export default function EditForm(props) {
       }
       return goal;
     });
-    
      //update categoryGoals state to reflect new value
-    return axios.put(`http://localhost:8080/api/category-goals/${categoryGoalId}`, {'amount': amount})
+    return axios.put(`http://localhost:8080/api/category-goals/${categoryGoalId}`, amount)
       .then(() => {
         setCategoryGoals(updatedGoals);
         props.onClose()
       })
       .catch(error => console.log(error))
     }
-
-
+  
   return (
+    <div className="popup-box">
     <div className="edit-form">
-
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
+        <header>What is your monthly spending goal for {props.name}?</header>
         <input
-          name="Spending Goal"
+          name="edit-goal"
           type="text"
           placeholder={amount}
           value={amount}
@@ -42,6 +42,7 @@ export default function EditForm(props) {
       </form>
       <button onClick={() => saveGoal(props.category)}>Save</button>
       <button onClick={() => props.onClose()}>Cancel</button>
+    </div>
     </div>
   )
 }
