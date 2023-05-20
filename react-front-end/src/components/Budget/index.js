@@ -13,14 +13,14 @@ export default function Budget(props) {
   return (
       <CategoriesProvider>
         <div className='budget'>
-          <h1>Budget</h1>
+          <h1>Monthly Summary</h1>
           {/* <SankeyE /> */}
           <Sankey/>
+          <Remainder/>
           <Income/>
           <CategoryGoalsProvider>
             <ExpenseList/>
           </CategoryGoalsProvider>
-          <Remainder/>
         </div>
       </CategoriesProvider>
   )
