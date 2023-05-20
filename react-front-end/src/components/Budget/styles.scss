@@ -8,6 +8,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 1000px;
 
+  svg {
+    height: 500px;
+  }
+
   .income {
     display: flex;
     background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
