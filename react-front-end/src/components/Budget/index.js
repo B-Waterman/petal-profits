@@ -14,6 +14,7 @@ export default function Budget(props) {
       <CategoriesProvider>
         <div className='budget'>
           <h1>Monthly Summary</h1>
+          <h3>Cash Flow</h3>
           {/* <SankeyE /> */}
           <Sankey/>
           <Remainder/>

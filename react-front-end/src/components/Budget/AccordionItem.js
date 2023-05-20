@@ -30,8 +30,10 @@ export default function AccordionItem(props) {
     <li className={`accordion-item ${props.active ? "active" : ""}`}>
       <button className="button" onClick={() => props.onToggle()}>
         <h3>{props.title}</h3>
-        <h3>{props.total}</h3>
-        <span className="control">{props.active ? "—" : "+"}</span>
+        <div className="total">
+          <h3>{props.total}</h3>
+          <span className="control">{props.active ? "—" : "+"}</span>
+        </div>
       </button>
       <div className={`transaction-wrapper ${props.active ? "open" : ""}`}>
         <div className="transactions">

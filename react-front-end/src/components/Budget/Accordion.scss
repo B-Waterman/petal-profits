@@ -3,6 +3,8 @@
 .accordion {
   list-style-type: none;
   padding: 0px;
+  width: 100%;
+
 }
 
 .accordion-item {
@@ -10,6 +12,7 @@
   flex-direction: column;
   background-color: transparent;
   border: none;
+  width: 100%;
   
   .button {
     display: flex;
@@ -19,6 +22,22 @@
     border: transparent;
     border-radius: 15px;
     background-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    width: 100%;
+
+    .total {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin: 0px 10px;
+      }
+    }
+  }
+
+  button :hover {
+    cursor: pointer;
   }
 }
 

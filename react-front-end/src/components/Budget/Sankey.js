@@ -9,7 +9,7 @@ export default function Sankey() {
       return(
             <ResponsiveSankey 
             data={data}
-                margin={{ top: 20, right: 250, bottom: 20, left: 180 }}
+                margin={{ top: 20, right: 220, bottom: 20, left: 220 }}
                 valueFormat=" <-$1,.0f"
                 sort='auto'
                 colors={{ scheme: 'category10' }}

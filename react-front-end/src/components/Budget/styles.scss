@@ -14,39 +14,58 @@
 
   .income {
     display: flex;
-    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
-    padding: 20px 40px;
+    background: linear-gradient(0deg, rgb(106 159 124 / 24%) 0%, rgba(143, 209, 165, 0.58) 100%);
+    padding: 10px 20px;
     border-radius: 15px;
-    margin-top: 50px;
     width: 70%;
-    color: whitesmoke;
     flex-direction: column;
-  
-    header {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 
   .remainder {
-    display: flex;
-    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
-    padding: 20px 40px;
     border-radius: 15px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
-    width: 70%;
-    color: whitesmoke;
-    flex-direction: row;
-    flex-direction: column;
-    align-items: center;
+    width: 75%;
 
     .header {
       display: flex;
-      justify-content: space-between;
       width: 100%;
+      align-items: baseline;
+      margin-bottom: 10px;
+
+      h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 40px;
+      }
+
+      h3 {
+        margin-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 32px;
+      }
+    }
+
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+  }
+
+  #surplus {
+    .header {
+      color: rgb(106 184 102)
     }
   }
+
+  #deficit {
+    .header {
+      color: rgb(205, 32, 32)
+    }
+  }
+  
 
 }
 
