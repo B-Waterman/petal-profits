@@ -22,7 +22,7 @@ export default function Garden(props) {
     e.preventDefeault();
     try {
       const body = { goal }
-      const response = await fetch("http://localhost/3000/garden", {
+      const response = await fetch("http://localhost/8080/garden", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -51,7 +51,7 @@ export default function Garden(props) {
         </div>
         <div className='container'>
           <div>
-            {/* <InputGarden /> */}
+            <InputGarden />
 
           </div>
 

@@ -1,29 +1,26 @@
 const express = require('express')
-const app = express();
-const cors = require('cors')
-
-app.use(cors())
-app.use(express.json()); //req.body
+const router = express.Router();
+const db = require('../db/connection')
 
 //create a goal
-app.post('/garden', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { plant_goals } = req.body
-    new plant_goals = await pool.query(
-      "INSERT INTO plant_goals (name) VALUES ($1) RETURNING *", 
+    const result = await db.query(
+      "INSERT INTO plant_goals (name) VALUES ($1) RETURNING *;", 
     [plant_goals]
     );
-
-    res.json(plant_goals.rows[0])
+      
+    res.json(result.rows[0])
   } catch (err) {
     console.error(err.message);
   }
 })
 
 //get all goals
-app.get('/garden', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const allgoals = await pool.query("SELECT * FROM plant_goals")
+    const allgoals = await db.query("SELECT * FROM plant_goals")
     res.json(allgoals.rows);
   } catch (err) {
     console.error(err.message);
@@ -32,10 +29,10 @@ app.get('/garden', async (req, res) => {
 })
 
 //get a goal
-app.get('/garden/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
-    const goal = await pool.query(`SELECT * FROM plant_goals WHERE id = $1`, [id])
+    const goal = await db.query(`SELECT * FROM plant_goals WHERE id = $1`, [id])
 
     res.json(plant_goals.rows[0])
   } catch (err) {
@@ -45,11 +42,11 @@ app.get('/garden/:id', async (req, res) => {
 })
 
 //update/edit a goal
-app.put('/garden/:id', async (req, res) =>{
+router.put('/:id', async (req, res) =>{
   try{
     const { id } = req.params
     const { plant_goals } = req.body
-    const updategoals = await pool.query("UPDATE plant_goals SET name = $1 Where id = $2", 
+    const updategoals = await db.query("UPDATE plant_goals SET name = $1 Where id = $2", 
     [name, id]);
 
     res.json("plant goal was updated")
@@ -61,10 +58,10 @@ app.put('/garden/:id', async (req, res) =>{
 
 
 //delete a goal
-app.delete('/garden', async (req, res) => {
+router.delete('/', async (req, res) => {
   try {
     const { id } = req.params;
-    const deleteGoal = await pool.query("DELETE FROM plant_goals WHERE id = $1", [id])
+    const deleteGoal = await db.query("DELETE FROM plant_goals WHERE id = $1", [id])
     res.json("goal was deleted")
 
   } catch (err) {
@@ -72,3 +69,5 @@ app.delete('/garden', async (req, res) => {
 
   }
 })
+
+module.exports = router;
