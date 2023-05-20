@@ -1,11 +1,13 @@
 import React, {useContext, useState} from 'react';
-import ProgressBar from "../progress-bar";
+import ProgressBarBudget from './ProgressBarBudget';
 import { categoriesContext } from './providers/CategoriesProvider';
 import './ExpenseList.scss'
 import { categoryGoalsContext } from './providers/CategoryGoalsProvider';
 import EditForm from './EditForm';
 import formatTitle from './helpers/formatTitle';
 import Accordion from './Accordion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 export default function ExpenseList(props) {
 
@@ -36,8 +38,21 @@ export default function ExpenseList(props) {
     //check user category goal
     const categoryGoal = categoryGoals.find(goal => goal.category_id === obj.id);
     const goalAmount = Number(categoryGoal.amount);
+
+    let comparison = sum / goalAmount;
+    let tracking = ''
+    if (comparison <= 1) {
+      comparison = Math.round(comparison * 100)
+      const difference = (goalAmount - sum).toFixed(2).toLocaleString();
+      tracking = `$${difference} left`
+    } else {
+      comparison = 100;
+      const difference = ((goalAmount - sum) * -1).toFixed(2).toLocaleString()
+      tracking = `$${difference} over`
+    }
     
     const edit = isEditOpen[obj.id] || false;
+
 
     return (
     <div className="category-item" key={obj.id}>
@@ -46,11 +61,15 @@ export default function ExpenseList(props) {
        />
       {!edit && goalAmount > 0 &&(
         <>
-          <h5>{'Goal: $' + goalAmount}</h5>
-          <button onClick={() => toggleForm(obj.id)}>
-            Edit
-          </button>
-          <ProgressBar className="progress-bar" bgcolor="green" completed={Math.round(sum / goalAmount * 100)}/>
+          <div className='track'>
+            <button onClick={() => toggleForm(obj.id)}>
+              <FontAwesomeIcon icon={faPenToSquare} style={{color: "#8fd0a5"}} />
+            </button>
+              <ProgressBarBudget bgcolor="green" completed={comparison}/>
+          </div>
+          <div className='budget-amount'>
+          <h5 className='budget-amount' id='item'>{tracking}</h5>
+          </div>
         </>
       )}
       {!edit && !goalAmount && (
@@ -79,6 +98,7 @@ export default function ExpenseList(props) {
         <h3>Monthly Expenses</h3>
         <h3>{totalExpenses}</h3>
       </header>
+      <p>Detailed Breakdown</p>
       <ul>
         {expenseItems}
       </ul>

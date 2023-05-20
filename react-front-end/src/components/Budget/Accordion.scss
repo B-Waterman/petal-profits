@@ -13,6 +13,7 @@
   background-color: transparent;
   border: none;
   width: 100%;
+  padding-top: 15px;
   
   .button {
     display: flex;
@@ -26,19 +27,21 @@
     font-size: 20px;
     width: 100%;
 
-    .total {
-      display: flex;
-      align-items: center;
 
       span {
         margin: 0px 10px;
       }
-    }
+      
   }
 
   button :hover {
     cursor: pointer;
   }
+
+  h3 {
+    margin: 10px;
+  }
+
 }
 
 

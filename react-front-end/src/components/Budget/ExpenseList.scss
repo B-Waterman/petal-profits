@@ -1,5 +1,6 @@
 @import '../../App.scss';
 
+
  .expense-list {
     display: flex;
     flex-direction: column;
@@ -27,16 +28,12 @@
     }
 
       .category-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         color: black;
         background-color: white;
         margin-bottom: 10px;
         border-radius: 15px;
         padding-left: 20px;
         padding-right: 20px;
-        align-items: center;
 
         header {
           display: flex;
@@ -49,8 +46,42 @@
           color: $maincolor
         }
 
-        .progress-bar {
-          margin: 0;
+
+        button {
+          cursor: pointer;
+          height: 25px;
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+
+          .svg-inline--fa.fa-pen-to-square {
+            padding-left: 10px;
+            width: 100%;
+            height: 100%
+          }
         }
+
+        .track {
+          display: flex;
+          flex-direction: row-reverse;
+          width: 100%;
+          align-items: center;
+          padding-top: 15px;
+        }
+
+        .budget-amount {
+          text-align: right;
+
+          #item {
+            margin-top: 0px;
+            padding-right: 35px;
+            padding-bottom: 20px;;
+          }
+        }
+
       }
+
+    .fill {
+      background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgb(205 32 32 / 62%));
+    }
   }

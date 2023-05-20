@@ -19,6 +19,15 @@
     border-radius: 15px;
     width: 70%;
     flex-direction: column;
+
+    .accordion-item {
+      margin-bottom: 15px;
+      
+      button {
+        margin: 0px
+      }
+    }
+      
   }
 
   .remainder {
