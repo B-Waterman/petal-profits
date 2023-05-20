@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AccordionItem2 from "./AccordionItem2";
+import AccordionItem from "./AccordionItem";
 
-export default function Accordion2(props) {
+export default function Accordion(props) {
 
   const [clicked, setClicked] = useState("0");
 
@@ -14,7 +14,7 @@ export default function Accordion2(props) {
 
   return (
     <ul className="accordion">
-        <AccordionItem2 
+        <AccordionItem
           title={props.title}
           total={props.total}
           categoryId={props.id}

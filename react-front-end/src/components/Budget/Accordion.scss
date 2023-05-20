@@ -1,3 +1,4 @@
+@import '../../App.scss';
 
 .accordion {
   list-style-type: none;
@@ -7,19 +8,23 @@
 .accordion-item {
   display: flex;
   flex-direction: column;
-
+  background-color: transparent;
+  border: none;
   
   .button {
     display: flex;
-      justify-content: space-between;
-      margin-top: 0;
-      align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    align-items: center;
+    border: transparent;
+    border-radius: 15px;
+    background-color: transparent;
   }
 }
 
 
 .accordion-item.active .button {
-  background-color: #105057;
+  background-color: transparent;
 }
 .transaction-wrapper {
   height: 0;

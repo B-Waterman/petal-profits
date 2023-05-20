@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import { categoriesContext } from './providers/CategoriesProvider';
-import Accordion2 from './Accordion2';
+import Accordion from './Accordion';
 
-export default function IncomeItem(props) {
+export default function Income(props) {
 
   const { categories } = useContext(categoriesContext)
 
@@ -20,7 +20,7 @@ export default function IncomeItem(props) {
 
   return (
     <div className="income">
-    <Accordion2
+    <Accordion
       total={`$ ${total}`} title="Monthly Income" id={id}
     />
     </div>

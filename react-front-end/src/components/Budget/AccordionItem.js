@@ -4,7 +4,7 @@ import { transactionsContext } from "../../TransactionsProvider";
 import formatDate from "./helpers/formatdate";
 import './Accordion.scss'
 
-export default function AccordionItem2(props) {
+export default function AccordionItem(props) {
   const { transactions } = useContext(transactionsContext);
 
   //loop to find transaction associated with props.categoryId

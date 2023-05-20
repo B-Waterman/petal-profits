@@ -1,12 +1,11 @@
 import React, {useContext, useState} from 'react';
-import CategoryTransactionList from './CategoryTransactionList'
-import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from "../progress-bar";
 import { categoriesContext } from './providers/CategoriesProvider';
 import './ExpenseList.scss'
 import { categoryGoalsContext } from './providers/CategoryGoalsProvider';
 import EditForm from './EditForm';
 import formatTitle from './helpers/formatTitle';
+import Accordion from './Accordion';
 
 export default function ExpenseList(props) {
 
@@ -41,43 +40,33 @@ export default function ExpenseList(props) {
     const edit = isEditOpen[obj.id] || false;
 
     return (
-      <Accordion flush key={obj.id}>
-        <Accordion.Item className="category-item" eventKey={obj.id}>
-
-          <Accordion.Header>
-           <h4>{categoryTitle}</h4>
-           <h4>{amount}</h4>
-          </Accordion.Header>
-          <Accordion.Body>
-            <CategoryTransactionList category={obj.name}/>
-          </Accordion.Body>
-  
-          {!edit && goalAmount > 0 &&(
-            <>
-            <h5>{'Goal: $' + goalAmount}</h5>
-            <button onClick={() => toggleForm(obj.id)}>
-              Edit
-            </button>
-            <ProgressBar bgcolor="green" completed={Math.round(sum / goalAmount * 100)}/>
-            </>
-          )}
-          {!edit && !goalAmount && (
-            <button onClick={() => toggleForm(obj.id)}>
-            Set a Spending Goal
-            </button>
-          )}
-
-          {edit && (
-            <EditForm
-              name={obj.name}
-              amount={goalAmount}
-              category={obj.id}
-              onClose={() => toggleForm(obj.id)}
-            />
-          )}
-
-        </Accordion.Item> 
-      </Accordion>
+    <div className="category-item" key={obj.id}>
+      <Accordion
+      total={amount} title={categoryTitle} id={obj.id}
+       />
+      {!edit && goalAmount > 0 &&(
+        <>
+          <h5>{'Goal: $' + goalAmount}</h5>
+          <button onClick={() => toggleForm(obj.id)}>
+            Edit
+          </button>
+          <ProgressBar className="progress-bar" bgcolor="green" completed={Math.round(sum / goalAmount * 100)}/>
+        </>
+      )}
+      {!edit && !goalAmount && (
+        <button onClick={() => toggleForm(obj.id)}>
+        Set a Spending Goal
+        </button>
+      )}
+      {edit && (
+        <EditForm
+          name={obj.name}
+          amount={goalAmount}
+          category={obj.id}
+          onClose={() => toggleForm(obj.id)}
+        />
+      )}
+    </div>
     )
   });
 
