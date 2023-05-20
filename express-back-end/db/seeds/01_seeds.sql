@@ -46,8 +46,6 @@ VALUES
     (2,'2023-05-07', 31.63, 'BC Liquor #136', 1, true),
     (2,'2023-05-02', 101.97, 'Zarak by Afghan Kitchen', 1, true),
     (2,'2023-05-16', 106.60, 'Safeway #4979', 1, true),
-    (2,'2023-05-03', 608.93, 'United Airlines', 4, true),
-    (2,'2023-05-06', 345.93, 'Fairmont Hotel Vancouver', 4, true),
     (2,'2023-05-04', 56.78, 'Uber 072515 SF**POOL*', 2, true),
     (2,'2023-05-08', 49.14, 'Uber 087515 SF**POOL**', 2, true),
     (2,'2023-05-02', 21.14, 'Uber 072512 SF**POOL**', 2, true),
@@ -58,18 +56,17 @@ VALUES
     (2,'2023-05-15', 30.11, 'PURE Nail Bar', 5, true),
     (2,'2023-05-07', 6.23, 'Subway', 1, true),
     (2,'2023-05-12', 9.99, 'Spotify', 12, true),
+    (2,'2023-05-12', 9.99, 'DAZN', 12, true),
     (2,'2023-05-07', 4.99, 'Apple Music', 12, true),
     (2,'2023-05-04', 15.49, 'Netflix', 12, true),
     (2,'2023-05-08', 11.99, 'Disney Plus', 12, true),
     (2,'2023-05-03', 6.99, 'Hayu', 12, true),
-    (2,'2023-05-15', 250.00, 'BC Cancer Foundation', 10, true),
     (2,'2023-05-15', 300.00, 'Richmomd Shine Dental', 11, true),
     (1,'2023-05-01', 1200.00, 'AUTOMATIC PAYMENT - THANKS', 3, false),
     (1,'2023-05-04', -1100.00, 'Lighthouse Labs',  6, false),
-    (1,'2023-05-18', -1100.00, 'Lighthouse Labs',  6, false),
+    (1,'2023-05-18', -1100.00, 'Babysitting',  6, false),
     (1,'2023-05-21', -762.00, 'Etsy',  6, false),
     (1,'2023-05-19', 17.89, 'Subway', 1, false),
-    (1,'2023-05-10', 525.65, '3 Kings Roofing and Renovations Inc.', 8, false),
     (1,'2023-05-23', 68.70, 'Telus Comm BPY', 3, false);
 
 -- insert monthly balances
@@ -88,7 +85,7 @@ INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount,
 INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Pay off tuition', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 5000.00, 14000.00, 1);
 
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (1, 800.00, 1);
-INSERT INTO category_goals (category_id, amount, user_id) VALUES (2, 150.00, 1);
+INSERT INTO category_goals (category_id, amount, user_id) VALUES (2, 200.00, 1);
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (3, 0, 1);
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (4, 0, 1);
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (5, 0, 1);
