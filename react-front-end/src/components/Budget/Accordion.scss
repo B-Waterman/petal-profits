@@ -1,0 +1,44 @@
+
+.accordion {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+
+  
+  .button {
+    display: flex;
+      justify-content: space-between;
+      margin-top: 0;
+      align-items: center;
+  }
+}
+
+
+.accordion-item.active .button {
+  background-color: #105057;
+}
+.transaction-wrapper {
+  height: 0;
+  overflow: hidden;
+  
+}
+.transaction-wrapper.open {
+  height: auto;
+}
+
+
+
+.income-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  flex-direction: column;
+}

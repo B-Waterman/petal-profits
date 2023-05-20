@@ -36,8 +36,8 @@ const GetSankeyData = () => {
 
     //push remainder if positive number
     if (incomeTotal - expensesTotal > 0) {
-      nodes.push({id: 'Funds Available for Plant Goals!'})
-      links.push({source: 'Budget', target: 'Funds Available for Plant Goals!', value: incomeTotal - expensesTotal})
+      nodes.push({id: 'Extra Funds Available for Plant Goals!'})
+      links.push({source: 'Budget', target: 'Extra Funds Available for Plant Goals!', value: incomeTotal - expensesTotal})
     }
 
     return {nodes: nodes, links: links}

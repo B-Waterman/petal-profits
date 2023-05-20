@@ -8,11 +8,21 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 1000px;
 
-  ul {
-    padding: 0;
-    margin-top: 0;
+  .income {
+    display: flex;
+    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
+    padding: 20px 40px;
+    border-radius: 15px;
+    margin-top: 50px;
+    width: 70%;
+    color: whitesmoke;
+    flex-direction: column;
+  
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
   }
-
 
   .remainder {
     display: flex;
