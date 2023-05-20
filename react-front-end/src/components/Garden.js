@@ -55,7 +55,7 @@ export default function Garden(props) {
 
           </div>
 
-          <div className='addNew' onClick={() => setbuttonPopup(true)} setTrigger={setbuttonPopup}>
+          <div className='addNew' onClick={() => setbuttonPopup(true)} >
             <Lottie className='buttonPulse'
               loop
               animationData={buttonPulse}

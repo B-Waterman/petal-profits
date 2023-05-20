@@ -140,15 +140,7 @@ input {
 	color:#000000;
 }
 
-html::after {
-	content:'';
-  background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
-	height:3px;
-	width:100%;
-	position:absolute;
-	left:0;
-	top:0;
-}
+
 
 
 .submit{

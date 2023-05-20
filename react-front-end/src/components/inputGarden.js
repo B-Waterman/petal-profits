@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import lottieJson from '../plant_animation.json'
 import ProgressBar from "./progress-bar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'font-awesome/css/font-awesome.min.css';
 import Lottie from 'react-lottie-player'
 import EditGarden from './editGarden';
@@ -9,6 +8,7 @@ import EditGarden from './editGarden';
 const InputGarden = () => {
   const [openModal, setOpenModal] = useState(false)
   const [goals, setGoals] = useState([])
+  const [goal, setGoal] = useState({})
 
   const getGoal = async () => {
     try {
@@ -21,22 +21,28 @@ const InputGarden = () => {
     }
   }
   
+ const handleSetGoal = (goal) => {
+    setGoal(goal) 
+    setOpenModal(true)
+  }
+
   useEffect(() =>{
     getGoal();
   }, []);
 
+console.log(goals)
   return(
   <>
     <div className='plant'>
+          {openModal &&
+          <EditGarden open={openModal} onClose={()=> setOpenModal(false)} goal={goal} />}
       {goals.map((item, idx) => (<>
         <div className='goalName'>
           {item.name}
         </div>
-        <span className='edits' onClick={() => setOpenModal(true)} >
+        <span className='edits' onClick={() => handleSetGoal(item)}  >
           <p>edit</p>
         </span>
-          {openModal &&
-          <EditGarden open={openModal} onClose={()=> setOpenModal(false)} goals={goals} />}
         
         <Lottie className='plant-img'
           animationData={lottieJson}
