@@ -6,7 +6,7 @@ import { categoriesContext } from './providers/CategoriesProvider';
 import './ExpenseList.scss'
 import { categoryGoalsContext } from './providers/CategoryGoalsProvider';
 import EditForm from './EditForm';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import formatTitle from './helpers/formatTitle';
 
 export default function ExpenseList(props) {
 
@@ -31,6 +31,7 @@ export default function ExpenseList(props) {
   const expenseItems = expenseCats.map((obj, index) => {
     let sum = Number(obj.sum);
     const amount = '$' + sum.toLocaleString();
+    const categoryTitle = formatTitle(obj.name)
     total += sum;
 
     //check user category goal
@@ -44,7 +45,7 @@ export default function ExpenseList(props) {
         <Accordion.Item className="category-item" eventKey={obj.id}>
 
           <Accordion.Header>
-           <h4>{obj.name}</h4>
+           <h4>{categoryTitle}</h4>
            <h4>{amount}</h4>
           </Accordion.Header>
           <Accordion.Body>

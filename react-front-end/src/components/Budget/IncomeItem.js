@@ -13,7 +13,7 @@ export default function IncomeItem(props) {
   let amount = ''
   //figure out why you needs to loop
   const incomeCategory = income.map((obj) => {
-    let sum = Number(obj.sum) 
+    let sum = Number(obj.sum) * -1
     amount = '$' + sum.toLocaleString()
     return (
       <Accordion.Item className="income-item" eventKey={obj.id} key={obj.id}>

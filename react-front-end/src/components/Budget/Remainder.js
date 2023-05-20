@@ -18,13 +18,15 @@ export default function Remainder(props) {
     }
 
   }
-  //note: m,ultiply by -1 because in this case income is a negative number and expense is positive
+  //note: multiply by -1 because in this case income is a negative number and expense is positive
   const remainder = (income + expense).toFixed(2) * -1
   
   return (
    <div className="remainder">
-    <h3>Remaining</h3>
-    <h3>{remainder}</h3>
+    <div className="header">
+      <h3>Remaining</h3>
+      <h3>{remainder}</h3>
+    </div>
    </div>
   )
 }

@@ -4,7 +4,7 @@ import formatDate from './helpers/formatdate';
 import { transactionsContext } from '../../TransactionsProvider';
 
 
-export default function CategoryransactionList(props) {
+export default function CategoryTransactionList(props) {
 
   const { transactions } = useContext(transactionsContext);
 
