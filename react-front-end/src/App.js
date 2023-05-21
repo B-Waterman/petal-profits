@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.scss';
 import logo from './petalprofit.png';
 import { Link, BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -6,14 +7,15 @@ import Home from './components/Home';
 import Garden from './components/Garden';
 import Settings from './components/Settings';
 import PlantGoal from './components/PlantGoal';
+import TransactionsProvider from './TransactionsProvider';
 
 
 export default function App(props){
 
     return (
       <BrowserRouter>
-
       <div className="App">
+
         <nav className="navBar">
           <span className="logo">
             <img src={logo} alt="Petal Profits" />
@@ -31,16 +33,19 @@ export default function App(props){
             <Link to="/account">MY ACCOUNT</Link>
           </div>
         </nav>
+
+
+      <TransactionsProvider>
       <Routes>
         <Route path='/' exact Component={Home}/>
         <Route path='/transactions' Component={Budget}/>
         <Route path='/garden' exact Component={Garden}/>
         <Route path='/account' Component={Settings}/>
-        <Route path='/plantgoals' Component={PlantGoal}></Route>
+        <Route path='/plantgoals' Component={PlantGoal}/>
       </Routes>
-      </div>
+      </TransactionsProvider>
 
-      
+      </div>
       </BrowserRouter>
     )
 };
