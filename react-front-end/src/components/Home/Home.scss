@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.Home {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  .recent {
+    display: flex;
+    background: linear-gradient(0deg, rgb(106, 159, 124) 0%, rgb(143, 209, 165) 100%);
+    padding: 20px 40px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 70%;
+    color: whitesmoke;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}

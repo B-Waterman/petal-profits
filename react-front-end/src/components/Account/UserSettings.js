@@ -9,7 +9,7 @@ export default function UserSettings(props) {
 
 //edit username, first name
   const editFirstName = function(event) {
-    event.preventDefualt();
+    event.preventDefault();
 
     return (
       <div className="edit">
