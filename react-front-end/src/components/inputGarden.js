@@ -41,7 +41,7 @@ console.log(goals)
           {item.name}
         </div>
         <span className='edits' onClick={() => handleSetGoal(item)}  >
-          <p>edit</p>
+          <button>edit</button>
         </span>
         
         <Lottie className='plant-img'
@@ -56,10 +56,14 @@ console.log(goals)
         </div>
         <div className='amounts'>
           <div className='tAmount'>
-            {item.tracked_amount}
+            ${item.tracked_amount}
           </div>
           <div className='gAmount'>
-          {item.target_amount}
+          ${item.target_amount}
+          <br>
+          </br>
+          <br>
+          </br>
           </div>
         </div>
       </>))}

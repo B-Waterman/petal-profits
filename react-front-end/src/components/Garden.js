@@ -5,7 +5,8 @@ import buttonPulse from '../button-pulse.json'
 import Popup from './Popup';
 import { useState, onSubmitForm } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
-
+import Submit from './Submit';
+import './submit.scss';
 
 //components
 import InputGarden from './inputGarden';
@@ -69,22 +70,28 @@ export default function Garden(props) {
           <form onSubmit={onSubmitForm}>
             <Popup trigger={buttonPopup} setTrigger={setbuttonPopup}>
               <h1 className='popupHeader'> PLANT A GOAL</h1>
-              <div className='innerbutton'>
-                "saving for a big purchase"
+              <div className='section'>
+                <div className='section1'>
+                  <div className='innerbutton'>
+                    "saving for a big purchase"
+                  </div>
+                  <br></br>
+                  <div className='innerbutton'>
+                    "Paying off my debt"
+                  </div>
+                  <br></br>
+                </div>
+                <div className='section2'>
+                  <div className='innerbutton'>
+                    "Emergency Fund"
+                  </div>
+                  <br></br>
+                  <div className='innerbutton'>
+                    "Saving for a trip"
+                  </div>
+                </div>
+                <br></br>
               </div>
-              <br></br>
-              <div className='innerbutton'>
-                "Paying off my debt"
-              </div>
-              <br></br>
-              <div className='innerbutton'>
-                "Emergency Fund"
-              </div>
-              <br></br>
-              <div className='innerbutton'>
-                "Saving for a trip"
-              </div>
-              <br></br>
               <p>
                 <span className="input">
                   <input type="text" placeholder="Give your Goal a name"
@@ -103,7 +110,9 @@ export default function Garden(props) {
                 </span>
               </p>
               <br></br>
-              <div className='submit'>SUBMIT</div>
+              <div>
+                <Submit />
+              </div>
               <br></br>
 
 
