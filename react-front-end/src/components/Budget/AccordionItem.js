@@ -54,6 +54,7 @@ export default function AccordionItem(props) {
       )}
       <div className={`transaction-wrapper ${props.active ? "open" : ""}`}>
         <div className="transactions">
+          <p id="transactions-title">Transactions</p>
           {transactionItems}
         </div>
       </div>

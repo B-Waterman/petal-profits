@@ -5,10 +5,12 @@ export default function TransactionItem(props) {
 
   return (
     <div className="transaction">
-      <p>{props.name}</p>
-      <p>{props.amount}</p>
-      <p>{props.date}</p>
-      <p>{props.type}</p>
+      <div>
+        <p className='title'>{props.name}</p>
+        {/* <p>{props.type}</p> */}
+        <p className='date'>{props.date}</p>
+      </div>
+      <p className='amount'>{props.amount}</p>
     </div>
   )
 }

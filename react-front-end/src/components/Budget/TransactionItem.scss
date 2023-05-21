@@ -6,6 +6,23 @@
   background-color: whitesmoke;
   margin: 10px 0px;
   padding: 0px 20px;
-  border-radius: 15px;
   justify-content: space-between;
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: 10px;
+  }
+
+  .date {
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.498);
+    font-size: 14px;
+  }
+
+  .amount{ 
+    color: rgba(0, 0, 0, 0.842);
+  }
+
 }

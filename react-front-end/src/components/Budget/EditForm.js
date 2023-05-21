@@ -31,7 +31,7 @@ export default function EditForm(props) {
     <div className="popup-box">
     <div className="edit-form">
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
-        <header>What is your monthly spending goal for {props.name}?</header>
+        <header>What is your monthly spending limit for {props.name}?</header>
         <input
           name="edit-goal"
           type="text"
@@ -40,8 +40,21 @@ export default function EditForm(props) {
           onChange={(event) => setAmount(event.target.value)}
         />
       </form>
-      <button onClick={() => saveGoal(props.category)}>Save</button>
-      <button onClick={() => props.onClose()}>Cancel</button>
+      {/*Mathews save button - come back to this*/}
+      {/* <div className="wrapper">
+        <input type="checkbox" name="submit" className="check" id="submit" />
+        <label htmlFor="submit" className="button" onClick={() => saveGoal(props.category)}>
+          <span id="save" className="submit-text">Save</span>
+          <span className="submit-confirm">
+          <i className="fa fa-check"></i>
+          </span>
+        </label>
+      </div> */}
+
+      <div className="buttons">
+      <button id="save" onClick={() => saveGoal(props.category)}>Save</button>
+      <button id="cancel" onClick={() => props.onClose()}>Cancel</button>
+      </div>
     </div>
     </div>
   )

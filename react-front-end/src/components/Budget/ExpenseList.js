@@ -61,7 +61,6 @@ export default function ExpenseList(props) {
        />
       {!edit && goalAmount > 0 &&(
         <>
-          <p className='budget-header'>Budget</p>
           <div className='budget-summary'>
             <span id="amount">{amount}</span>
             <span id="goal-amount"> of ${goalAmount.toLocaleString()}</span>
@@ -104,7 +103,6 @@ export default function ExpenseList(props) {
         <h3>Monthly Expenses</h3>
         <h3>{totalExpenses}</h3>
       </header>
-      <p>Detailed Breakdown</p>
       <ul>
         {expenseItems}
       </ul>

@@ -31,8 +31,56 @@
     }
 
     input {
-      width: 20%;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      height: 30px;
     }
   }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600px;
+
+    #save {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1.8px solid #4CAF50;
+      color: #4CAF50;
+      border-radius: 10px 0 10px 0;
+      width: 8.4vw;
+      height: 3.2vw;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #save:hover {
+      background-color: #4CAF50;
+      color: white;
+      transition: 0.3s;
+    }
+    
+    #cancel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1.8px solid #cd1717;
+      color: #cd1717;
+      border-radius: 10px 0 10px 0;
+      width: 8.4vw;
+      height: 3.2vw;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #cancel:hover {
+      background-color: #cd1717;
+      color: white;
+      transition: 0.3s;
+    }
+  }
+
 }
  
