@@ -27,7 +27,6 @@ router.put("/category-goals/:id", (req, res) => {
   const id = req.params.id;
   const amountKey = Object.keys(req.body);
   const amount = amountKey[0]
-  console.log(req.body)
 
   // update category goals amount
   updateCategoryGoals(id, amount)

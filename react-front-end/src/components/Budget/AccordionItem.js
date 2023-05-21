@@ -3,6 +3,8 @@ import TransactionItem from "./TransactionItem";
 import { transactionsContext } from "../../TransactionsProvider";
 import formatDate from "./helpers/formatdate";
 import './Accordion.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function AccordionItem(props) {
   const { transactions } = useContext(transactionsContext);
@@ -26,19 +28,35 @@ export default function AccordionItem(props) {
     );
   });
 
+  let expense = true; 
+  if (props.title === 'Monthly Income') {
+    expense = false;
+  }
+
   return (
     <li className={`accordion-item ${props.active ? "active" : ""}`}>
-      <button className="button" onClick={() => props.onToggle()}>
-        <h3>{props.title}</h3>
-          <span className="control">{props.active ? "—" : "+"}</span>
-      </button>
-        <h3>Spent: {props.total}</h3>
+      {!expense && (
+        <button className="button" onClick={() => props.onToggle()}>
+          <h3>{props.title}</h3>
+          <h3>{props.total}</h3>
+            <span className="control">{props.active ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}</span>
+        </button>
+      )}
+      {expense && (
+        <>
+        <button className="button" onClick={() => props.onToggle()}>
+          <h3>{props.title}</h3>
+          {/* <h3>{props.total}</h3> */}
+            <span className="control">{props.active ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}</span>
+        </button>
+        </>
+      )}
       <div className={`transaction-wrapper ${props.active ? "open" : ""}`}>
         <div className="transactions">
           {transactionItems}
         </div>
       </div>
     </li>
-  );
+  )
 
 }

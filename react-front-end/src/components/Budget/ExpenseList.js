@@ -44,11 +44,11 @@ export default function ExpenseList(props) {
     if (comparison <= 1) {
       comparison = Math.round(comparison * 100)
       const difference = (goalAmount - sum).toFixed(2).toLocaleString();
-      tracking = `$${difference} left`
+      tracking = `$${difference} Left`
     } else {
       comparison = 100;
       const difference = ((goalAmount - sum) * -1).toFixed(2).toLocaleString()
-      tracking = `$${difference} over`
+      tracking = `$${difference} Over`
     }
     
     const edit = isEditOpen[obj.id] || false;
@@ -61,20 +61,26 @@ export default function ExpenseList(props) {
        />
       {!edit && goalAmount > 0 &&(
         <>
+          <p className='budget-header'>Budget</p>
+          <div className='budget-summary'>
+            <span id="amount">{amount}</span>
+            <span id="goal-amount"> of ${goalAmount.toLocaleString()}</span>
+          </div>
           <div className='track'>
+            <ProgressBarBudget bgcolor="green" completed={comparison}/>
             <button onClick={() => toggleForm(obj.id)}>
               <FontAwesomeIcon icon={faPenToSquare} style={{color: "#8fd0a5"}} />
             </button>
-              <ProgressBarBudget bgcolor="green" completed={comparison}/>
           </div>
+
           <div className='budget-amount'>
           <h5 className='budget-amount' id='item'>{tracking}</h5>
           </div>
         </>
       )}
       {!edit && !goalAmount && (
-        <button onClick={() => toggleForm(obj.id)}>
-        Set a Spending Goal
+        <button className='select' onClick={() => toggleForm(obj.id)}>
+        Set a Spending Limit
         </button>
       )}
       {edit && (

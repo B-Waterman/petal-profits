@@ -61,7 +61,7 @@ VALUES
     (2,'2023-05-04', 15.49, 'Netflix', 12, true),
     (2,'2023-05-08', 11.99, 'Disney Plus', 12, true),
     (2,'2023-05-03', 6.99, 'Hayu', 12, true),
-    (2,'2023-05-15', 300.00, 'Richmomd Shine Dental', 11, true),
+    (2,'2023-05-15', 300.00, 'Richmond Shine Dental', 11, true),
     (1,'2023-05-01', 1200.00, 'AUTOMATIC PAYMENT - THANKS', 3, false),
     (1,'2023-05-04', -1100.00, 'Lighthouse Labs',  6, false),
     (1,'2023-05-18', -1100.00, 'Babysitting',  6, false),

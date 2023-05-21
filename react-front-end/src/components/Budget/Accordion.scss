@@ -14,7 +14,9 @@
   border: none;
   width: 100%;
   padding-top: 15px;
-  
+  padding-bottom: 10px;;
+  border-bottom: rgba(0, 0, 0, 0.65) 1px solid;
+
   .button {
     display: flex;
     justify-content: space-between;
@@ -27,19 +29,19 @@
     font-size: 20px;
     width: 100%;
 
+    .control {
+      height: 20px;
 
-      span {
-        margin: 0px 10px;
+      .svg-inline--fa {
+        width: 100%;
+        height: 100%;
       }
+    }
       
   }
 
   button :hover {
     cursor: pointer;
-  }
-
-  h3 {
-    margin: 10px;
   }
 
 }
