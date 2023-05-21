@@ -5,7 +5,7 @@ import { Link, BrowserRouter, Routes, Route} from 'react-router-dom';
 import Budget from './components/Budget';
 import Home from './components/Home';
 import Garden from './components/Garden';
-import Settings from './components/Settings';
+import Account from './components/Account';
 import PlantGoal from './components/PlantGoal';
 import TransactionsProvider from './TransactionsProvider';
 
@@ -40,7 +40,7 @@ export default function App(props){
         <Route path='/' exact Component={Home}/>
         <Route path='/transactions' Component={Budget}/>
         <Route path='/garden' exact Component={Garden}/>
-        <Route path='/account' Component={Settings}/>
+        <Route path='/account' Component={Account}/>
         <Route path='/plantgoals' Component={PlantGoal}/>
       </Routes>
       </TransactionsProvider>
