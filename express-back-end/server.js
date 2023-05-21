@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const App = Express();
 const BodyParser = require('body-parser');
+
 const PORT = 8080 // || process.env.DB_PORT
 
 
@@ -19,9 +20,11 @@ App.use(cors());
 
 //import routers
 const apiRoutes = require('./routes/api')
+const gardenRouter = require("./routes/garden")
 
 //use routers
 App.use('/api', apiRoutes)
+App.use('/garden', gardenRouter)
 
 // homepage route (example below - change when working on homepage)
 App.get('/', (req, res) => res.json({
@@ -33,3 +36,4 @@ App.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
 });
+

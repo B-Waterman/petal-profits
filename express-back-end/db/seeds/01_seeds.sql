@@ -81,8 +81,9 @@ INSERT INTO monthly_balances (account_id, end_of_month, balance) VALUES (3, '202
 INSERT INTO monthly_balances (account_id, end_of_month, balance) VALUES (3, '2023-02-28', 20000.00);
 
 -- insert plant_goals
-INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Trip to Mexico', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 20.00, 3000.00, 1);
-INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Pay off tuition', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 5000.00, 14000.00, 1);
+INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Trip to Mexico', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 2000.00, 3000.00, 1);
+INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Pay off tuition', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 14000.00, 14000.00, 1);
+INSERT INTO plant_goals (name, interactive_image, tracked_amount, target_amount, user_id) VALUES ('Buy a new Jacket', 'https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js', 300.00, 300.00, 1);
 
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (1, 800.00, 1);
 INSERT INTO category_goals (category_id, amount, user_id) VALUES (2, 200.00, 1);
