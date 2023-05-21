@@ -1,7 +1,8 @@
 import React from 'react';
 
 import './Account.scss';
-import PleaseWork from './AccountDetails';
+import AccountSettings from './AccountSettings';
+import UserSettings from './UserSettings';
 
 
 
@@ -12,9 +13,11 @@ export default function Account(props) {
       <header>
         <h1>Account & Settings</h1>
       </header>
-      <PleaseWork />
-      {/* <main>
-      </main> */}
+      <main>
+        <UserSettings />
+        <AccountSettings />
+        {/* <NotificationSettings /> */}
+      </main>
     </div>
   )
 };
