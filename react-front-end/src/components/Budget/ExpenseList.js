@@ -85,7 +85,7 @@ export default function ExpenseList(props) {
       )}
       {edit && (
         <EditForm
-          name={obj.name}
+          name={categoryTitle}
           amount={goalAmount}
           category={obj.id}
           onClose={() => toggleForm(obj.id)}

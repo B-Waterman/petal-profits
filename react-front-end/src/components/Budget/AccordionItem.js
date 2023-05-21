@@ -38,16 +38,17 @@ export default function AccordionItem(props) {
       {!expense && (
         <button className="button" onClick={() => props.onToggle()}>
           <h3>{props.title}</h3>
-          <h3>{props.total}</h3>
+          <div id="income">
+            <h3>{props.total}</h3>
             <span className="control">{props.active ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}</span>
+          </div>
         </button>
       )}
       {expense && (
         <>
         <button className="button" onClick={() => props.onToggle()}>
           <h3>{props.title}</h3>
-          {/* <h3>{props.total}</h3> */}
-            <span className="control">{props.active ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}</span>
+          <span className="control">{props.active ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}</span>
         </button>
         </>
       )}

@@ -46,6 +46,16 @@
 
 }
 
+#income {
+  height: 20px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin-right: 10px;
+  }
+}
 
 .accordion-item.active .button {
   background-color: transparent;
