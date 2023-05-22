@@ -37,6 +37,20 @@ export default function BarChart(props) {
       title: {
         display: false,
       }
+    },
+    tooltip: {
+      callbacks: {
+        label: (context) => `$${context.formattedValue}`, // Add the dollar sign to the tooltip label
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: (value) => `$${value.toLocaleString()}`, // Add the dollar sign to each tick value
+          precision: 0,
+        },
+      },
     }
   };
   
@@ -46,21 +60,24 @@ export default function BarChart(props) {
     labels,
     datasets: [
       {
-        label: "Income",
+        label: "Earned",
         data: [incomeTotal],
         backgroundColor: "rgb(106, 184, 102)"
       },
       {
-        label: "Expenses",
+        label: "Spent",
         data: [expensesTotal],
-        backgroundColor: "rgb(214, 39, 40)"
+        backgroundColor: "rgba(205, 32, 32, 0.966)"
       }
     ]
   };
 
   return (
     <div id="chart">
-      <Bar options={options} data={data} />
+      <Bar 
+        options={options}
+        data={data}
+      />
     </div>
   )
 }
