@@ -1,6 +1,7 @@
 const Express = require('express');
 const router = Express.Router();
-const { getMonthlyTransactions, getMonthlyCategoriesSum, getUsersCategoryGoals } = require('../db/queries/transactions');
+const { getMonthlyTransactions, getMonthlyCategoriesSum, getUsersCategoryGoals, getCurrentAccountBalance } = require('../db/queries/transactions');
+// const { getCurrentAccountBalance } = require('../db/queries/home');
 
 router.get("/transactions", (req, res) => {
   // get transaction data from db
@@ -20,6 +21,12 @@ router.get("/categories", (req, res) => {
 router.get("/category-goals", (req, res) => {
   // get the categories saving goals
   getUsersCategoryGoals(1)
+    .then(data => res.json(data))
+    .catch(error => console.log(error))
+});
+
+router.get("/accounts", (req, res) => {
+  getCurrentAccountBalance(1)
     .then(data => res.json(data))
     .catch(error => console.log(error))
 });
