@@ -1,10 +1,12 @@
 import React, {useContext} from 'react';
-import { categoriesContext } from './providers/CategoriesProvider';
+// import { categoriesContext } from './providers/CategoriesProvider';
 import Accordion from './Accordion';
+import { transactionsContext } from '../../TransactionsProvider';
 
 export default function Income(props) {
 
-  const { categories } = useContext(categoriesContext)
+  // const { categories } = useContext(categoriesContext)
+  const { categories } = useContext(transactionsContext)
 
   // //pull out income category sum
   let sum;

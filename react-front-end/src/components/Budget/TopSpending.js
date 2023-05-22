@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUtensils,  faCar, faCircleDollarToSlot, faHouse, faPlane, faIcons, faBriefcaseMedical, faHandHoldingHeart} from "@fortawesome/free-solid-svg-icons";
-import { categoriesContext } from "./providers/CategoriesProvider";
+// import { categoriesContext } from "./providers/CategoriesProvider";
 import { useContext } from "react";
 import './TopSpending.scss';
 import { formatTitle } from "./helpers/formatTitle";
+import { transactionsContext } from "../../TransactionsProvider";
 
 export default function TopSpending(props) {
 
 
-  const { categories } = useContext(categoriesContext);
+  // const { categories } = useContext(categoriesContext);
+  const { categories } = useContext(transactionsContext)
 
   //find the 3 highest values for top spending component
   // Sort the expenseCats array in descending order based on obj.sum

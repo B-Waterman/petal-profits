@@ -1,18 +1,16 @@
 import React, {useContext, useState} from 'react';
 import ProgressBarBudget from './ProgressBarBudget';
-import { categoriesContext } from './providers/CategoriesProvider';
 import './ExpenseList.scss'
-import { categoryGoalsContext } from './providers/CategoryGoalsProvider';
 import EditForm from './EditForm';
 import { formatTitle } from './helpers/formatTitle';
 import Accordion from './Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { transactionsContext } from '../../TransactionsProvider';
 
 export default function ExpenseList(props) {
 
-  const { categories } = useContext(categoriesContext);
-  const { categoryGoals } = useContext(categoryGoalsContext)
+  const { categories, categoryGoals } = useContext(transactionsContext);
   const [isEditOpen, setIsEditOpen] = useState({});
 
   function toggleForm(categoryId) {
@@ -29,12 +27,12 @@ export default function ExpenseList(props) {
   //calculate the sum of all expenses as you loop to be displayed above
   let total = 0;
   const expenseItems = expenseCats.map((obj, index) => {
-    console.log(obj); 
     let sum = Number(obj.sum);
     const amount = '$' + sum.toLocaleString();
     const categoryTitle = formatTitle(obj.name)
     total += sum;
-
+    
+    console.log(categoryGoals)
     //check user category goal
     const categoryGoal = categoryGoals.find(goal => goal.category_id === obj.id);
     const goalAmount = Number(categoryGoal.amount);

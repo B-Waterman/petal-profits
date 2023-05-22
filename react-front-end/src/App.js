@@ -8,7 +8,7 @@ import Garden from './components/Garden';
 import Account from './components/Account';
 import PlantGoal from './components/PlantGoal';
 import TransactionsProvider from './TransactionsProvider';
-import CategoriesProvider from './components/Budget/providers/CategoriesProvider'
+// import CategoriesProvider from './components/Budget/providers/CategoriesProvider'
 
 
 export default function App(props){
@@ -37,7 +37,6 @@ export default function App(props){
 
 
       <TransactionsProvider>
-      <CategoriesProvider>
       <Routes>
         <Route path='/' exact Component={Home}/>
         <Route path='/transactions' Component={Budget}/>
@@ -45,7 +44,6 @@ export default function App(props){
         <Route path='/account' Component={Account}/>
         <Route path='/plantgoals' Component={PlantGoal}/>
       </Routes>
-      </CategoriesProvider>
       </TransactionsProvider>
 
       </div>

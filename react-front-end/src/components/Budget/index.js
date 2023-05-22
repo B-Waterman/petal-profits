@@ -3,8 +3,6 @@ import React from 'react';
 import ExpenseList from './ExpenseList';
 import Income from './Income';
 import Remainder from './Remainder';
-import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
-import CategoriesProvider from './providers/CategoriesProvider';
 import TopSpending from './TopSpending';
 import MonthlyCharts from './MonthlyCharts';
 
@@ -16,7 +14,6 @@ export default function Budget(props) {
 
 
   return (
-      // <CategoriesProvider>
         <div className='budget'>
           <h1>{monthName} Summary</h1>
           <h3>Cash Flow</h3>
@@ -24,10 +21,7 @@ export default function Budget(props) {
           <Remainder/>
           <TopSpending/>
           <Income/>
-          <CategoryGoalsProvider>
-            <ExpenseList/>
-          </CategoryGoalsProvider>
+          <ExpenseList/>
         </div>
-      // {/* </CategoriesProvider> */}
   )
 }

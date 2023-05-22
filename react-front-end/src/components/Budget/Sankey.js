@@ -1,6 +1,6 @@
 import { ResponsiveSankey } from '@nivo/sankey'
 import { useEffect, useContext, useState } from 'react';
-import { categoriesContext } from './providers/CategoriesProvider';
+// import { categoriesContext } from './providers/CategoriesProvider';
 import { transactionsContext } from '../../TransactionsProvider';
 import { formatTitle } from './helpers/formatTitle';
 
@@ -8,8 +8,8 @@ import { formatTitle } from './helpers/formatTitle';
 export default function Sankey() {
 
 const [data, setData] = useState(null);
-const { categories } = useContext(categoriesContext);
-const { transactions } = useContext(transactionsContext)
+// const { categories } = useContext(categoriesContext);
+const { transactions, categories } = useContext(transactionsContext)
 
     useEffect(() => {
         try {
@@ -58,7 +58,7 @@ const { transactions } = useContext(transactionsContext)
         <div id="sankey-wrapper">
             <ResponsiveSankey 
             data={data}
-                margin={{ top: 20, right: 220, bottom: 20, left: 220 }}
+                margin={{ top: 20, right: 150, bottom: 20, left: 220 }}
                 valueFormat=" <-$1,.0f"
                 sort='auto'
                 colors={{ scheme: 'category10' }}
@@ -79,7 +79,7 @@ const { transactions } = useContext(transactionsContext)
                 nodeBorderRadius={2}
                 linkOpacity={0.35}
                 linkHoverOthersOpacity={0.25}
-                linkContract={2}
+                linkContract={1}
                 enableLinkGradient={true}
                 enableLabels={true}
                 labelPosition="outside"

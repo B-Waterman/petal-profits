@@ -1,8 +1,9 @@
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { useContext } from "react";
-import { categoriesContext } from "./providers/CategoriesProvider";
+// import { categoriesContext } from "./providers/CategoriesProvider";
 import './BarChart.scss'
+import { transactionsContext } from "../../TransactionsProvider";
 
 export default function BarChart(props) {
   ChartJS.register(
@@ -14,7 +15,8 @@ export default function BarChart(props) {
     Legend
   );
 
-  const { categories } = useContext(categoriesContext);
+  // const { categories } = useContext(categoriesContext);
+  const { categories } = useContext(transactionsContext)
 
   let incomeTotal = 0;
   let expensesTotal = 0;

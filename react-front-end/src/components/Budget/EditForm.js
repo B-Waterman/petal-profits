@@ -1,13 +1,13 @@
 import { useState, useContext } from "react";
-import { categoryGoalsContext } from "./providers/CategoryGoalsProvider";
 import axios from 'axios'
 import './EditForm.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from '@fortawesome/free-solid-svg-icons'
+import { transactionsContext } from "../../TransactionsProvider";
 
 export default function EditForm(props) {
 
-  const { categoryGoals, setCategoryGoals } = useContext(categoryGoalsContext)
+  const { categoryGoals, setCategoryGoals } = useContext(transactionsContext)
   const [amount, setAmount] = useState(props.amount)
 
   function saveGoal(categoryId) {

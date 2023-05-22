@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { categoriesContext } from "./Budget/providers/CategoriesProvider";
+// import { categoriesContext } from "./Budget/providers/CategoriesProvider"; ////tell Broooke about this line
 import { formatTitle } from './Budget/helpers/formatTitle'
 import {Chart, ArcElement, Tooltip, Legend} from 'chart.js'
+import { transactionsContext } from '../TransactionsProvider';///tell Broooke about this line
 Chart.register(ArcElement, Tooltip, Legend);
 
 export default function DonutChart() {
 
-  const { categories } = useContext(categoriesContext);
+  // const { categories } = useContext(categoriesContext); ///tell Broooke about this line
+  const { categories } = useContext(transactionsContext) ///tell Broooke about this line
 
   const catLabels = [] //hold name of categories
   const catData = [] //hold total amount in each category
