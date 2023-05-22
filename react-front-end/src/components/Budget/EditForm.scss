@@ -1,0 +1,131 @@
+.popup-box {
+  position: fixed;
+  background: rgba(0,0,0,0.2);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+
+  #wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #close {
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+
+    .svg-inline--fa {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .edit-form {
+    position: relative;
+    width: 50%;
+    margin-left: 250px;
+    height: auto;
+    max-height: 70vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    filter: drop-shadow(0 0 0.75rem #24242477);
+    overflow: auto;
+
+
+    header {
+      display: flex;
+      flex-direction: column;
+      font-size: 18px;
+      padding-bottom: 0px;
+      text-align: center;
+
+      h2 {
+        margin: 0px;
+      }
+
+      h4 {
+        margin-top: 5px;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input {
+      margin-bottom: 10px;
+      height: 30px;
+      border: none;
+      width: auto;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.618);
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  .note {
+    display: flex;
+    p {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.618);
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600px;
+
+    #save {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1.8px solid #49a44c;
+      color: #4CAF50;
+      border-radius: 10px 0 10px 0;
+      width: 6.4vw;
+      height: 3.2vw;
+      cursor: pointer;
+      font-weight: bold;
+      filter: drop-shadow(0 0 0.75rem #4394445d);
+    }
+
+    #save:hover {
+      background-color: #4CAF50;
+      color: white;
+      transition: 0.3s;
+    }
+    
+    #cancel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1.8px solid rgb(174, 32, 32);
+      color: #cd1717;
+      border-radius: 10px 0 10px 0;
+      width: 6.4vw;
+      height: 3.2vw;
+      cursor: pointer;
+      font-weight: bold;
+      filter: drop-shadow(0 0 0.75rem #b4141448);
+    }
+
+    #cancel:hover {
+      background-color: #cd1717;
+      color: white;
+      transition: 0.3s;
+    }
+  }
+
+}
+ 

@@ -1,52 +1,50 @@
-import React from "react";
-import { Chart } from 'react-google-charts'
+import { ResponsiveSankey } from '@nivo/sankey'
+import GetSankeyData from './helpers/getSankeyData';
 
 export default function Sankey() {
-  const data = [
-    ["From", "To", "Total"],
-    ["Lighthouse Labs", "Budget", 1100],
-    ["Lighthouse Labs", "Budget", 1100],
-    ["Etsy", "Budget", 500],
-    ['Budget', 'ENTERTAINMENT', 49.45],
-    ['Budget', 'FOOD_AND_DRINK', 683.38],
-    ['Budget', 'GOVERNMENT_AND_NON_PROFIT', 250.00],
-    ['Budget', 'HOME_IMPROVEMENT', 525.65],
-    ['Budget', 'MEDICAL', 300.00],
-    ['Budget', 'PERSONAL_CARE', 72.22],
-    ['Budget', 'RENT_AND_UTILITIES', 1268.70],
-    ['Budget', 'TRANSPORTATION', 189.46],
-    ['Budget', 'TRAVEL', 954.86],
-    ['Budget', 'PlantGoals', 2000],
-    ['PlantGoals', 'Girls Trip', 600],
-    ['PlantGoals', 'Emergency Fund', 400],
-    ['PlantGoals', 'Pay off Student Loan', 400],
-  ]
 
-  const colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f', '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+    const data = GetSankeyData()
+    console.log(GetSankeyData())
+    
+      return(
+            <ResponsiveSankey 
+            data={data}
+                margin={{ top: 20, right: 220, bottom: 20, left: 220 }}
+                valueFormat=" <-$1,.0f"
+                sort='auto'
+                colors={{ scheme: 'category10' }}
+                nodeOpacity={0.75}
+                nodeHoverOthersOpacity={0.5}
+                nodeThickness={8}
+                nodeSpacing={40}
+                nodeBorderWidth={0}
+                nodeBorderColor={{
+                    from: 'color',
+                    modifiers: [
+                        [
+                            'darker',
+                            0.8
+                        ]
+                    ]
+                }}
+                nodeBorderRadius={2}
+                linkOpacity={0.35}
+                linkHoverOthersOpacity={0.25}
+                linkContract={2}
+                enableLinkGradient={true}
+                enableLabels={true}
+                labelPosition="outside"
+                labelPadding={27}
+                labelTextColor={{
+                    from: 'color',
+                    modifiers: [
+                        [
+                            'darker',
+                            '1'
+                        ]
+                    ]
+                }}
+            />
+    )
 
-  const options = {
-    sankey: {
-      node: {
-        colors: colors,
-        nodePadding: 25
-      },
-      link: {
-        colorMode: 'gradient',
-        colors: colors
-        }
-    }
-  };
-  
-
-  return (
-    <div className="chart">
-      <Chart
-          chartType="Sankey"
-          width="700"
-          height="600px"
-          data={data}
-          options={options}
-        />
-    </div>
-  )
 }
