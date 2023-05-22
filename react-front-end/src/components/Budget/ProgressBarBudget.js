@@ -21,9 +21,19 @@ export default function ProgressBarBudget(props) {
     fontWeight: 'bold'
   }
 
+  let className;
+  if (completed < 50) {
+    className = 'low';
+  } else if (completed < 75) {
+    className = 'middle';
+  } else {
+    className = 'high'
+  }
+
+
   return (
     <div className="progress-bar" style={containerStyles}>
-      <div className="fill" style={fillerStyles}>
+      <div className={className} style={fillerStyles}>
         <span style={labelStyles}></span>
       </div>
     </div>

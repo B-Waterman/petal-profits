@@ -93,8 +93,14 @@
 
       }
 
-    .fill {
-      background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgb(205 32 32 / 62%));
+    .high {
+      background: linear-gradient(90deg, rgba(198, 216, 41, 0.6) 0%, rgb(205 32 32 / 62%));
+    }
+    .low {
+      background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgba(191, 205, 32, 0.62));
+    }
+    .middle {
+      background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgba(205, 139, 32, 0.62));
     }
 
   }
