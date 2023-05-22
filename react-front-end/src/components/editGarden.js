@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import Submit from './Submit';
 import './submit.scss';
+import Garden from './Garden';
 
 
-const EditGarden = ({ open, onClose, goal }) => {
+const EditGarden = ({ open, onClose, goal, reFetch }) => {
   const [name, newName] = useState(goal.name);
   const [target, newTarget] = useState(goal.target_amount)
 
   //
   const update = async (e) => {
-    e.preventDefault()
     try {
       const body = { name, target }
-      const response = await fetch(`/garden/${goal.id}`, {
+      console.log(body)
+      const response = await fetch(`http://localhost:8080/garden/1`, {
         method: "PUT",
-        header: { "Content-type": "application/json" },
+        headers: { "Content-type": "application/json" },
         body: JSON.stringify(body)
 
       })
-
+      reFetch(response, ...body);
     } catch (err) {
       console.error(err.message)
     }
@@ -35,11 +36,8 @@ const EditGarden = ({ open, onClose, goal }) => {
           <input type='text' value={name} onChange = {(event) => newName(event.target.value)}></input>
           <p></p>
           <input type='number' value={target} onChange={(event) => newTarget(event.target.value)}></input>
-
-
           <div>
             <button
-              className='btnOutline'
               data-target={`id$(goals.id)`}
               onClick={e => update(e)}
             >

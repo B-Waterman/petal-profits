@@ -1,7 +1,11 @@
-$maincolor: #8fd1a5;
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
 
 .App {
   display: flex;
+  background-color: $primary;
 //   flex-direction: column;
 //   width: 250px;
 //   height: 100vh;
@@ -20,7 +24,6 @@ nav {
   padding: 15px 32px;
   font-size: 16px;
   color: white;
-
 
   .logo {
     display: flex;

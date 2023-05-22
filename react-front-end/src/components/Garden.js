@@ -20,7 +20,6 @@ export default function Garden(props) {
 
   //code for post request to the back end.
   const onSubmitForm = async (e) => {
-    e.preventDefeault();
     try {
       const body = { goal }
       const response = await fetch("http://localhost:8080/garden", {
@@ -28,8 +27,8 @@ export default function Garden(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
-
-      console.log(response)
+      console.log(body)
+      window.location = '/'
     } catch (err) {
       console.error(err.message)
     }
@@ -110,7 +109,7 @@ export default function Garden(props) {
                 </span>
               </p>
               <br></br>
-              <div>
+              <div onClick={(e) => onSubmitForm(e.target.value)}>
                 <Submit />
               </div>
               <br></br>
