@@ -29,6 +29,7 @@ export default function ExpenseList(props) {
   //calculate the sum of all expenses as you loop to be displayed above
   let total = 0;
   const expenseItems = expenseCats.map((obj, index) => {
+    console.log(obj); 
     let sum = Number(obj.sum);
     const amount = '$' + sum.toLocaleString();
     const categoryTitle = formatTitle(obj.name)

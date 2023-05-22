@@ -1,10 +1,13 @@
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
 
 .top-spending {
   display: flex;
   width: 75%;
   padding: 30px 0px;
   justify-content: space-evenly;
-  background-color: aliceblue;
   margin-bottom: 50px;
 
   .category {
@@ -16,6 +19,7 @@
     .icon {
       height: 50px;
       width: 50px;
+      color: $secondarycolor;
   
       svg {
         height: 50px;

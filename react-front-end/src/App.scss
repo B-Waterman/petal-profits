@@ -1,4 +1,7 @@
-$maincolor: #8fd1a5;
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
 
 .App {
   display: flex;
@@ -14,13 +17,12 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 250px;
-  height: 100vh;
+  width: 150px;
+  min-height: 100vh;
   background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
   padding: 15px 32px;
   font-size: 16px;
   color: white;
-
 
   .logo {
     display: flex;

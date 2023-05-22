@@ -1,15 +1,19 @@
-@import '../../App.scss';
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
 
 
  .expense-list {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(0deg, rgb(106 159 124 / 24%) 0%, rgba(143, 209, 165, 0.58) 100%);
+    background: white;
     padding: 10px 20px;
     border-radius: 15px;
     align-items: stretch;
     margin-top: 50px;
     width: 70%;
+    color: $icons;
 
     ul {
       padding: 0px;
@@ -99,13 +103,14 @@
       }
 
     .high {
-      background: linear-gradient(90deg, rgba(216, 166, 41, 0.6) 0%, rgba(205, 32, 32, 0.807));
+      // background: linear-gradient(90deg, rgba(216, 166, 41, 0.6) 0%, rgba(205, 32, 32, 0.807));
+      background:  linear-gradient(90deg, #b1dca8 0%, #f87e63);
     }
     .low {
-      background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgba(191, 205, 32, 0.62));
+      background: linear-gradient(90deg, $maincolor 0%, #fabd81);
     }
     .middle {
-      background: linear-gradient(90deg, rgba(152, 216, 41, 0.6) 0%, rgba(205, 139, 32, 0.62));
+      background: linear-gradient(90deg, $maincolor 0%, $secondarycolor);
     }
 
   }
