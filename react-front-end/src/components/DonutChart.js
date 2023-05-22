@@ -81,18 +81,18 @@ export default function DonutChart() {
     },
   };
 
-//   // const textCenter = {
-//   //   id: 'textCenter',
-//   //   beforeDatasetsDraw(chart, args, pluginOptions) {
-//   //     const { ctx, data } = chart;
-//   //     ctx.save();
-//   //     ctx.font = 'bolder 50px sans-serif';
-//   //     ctx.fillStyle ='red';
-//   //     ctx.textAlign = 'center';
-//   //     ctx.textBaseline = 'middle';
-//   //     ctx.fillText('Expenses', chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y);
-//   //   }
-//   // }
+  // const textCenter = {
+  //   id: 'textCenter',
+  //   beforeDatasetsDraw(chart, args, pluginOptions) {
+  //     const { ctx, data } = chart;
+  //     ctx.save();
+  //     ctx.font = 'bolder 50px sans-serif';
+  //     ctx.fillStyle ='red';
+  //     ctx.textAlign = 'center';
+  //     ctx.textBaseline = 'middle';
+  //     ctx.fillText('Expenses', chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y);
+  //   }
+  // }
 
 
 

@@ -1,31 +1,28 @@
-// import {createContext, useState, useEffect} from 'react';
-// import axios from 'axios'
+import React, { useContext } from 'react';
 
-// export const categoriesContext = createContext();
+import AccountItem from './AccountItem';
+import { transactionsContext } from '../../TransactionsProvider';
 
-// export default function AccountBalance(props) {
-//   const [balance, setBalance] = useState([]);
+export default function AccountBalance(props) {
+  const { accounts } = useContext(transactionsContext);
+  console.log(accounts);
 
-//   useEffect(()=>{
-//     axios.get('http://localhost:8080/api/accounts')
-//     .then((response) => {
-//       (prev => [...prev, ...response.data]);
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-//   }, []);
+  const currentBalances = accounts.map((obj) => {
+    const balance = '$' + obj.current_balance.toLocaleString()
 
-//   return (
-//     <categoriesContext.Provider value={data}>
-//       {props.children}
-//     </categoriesContext.Provider>
-//   );
+    return (
+      <AccountItem
+        key={obj.id}
+        name={obj.account_name}
+        balance={balance}
+      />
+    )
+  });
 
-//   return (
-//     <div className="account-balance">
-//       <h3>Current Balance(s)</h3>
-//       <span>{balance}</span>
-//     </div>
-//   );
-// };
+  return (
+    <div className="account-balance">
+      <h3>Current Balance(s)</h3>
+      <span>{currentBalances}</span>
+    </div>
+  );
+};

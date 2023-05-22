@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 //bring in budget tools
 import TransactionItem from "../Budget/TransactionItem";
 import { transactionsContext } from "../../TransactionsProvider";
-import formatDate from './helpers/formatdate';
+import formatDate from '../Budget/helpers/formatdate';
 
 export default function RecentTransactionsList(props) {
   const { transactions } = useContext(transactionsContext);
 
-  const recentTransactions = transactions.map((obj) => {
+  const recentTransactions = transactions.slice(0, 5).map((obj) => {
 
     const amount = '$' + obj.transaction_amount.toLocaleString()
     const date = formatDate(obj.transaction_date)
@@ -26,7 +27,8 @@ export default function RecentTransactionsList(props) {
   return (
     <div className="recent">
       <h3>Recent Transactions</h3>
-        <span>{recentTransactions}</span>
+          {recentTransactions}
+          <Link to="/transactions">More Transactions</Link>
     </div>
   );
 };

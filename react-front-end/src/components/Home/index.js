@@ -1,15 +1,26 @@
-// import React from 'react';
+import React from 'react';
 
-// import './Home.scss';
-// import RecentTransactionsList from './RecentTransactionsList';
+import './Home.scss';
+import RecentTransactionsList from './RecentTransactionsList';
+import StatusUpdate from './StatusUpdate';
+import AccountBalance from './AccountBalance';
+import DonutChart from '../DonutChart';
 
+export default function Home(props) {
+  return (
+    // <GetAccountData>
 
-// export default function Home(props) {
-//   return (
-//     <CategoriesProvider>
-//       <div className='Home'>
-//         <RecentTransactionsList />
-//       </div>
-//     </CategoriesProvider>
-//   )
-// };
+    <div className='Home'>
+      <header>
+        <h1>Home</h1>
+      </header>
+      <main>
+        {/* <StatusUpdate /> */}
+        <DonutChart />
+        {/* <AccountBalance /> */}
+        {/* <RecentTransactionsList /> */}
+      </main>
+    </div>
+    // </GetAccountData>
+  )
+};

@@ -10,7 +10,7 @@ import CategoriesProvider from './providers/CategoriesProvider';
 export default function Budget(props) {
 
   return (
-      <CategoriesProvider>
+      // <CategoriesProvider>
         <div className='budget'>
           <h1>Budget</h1>
           <Sankey />
@@ -20,6 +20,6 @@ export default function Budget(props) {
           </CategoryGoalsProvider>
           <Remainder/>
         </div>
-      </CategoriesProvider>
+      // {/* </CategoriesProvider> */}
   )
 }
