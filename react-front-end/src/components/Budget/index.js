@@ -6,6 +6,8 @@ import IncomeItem from './IncomeItem';
 import Remainder from './Remainder';
 import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
 import CategoriesProvider from './providers/CategoriesProvider';
+import Sankey from './Sankey';
+
 
 export default function Budget(props) {
 
