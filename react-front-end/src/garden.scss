@@ -1,13 +1,21 @@
-$maincolor: #8fd1a5;
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
 
+html {
+  background-color: $primary;
+}
 
-.page{
+.page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
+  background-color: $primary;
 }
-.progressBar{
+
+.progressBar {
   display: flex;
   flex-direction: row;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -15,24 +23,25 @@ $maincolor: #8fd1a5;
   height: 80px;
 }
 
-.plant{
+.plant {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #27392d;
+  background-color: $primary;
   margin: 5px;
-  border-radius: 30px;
-  color: #ffffff;
+  border-radius: 15px;
+  color: #631515;
+
 }
 
-.plant-img{
-  background-color: #8fd1a5;
+.plant-img {
+  background-color: $maincolor;
   border-radius: 25%;
   margin-top: 10px;
 }
 
-.banner{
+.banner {
   background-color: $maincolor;
   display: flex;
   justify-content: center;
@@ -43,26 +52,26 @@ $maincolor: #8fd1a5;
   border-radius: 15px;
 }
 
-#id{
+#id {
   display: flex;
   flex-direction: row;
 }
 
-.container{
-  background-color: #ffffff;
+.container {
+  background-color: $primary;
   height: 100vh;
   width: 80vw;
   flex-direction: row;
 
 
-  
-.buttonPulse{
-  font-size: 40px;
-  color: $maincolor;
-}
+
+  .buttonPulse {
+    font-size: 40px;
+    color: $maincolor;
+  }
 }
 
-.addNew{
+.addNew {
   display: flex;
   font-size: 40px;
   color: white;
@@ -70,15 +79,16 @@ $maincolor: #8fd1a5;
   justify-content: center;
   align-items: center;
   background-color: $maincolor;
-  border-radius: 100px;
+  border-radius: 15px;
 
 
 }
-.addNew:hover{
-  background-color: #27392d;
+
+.addNew:hover {
+  background-color: $secondarycolor;
 }
 
-.innerbutton{
+.innerbutton {
   font: 60px;
   background-color: $maincolor;
   display: flex;
@@ -87,45 +97,46 @@ $maincolor: #8fd1a5;
 
 }
 
-.goalName{
+.goalName {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 40px;
 }
 
-.tAmount{
+.tAmount {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 32px;
 }
 
-.gAmount{
+.gAmount {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 32px;
 }
 
-.edits{
+.edits {
   display: flex;
   width: 100%;
-  justify-content:space-between;
+  justify-content: space-between;
   font-size: 20px;
 }
 
-.amounts{
+.amounts {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 750px;
 }
 
-.modalContainer{
-  color:black;
+.modalContainer {
+  color: black;
   border-radius: 15px;
-  background-color: rgb(255, 255, 255);
+  background-color: $maincolor;
   width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.closeBtn{
-display: flexbox;
-
+.closeBtn {
+  position: absolute;
+  right: 350px;
+  top: 70px;
 }
