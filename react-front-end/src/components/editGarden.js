@@ -19,7 +19,7 @@ const EditGarden = ({ open, onClose, goal, reFetch }) => {
         body: JSON.stringify(body)
 
       })
-      reFetch(...body);
+      reFetch(response, ...body);
     } catch (err) {
       console.error(err.message)
     }
@@ -38,7 +38,6 @@ const EditGarden = ({ open, onClose, goal, reFetch }) => {
           <input type='number' value={target} onChange={(event) => newTarget(event.target.value)}></input>
           <div>
             <button
-          
               data-target={`id$(goals.id)`}
               onClick={e => update(e)}
             >

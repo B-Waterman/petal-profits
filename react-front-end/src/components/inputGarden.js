@@ -36,7 +36,12 @@ console.log(goals)
   <>
     <div className='plant'>
           {openModal &&
-          <EditGarden open={openModal} onClose={()=> setOpenModal(false)} goal={goal} reFetch={getGoal}/>}
+          <EditGarden 
+          open={openModal} 
+          onClose={()=> setOpenModal(false)} 
+          goal={goal} 
+          reFetch={getGoal}
+          />}
       {goals.map((item, idx) => (<>
         <div className='goalName'>
           {item.name}

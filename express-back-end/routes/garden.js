@@ -51,9 +51,9 @@ router.get('/:id', async (req, res) => {
 //update/edit a goal
 router.put('/:id', async (req, res) =>{
      const { name } = req.body
-     const { id } = req.params
-  return db.query("UPDATE plant_goals SET name = $1 WHERE id = $2;", 
-     [name, id])
+     const { target_amount } = req.params
+  return db.query("UPDATE plant_goals SET name = $1 WHERE target_amout = $2;", 
+     [name, target_amount])
      .then((responce) => {res.json(responce.rows)})
       .catch((error) => console.error(error))
   // try{
