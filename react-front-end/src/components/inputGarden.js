@@ -4,6 +4,7 @@ import ProgressBar from "./progress-bar";
 import 'font-awesome/css/font-awesome.min.css';
 import Lottie from 'react-lottie-player'
 import EditGarden from './editGarden';
+import Submit from './Submit';
 
 const InputGarden = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -14,7 +15,7 @@ const InputGarden = () => {
     try {
       const response = await fetch ('/garden')
       const jsonData = await response.json();
-
+      console.log(jsonData)
       setGoals(jsonData)
       } catch (err) {
       console.error(err.message);
@@ -35,13 +36,15 @@ console.log(goals)
   <>
     <div className='plant'>
           {openModal &&
-          <EditGarden open={openModal} onClose={()=> setOpenModal(false)} goal={goal} />}
+          <EditGarden open={openModal} onClose={()=> setOpenModal(false)} goal={goal} reFetch={getGoal}/>}
       {goals.map((item, idx) => (<>
         <div className='goalName'>
           {item.name}
         </div>
         <span className='edits' onClick={() => handleSetGoal(item)}  >
-          <button>edit</button>
+          <div className='button'>
+            Edit            
+          </div>
         </span>
         
         <Lottie className='plant-img'
@@ -49,10 +52,10 @@ console.log(goals)
           play
           segments={[0, Math.round(item.tracked_amount/item.target_amount * 100)]}
           loop={false}
-          style={{ width: 150, height: 150 }}
+          style={{ width: 300, height: 300 }}
         />
-        <div className="progressBar">
-          <ProgressBar key={idx} bgcolor={'#6a1b9a'} completed={Math.round(item.tracked_amount/item.target_amount * 100)} />
+        <div className="progressBar" key={idx}>
+          <ProgressBar  bgcolor={'#05648A'} completed={Math.round(item.tracked_amount/item.target_amount * 100)} />
         </div>
         <div className='amounts'>
           <div className='tAmount'>

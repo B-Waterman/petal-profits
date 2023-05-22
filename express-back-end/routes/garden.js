@@ -19,20 +19,27 @@ router.post('/', async (req, res) => {
 
 //get all goals
 router.get('/', async (req, res) => {
-  try {
-    const allgoals = await db.query("SELECT * FROM plant_goals")
-    res.json(allgoals.rows);
-  } catch (err) {
-    console.error(err.message);
+  return db.query("SELECT * FROM plant_goals;")
+  .then((responce) => {res.json(responce.rows)})
+  .catch((error) => console.error(error))
 
-  }
+
+  // try {
+  //   console.log('test')
+  //   const {allgoals} = await db.query("SELECT * FROM plant_goals;")
+  //   console.log(allgoals)
+  //   res.json(allgoals.rows);
+  // } catch (err) {
+  //   console.error(err.message);
+
+  // }
 })
 
 //get a goal
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
-    const goal = await db.query(`SELECT * FROM plant_goals WHERE id = $1`, [id])
+    const goal = await db.query(`SELECT * FROM plant_goals WHERE id = $1;`, [id])
 
     res.json(plant_goals.rows[0])
   } catch (err) {
@@ -43,17 +50,24 @@ router.get('/:id', async (req, res) => {
 
 //update/edit a goal
 router.put('/:id', async (req, res) =>{
-  try{
-    const { id } = req.params
-    const { plant_goals } = req.body
-    const updategoals = await db.query("UPDATE plant_goals SET name = $1 Where id = $2", 
-    [name, id]);
+     const { name } = req.body
+     const { id } = req.params
+  return db.query("UPDATE plant_goals SET name = $1 WHERE id = $2;", 
+     [name, id])
+     .then((responce) => {res.json(responce.rows)})
+      .catch((error) => console.error(error))
+  // try{
+  //   const { name } = req.body
+  //   const { id } = req.params
+  //   console.log(name, id)
+  //   const updategoals = await db.query("UPDATE plant_goals SET name = $1 WHERE id = $2;", 
+  //   [name, id]);
+    
+  //   res.json("plant goal was updated")
 
-    res.json("plant goal was updated")
-
-  } catch (err) {
-    console.error(err.message)
-  }
+  // } catch (err) {
+  //   console.error(err.message)
+  // }
 })
 
 

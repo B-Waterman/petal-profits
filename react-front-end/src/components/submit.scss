@@ -1,6 +1,8 @@
 $multi: 1.3vw;
-$mainColor: #4CAF50;
-$secColor: #E8F5E9;
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
 
 .wrapper {
   width: 160px;
@@ -18,14 +20,15 @@ $secColor: #E8F5E9;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $secColor;
-  border: 4px solid $mainColor;
-  color: $mainColor;
+  color: $secondarycolor;
+  border: 4px solid $maincolor;
+  color: $maincolor;
   border-radius: 10px 0 10px 0;
   width: 8*$multi;
   height: 4*$multi;
   cursor: pointer;
   transition: all .5s;
+  
 }
 .submit-confirm {
   display: none;
