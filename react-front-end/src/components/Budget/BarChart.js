@@ -1,7 +1,6 @@
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { useContext } from "react";
-// import { categoriesContext } from "./providers/CategoriesProvider";
 import './BarChart.scss'
 import { transactionsContext } from "../../TransactionsProvider";
 
@@ -15,7 +14,7 @@ export default function BarChart(props) {
     Legend
   );
 
-  // const { categories } = useContext(categoriesContext);
+
   const { categories } = useContext(transactionsContext)
 
   let incomeTotal = 0;
@@ -56,6 +55,7 @@ export default function BarChart(props) {
     }
   };
   
+  
   const labels = [`${props.month} Cash Flow`];
   
   const data = {
@@ -64,18 +64,18 @@ export default function BarChart(props) {
       {
         label: "Earned",
         data: [incomeTotal],
-        backgroundColor: "rgb(106, 184, 102)"
+        backgroundColor: "#A8DCB9"
       },
       {
         label: "Spent",
         data: [expensesTotal],
-        backgroundColor: "rgba(205, 32, 32, 0.966)"
+        backgroundColor: "#FAA381"
       }
     ]
   };
 
   return (
-    <div id="chart">
+    <div id="bar-chart">
       <Bar 
         options={options}
         data={data}

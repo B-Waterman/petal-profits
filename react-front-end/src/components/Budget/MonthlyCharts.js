@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Sankey from './Sankey';
 import BarChart from './BarChart';
-// import SankeyE from './SankeyE';
 
 export default function MonthlyCharts(props) {
 
@@ -17,9 +16,18 @@ export default function MonthlyCharts(props) {
 
   return (
     <div className='charts'>
-      <button onClick={() => {handleToggle()}}>CHARTS</button>
-        {sankey && <Sankey/>}
-        {!sankey && <BarChart month={props.month}/>}
+        {sankey && (
+          <>
+            <button onClick={() => {handleToggle()}}>See Bar Chart</button>
+            <Sankey/>
+          </>
+      )}
+      {!sankey && (
+          <>
+            <button onClick={() => {handleToggle()}}>See Sankey</button>
+            <BarChart month={props.month}/>
+          </>
+      )}
     </div>
   )
 

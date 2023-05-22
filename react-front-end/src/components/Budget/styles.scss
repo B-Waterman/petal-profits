@@ -17,12 +17,6 @@ $icons: #05648A;
     background-color: white;
     border-radius: 15px;
     padding-bottom: 20px;
-    height: 55vh;
-
-    svg {
-      height: 500px;
-      width: 100%;
-    }
   }
 
   .income {
@@ -94,6 +88,6 @@ $icons: #05648A;
 }
 
 #sankey-wrapper {
-  width: 90%;
+  width: 100%;
   height: 55vh;
 }
