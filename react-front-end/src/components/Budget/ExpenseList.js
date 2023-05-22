@@ -25,7 +25,6 @@ export default function ExpenseList(props) {
   //remove income category
   const expenseCats = categories.filter(obj => obj.name !== 'INCOME')
 
-
   //loop through the expenses categories and return an item for each one 
   //calculate the sum of all expenses as you loop to be displayed above
   let total = 0;
@@ -78,9 +77,12 @@ export default function ExpenseList(props) {
         </>
       )}
       {!edit && !goalAmount && (
-        <button className='select' onClick={() => toggleForm(obj.id)}>
-        Set a Spending Limit
-        </button>
+        <div className='budget-summary no-goal'>
+          <span id="amount">{amount}</span>
+          <button className='select' onClick={() => toggleForm(obj.id)}>
+          Set a Spending Limit
+          </button>
+        </div>
       )}
       {edit && (
         <EditForm

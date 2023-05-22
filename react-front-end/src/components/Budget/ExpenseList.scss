@@ -63,6 +63,11 @@
           #goal-amount {
             color: #626262e5
           }
+
+        }
+        .no-goal {
+          display: flex;
+          flex-direction: column;
         }
 
         .select {
@@ -81,6 +86,7 @@
           align-items: center;
         }
 
+        
         .budget-amount {
           text-align: right;
 
@@ -90,17 +96,16 @@
             padding-bottom: 20px;;
           }
         }
-
       }
 
     .high {
-      background: linear-gradient(90deg, rgba(198, 216, 41, 0.6) 0%, rgb(205 32 32 / 62%));
+      background: linear-gradient(90deg, rgba(216, 166, 41, 0.6) 0%, rgba(205, 32, 32, 0.807));
     }
     .low {
       background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgba(191, 205, 32, 0.62));
     }
     .middle {
-      background: linear-gradient(90deg, rgb(109 216 41 / 60%) 0%, rgba(205, 139, 32, 0.62));
+      background: linear-gradient(90deg, rgba(152, 216, 41, 0.6) 0%, rgba(205, 139, 32, 0.62));
     }
 
   }

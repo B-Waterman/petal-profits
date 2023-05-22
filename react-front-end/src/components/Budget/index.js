@@ -1,5 +1,5 @@
 import './styles.scss';
-import React, { useEffect, useRef, useState} from 'react';
+import React, { useState} from 'react';
 import ExpenseList from './ExpenseList';
 // import SankeyE from './SankeyE'; -- backup
 import Income from './Income';
@@ -9,6 +9,7 @@ import CategoriesProvider from './providers/CategoriesProvider';
 import Sankey from './Sankey';
 import BarChart from './BarChart';
 import SankeyE from './SankeyE';
+import TopSpending from './TopSpending';
 
 
 export default function Budget(props) {
@@ -35,6 +36,7 @@ export default function Budget(props) {
           {sankey && <Sankey/>}
           {!sankey && <BarChart month={monthName}/>}
           <Remainder/>
+          <TopSpending/>
           <Income/>
           <CategoryGoalsProvider>
             <ExpenseList/>
