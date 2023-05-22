@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { categoryGoalsContext } from "./providers/CategoryGoalsProvider";
 import axios from 'axios'
 import './EditForm.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from '@fortawesome/free-solid-svg-icons'
 
 export default function EditForm(props) {
 
@@ -30,8 +32,16 @@ export default function EditForm(props) {
   return (
     <div className="popup-box">
     <div className="edit-form">
-      <form autoComplete="off" onSubmit={e => e.preventDefault()}>
-        <header>What is your monthly spending limit for {props.name}?</header>
+      <div id='wrapper'>
+      <div onClick={() => props.onClose()} id="close">
+          <FontAwesomeIcon icon={faX} />
+      </div>
+      </div>
+    <form autoComplete="off" onSubmit={e => e.preventDefault()}>
+        <header>
+          <h2>{props.name}</h2>
+          <h4>Enter your spending limit</h4>
+        </header>
         <input
           name="edit-goal"
           type="text"
@@ -40,6 +50,9 @@ export default function EditForm(props) {
           onChange={(event) => setAmount(event.target.value)}
         />
       </form>
+      <div className="note">
+        <p>By setting a spending limit, you can keep better track of your expenses throughout the month.</p>
+      </div>
       {/*Mathews save button - come back to this*/}
       {/* <div className="wrapper">
         <input type="checkbox" name="submit" className="check" id="submit" />
@@ -52,8 +65,8 @@ export default function EditForm(props) {
       </div> */}
 
       <div className="buttons">
-      <button id="save" onClick={() => saveGoal(props.category)}>Save</button>
       <button id="cancel" onClick={() => props.onClose()}>Cancel</button>
+      <button id="save" onClick={() => saveGoal(props.category)}>Save</button>
       </div>
     </div>
     </div>

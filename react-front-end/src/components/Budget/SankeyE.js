@@ -1,20 +1,14 @@
 import React, { useRef } from "react";
 import { Chart } from 'react-google-charts'
+import GetSankeyEData from "./helpers/getSankeyEData";
 
 export default function SankeyE() {
-  const data = [
+  const datatest = [
     ["From", "To", "Total"],
     ["Lighthouse Labs", "Income", 3300],
     ["Side Hustle", "Income", 1100],
     ['Income', 'Budget', 49.45],
     ['Income', 'Budget', 683.38],
-    ['Income', 'Budget', 250.00],
-    ['Income', 'Budget', 525.65],
-    ['Income', 'Budget', 300.00],
-    ['Income', 'Budget', 72.22],
-    ['Income', 'Budget', 1268.70],
-    ['Income', 'Budget', 189.46],
-    ['Income', 'Budget', 954.86],
     ['Budget', 'PlantGoals', 954.86],
     ['Budget', 'ENTERTAINMENT', 49.45],
     ['Budget', 'FOOD_AND_DRINK', 683.38],
@@ -27,6 +21,8 @@ export default function SankeyE() {
     ['Budget', 'TRAVEL', 954.86],
     ['Budget', 'Available for PlantGoals', 2000]
   ]
+
+  const data = GetSankeyEData()
 
   const colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f', '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
 
