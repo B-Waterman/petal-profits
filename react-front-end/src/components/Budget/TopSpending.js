@@ -3,7 +3,7 @@ import { faUtensils,  faCar, faCircleDollarToSlot, faHouse, faPlane, faIcons, fa
 import { categoriesContext } from "./providers/CategoriesProvider";
 import { useContext } from "react";
 import './TopSpending.scss';
-import formatTitle from './helpers/formatTitle';
+import { formatTitle } from "./helpers/formatTitle";
 
 export default function TopSpending(props) {
 
@@ -38,8 +38,8 @@ export default function TopSpending(props) {
       icon = faHandHoldingHeart;
     } else if (obj.name === 'ENTERTAINMENT') {
       icon = faIcons;
-    } 
-   
+    }
+
 
     return (
       <div className="category" key={i}>

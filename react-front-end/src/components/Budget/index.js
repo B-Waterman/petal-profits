@@ -1,14 +1,12 @@
 import './styles.scss';
 import React, { useState} from 'react';
 import ExpenseList from './ExpenseList';
-// import SankeyE from './SankeyE'; -- backup
 import Income from './Income';
 import Remainder from './Remainder';
 import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
-import CategoriesProvider from './providers/CategoriesProvider';
+// import CategoriesProvider from './providers/CategoriesProvider';
 import Sankey from './Sankey';
 import BarChart from './BarChart';
-import SankeyE from './SankeyE';
 import TopSpending from './TopSpending';
 
 export default function Budget(props) {

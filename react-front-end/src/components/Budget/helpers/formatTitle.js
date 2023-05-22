@@ -11,4 +11,4 @@ function formatTitle(title) {
   return result;
 }
 
-module.exports = { formatTitle };
+module.exports = {formatTitle};
