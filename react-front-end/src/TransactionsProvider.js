@@ -10,8 +10,8 @@ export default function TransactionsProvider(props) {
 
   // Here is our Shared State Object
   const [transactions, setTransactions] = useState([]);
-  const [accounts, getAccounts] = useState([]);
 
+  //to handle delay
   const [loading, setLoading] = useState(true);
 
   // Get transaction/category info and set state item

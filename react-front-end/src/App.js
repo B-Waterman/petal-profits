@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './App.scss';
 import logo from './petalprofit.png';
 import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';

@@ -12,7 +12,7 @@ const InputGarden = () => {
 
   const getGoal = async () => {
     try {
-      const response = await fetch ('/garden')
+      const response = await fetch ('http://localhost:8080/garden')
       const jsonData = await response.json();
 
       setGoals(jsonData)
