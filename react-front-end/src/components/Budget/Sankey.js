@@ -58,8 +58,7 @@ const { transactions } = useContext(transactionsContext)
    
     
       return(
-        <div id="test">
-            <h1>Test </h1>
+        <div id="sankey-wrapper">
             <ResponsiveSankey 
             data={data}
                 margin={{ top: 20, right: 220, bottom: 20, left: 220 }}

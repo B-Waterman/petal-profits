@@ -18,8 +18,8 @@ export default function MonthlyCharts(props) {
   return (
     <div className='charts'>
       <button onClick={() => {handleToggle()}}>CHARTS</button>
-        {!sankey && <Sankey/>}
-        {sankey && <BarChart month={props.month}/>}
+        {sankey && <Sankey/>}
+        {!sankey && <BarChart month={props.month}/>}
     </div>
   )
 
