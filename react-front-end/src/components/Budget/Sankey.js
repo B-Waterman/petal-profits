@@ -1,8 +1,8 @@
 import { ResponsiveSankey } from '@nivo/sankey'
 import { useEffect, useContext, useState } from 'react';
-const { categoriesContext } = require('./providers/CategoriesProvider');
-const { transactionsContext } = require('../../TransactionsProvider');
-const formatTitle = require('./helpers/formatTitle')
+import { categoriesContext } from './providers/CategoriesProvider';
+import { transactionsContext } from '../../TransactionsProvider';
+import { formatTitle } from './helpers/formatTitle';
 
 
 export default function Sankey() {
@@ -27,7 +27,6 @@ const { transactions } = useContext(transactionsContext)
                 nodes.push({id: title})
                 links.push({source: 'Budget', target: title, value: value})
             });
-            
             //get income transactions
             let incomeTotal = 0;
             const income = transactions.filter(obj => obj.category === 'INCOME')
@@ -39,13 +38,11 @@ const { transactions } = useContext(transactionsContext)
                 nodes.push({id: title})
                 links.push({source: title, target: 'Budget', value: value})
             });
-        
             //push remainder if positive number
             if (incomeTotal - expensesTotal > 0) {
               nodes.push({id: 'Extra Funds for Plant Goals!'})
               links.push({source: 'Budget', target: 'Extra Funds for Plant Goals!', value: incomeTotal - expensesTotal})
             }
-        
             console.log(nodes)
             setData({nodes: nodes, links: links})
 

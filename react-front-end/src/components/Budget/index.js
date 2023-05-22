@@ -8,7 +8,6 @@ import CategoriesProvider from './providers/CategoriesProvider';
 import TopSpending from './TopSpending';
 import MonthlyCharts from './MonthlyCharts';
 
-
 export default function Budget(props) {
 
   const date = new Date();
@@ -17,7 +16,7 @@ export default function Budget(props) {
 
 
   return (
-      <CategoriesProvider>
+      // <CategoriesProvider>
         <div className='budget'>
           <h1>{monthName} Summary</h1>
           <h3>Cash Flow</h3>
@@ -29,6 +28,6 @@ export default function Budget(props) {
             <ExpenseList/>
           </CategoryGoalsProvider>
         </div>
-      </CategoriesProvider>
+      // {/* </CategoriesProvider> */}
   )
 }

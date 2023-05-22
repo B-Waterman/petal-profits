@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Sankey from './Sankey';
 import BarChart from './BarChart';
-import SankeyE from './SankeyE';
+// import SankeyE from './SankeyE';
 
 export default function MonthlyCharts(props) {
 
