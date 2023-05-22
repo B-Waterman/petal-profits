@@ -1,16 +1,13 @@
 import './styles.scss';
 import React, { useState} from 'react';
 import ExpenseList from './ExpenseList';
-// import SankeyE from './SankeyE'; -- backup
 import Income from './Income';
 import Remainder from './Remainder';
 import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
-import CategoriesProvider from './providers/CategoriesProvider';
+// import CategoriesProvider from './providers/CategoriesProvider';
 import Sankey from './Sankey';
 import BarChart from './BarChart';
-import SankeyE from './SankeyE';
 import TopSpending from './TopSpending';
-
 
 export default function Budget(props) {
 
@@ -28,7 +25,7 @@ export default function Budget(props) {
   };
 
   return (
-      <CategoriesProvider>
+      // <CategoriesProvider>
         <div className='budget'>
           <h1>{monthName} Summary</h1>
           <h3>Cash Flow</h3>
@@ -42,6 +39,6 @@ export default function Budget(props) {
             <ExpenseList/>
           </CategoryGoalsProvider>
         </div>
-      </CategoriesProvider>
+      // {/* </CategoriesProvider> */}
   )
 }

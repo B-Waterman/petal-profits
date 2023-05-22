@@ -4,7 +4,7 @@ import { categoriesContext } from './providers/CategoriesProvider';
 import './ExpenseList.scss'
 import { categoryGoalsContext } from './providers/CategoryGoalsProvider';
 import EditForm from './EditForm';
-import formatTitle from './helpers/formatTitle';
+import { formatTitle } from './helpers/formatTitle';
 import Accordion from './Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
@@ -25,7 +25,7 @@ export default function ExpenseList(props) {
   //remove income category
   const expenseCats = categories.filter(obj => obj.name !== 'INCOME')
 
-  //loop through the expenses categories and return an item for each one 
+  //loop through the expenses categories and return an item for each one
   //calculate the sum of all expenses as you loop to be displayed above
   let total = 0;
   const expenseItems = expenseCats.map((obj, index) => {
@@ -49,7 +49,7 @@ export default function ExpenseList(props) {
       const difference = ((goalAmount - sum) * -1).toFixed(2).toLocaleString()
       tracking = `$${difference} Over`
     }
-    
+
     const edit = isEditOpen[obj.id] || false;
 
 
@@ -97,7 +97,7 @@ export default function ExpenseList(props) {
   });
 
   const totalExpenses = '$' + total.toLocaleString()
-  
+
 
   return (
     <div className="expense-list">
