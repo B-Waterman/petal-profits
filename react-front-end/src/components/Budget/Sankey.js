@@ -55,7 +55,7 @@ const { transactions, categories } = useContext(transactionsContext)
         <div id="sankey-wrapper">
             <ResponsiveSankey 
             data={data}
-                margin={{ top: 30, right: 165, bottom: 0, left: 160 }}
+                margin={{ top: 0, right: 165, bottom: 0, left: 160 }}
                 valueFormat=" <-$1,.0f"
                 sort='auto'
                 align="justify"

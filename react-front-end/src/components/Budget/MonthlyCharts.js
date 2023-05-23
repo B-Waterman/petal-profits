@@ -20,6 +20,7 @@ export default function MonthlyCharts(props) {
           <>
             <button onClick={() => {handleToggle()}}>See Bar Chart</button>
             <Sankey/>
+            <p className='label'>Income to Expenses Cash Flow</p>
           </>
       )}
       {!sankey && (

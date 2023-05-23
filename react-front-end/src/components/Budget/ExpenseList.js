@@ -64,7 +64,7 @@ export default function ExpenseList(props) {
             <span id="goal-amount"> of ${goalAmount.toLocaleString()}</span>
           </div>
           <div className='track'>
-            <ProgressBarBudget bgcolor="green" completed={comparison}/>
+            <ProgressBarBudget completed={comparison}/>
             <button onClick={() => toggleForm(obj.id)}>
               <FontAwesomeIcon icon={faPenToSquare} style={{color: "#8fd0a5"}} />
             </button>

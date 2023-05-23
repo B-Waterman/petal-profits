@@ -14,7 +14,7 @@ export default function AccordionItem(props) {
 
   //loop through the income transactions and return an item for each one 
   const transactionItems = categoryTransactions.map((obj) => {
-    const amount = '$' + obj.transaction_amount;
+    const amount = obj.transaction_amount;
     const date = formatDate(obj.transaction_date);
   
     return (

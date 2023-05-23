@@ -1,5 +1,5 @@
 export default function ProgressBarBudget(props) {
-  const { bgcolor, completed } = props;
+  const { completed } = props;
 
   const containerStyles = {
     height: 20,
@@ -22,12 +22,14 @@ export default function ProgressBarBudget(props) {
   }
 
   let className;
-  if (completed < 50) {
+  if (completed < 25) {
     className = 'low';
-  } else if (completed < 75) {
+  } else if (completed < 50) {
     className = 'middle';
-  } else {
+  } else if (completed < 75) {
     className = 'high'
+  } else {
+    className = 'higher'
   }
 
 
