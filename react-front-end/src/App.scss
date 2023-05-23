@@ -19,11 +19,14 @@ nav {
   align-items: center;
   // justify-content: space-around;
   width: 150px;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
   padding: 15px 32px;
   font-size: 16px;
   color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   
 
   .navBar-items {
