@@ -78,9 +78,13 @@ $icons: #05648A;
       border-bottom: 1px solid #8b8b8b;
       padding-top: 0px;
       
-      button {
+      .button {
         margin: 0px;
         color: $icons;
+
+        h3 {
+          color: $icons;
+        }
       }
     }
       
