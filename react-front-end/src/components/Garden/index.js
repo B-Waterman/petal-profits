@@ -46,7 +46,7 @@ export default function Garden(props) {
   return (
     <>
       <div className='page'>
-        <h1 className='banner'>
+        <h1 className='header'>
           My Garden
         </h1>
         <div className='container'>

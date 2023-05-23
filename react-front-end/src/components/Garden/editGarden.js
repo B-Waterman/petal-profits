@@ -29,8 +29,8 @@ const EditGarden = ({ open, onClose, goal, reFetch }) => {
     <>
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
         <div className="modalContainer" id={`id$(goals.id)`}>
-          <h1 className='popupHeader'>edit</h1>
-          <button onClick={onClose} className='closeBtn' >X</button>
+          <h1 className='popupHeader'>EDIT</h1>
+          <a onClick={onClose} className='closeBtn' >X</a>
           <span className='input'>
           <input type='text' value={name} onChange = {(event) => newName(event.target.value)}></input>
           </span>
