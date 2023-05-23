@@ -4,23 +4,33 @@ const db = require('../db/connection')
 
 //create a goal
 router.post('/', async (req, res) => {
-  try {
-    const { plant_goals } = req.body
-    const result = await db.query(
-      "INSERT INTO plant_goals (name) VALUES ($1) RETURNING *;", 
-    [plant_goals]
-    );
+  const userId = 1
+  const {name, amount} = req.body
+  console.log('name:', name, 'amout:', amount)
+  return db.query("INSERT INTO plant_goals (name, target_amount, user_id) VALUES ($1, $2, $3) RETURNING *;", [name, amount, userId])
+  .then((responce) => {res.json(responce.rows)})
+  .catch((error) => console.error(error))
+
+
+  // try {
+  //   const { plant_goals } = req.body
+  //   const result = await db.query(
+  //     "INSERT INTO plant_goals (name) VALUES ($1) RETURNING *;", 
+  //   [plant_goals]
+  //   );
       
-    res.json(result.rows[0])
-  } catch (err) {
-    console.error(err.message);
-  }
+  //   res.json(result.rows[0])
+  // } catch (err) {
+  //   console.error(err.message);
+  // }
 })
 
 //get all goals
 router.get('/', async (req, res) => {
-  return db.query("SELECT * FROM plant_goals;")
+  return db.query("SELECT * FROM plant_goals ORDER BY id ;")
+
   .then((responce) => {res.json(responce.rows)})
+
   .catch((error) => console.error(error))
 
 
@@ -36,24 +46,24 @@ router.get('/', async (req, res) => {
 })
 
 //get a goal
-router.get('/:id', async (req, res) => {
-  try {
-    const { id } = req.params
-    const goal = await db.query(`SELECT * FROM plant_goals WHERE id = $1;`, [id])
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const { id } = req.params
+//     const goal = await db.query(`SELECT * FROM plant_goals WHERE id = $1 ORDER BY id DESC;`, [id])
 
-    res.json(plant_goals.rows[0])
-  } catch (err) {
-    console.error(err.message);
+//     res.json(plant_goals.rows[0])
+//   } catch (err) {
+//     console.error(err.message);
 
-  }
-})
+//   }
+// })
 
 //update/edit a goal
 router.put('/:id', async (req, res) =>{
      const { name } = req.body
-     const { target_amount } = req.params
-  return db.query("UPDATE plant_goals SET name = $1 WHERE target_amout = $2;", 
-     [name, target_amount])
+     const { id } = req.params
+  return db.query("UPDATE plant_goals SET name = $1 WHERE id = $2;", 
+     [name, id])
      .then((responce) => {res.json(responce.rows)})
       .catch((error) => console.error(error))
   // try{
@@ -72,16 +82,16 @@ router.put('/:id', async (req, res) =>{
 
 
 //delete a goal
-router.delete('/', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const deleteGoal = await db.query("DELETE FROM plant_goals WHERE id = $1", [id])
-    res.json("goal was deleted")
+// router.delete('/', async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const deleteGoal = await db.query("DELETE FROM plant_goals WHERE id = $1", [id])
+//     res.json("goal was deleted")
 
-  } catch (err) {
-    console.error(err.message);
+//   } catch (err) {
+//     console.error(err.message);
 
-  }
-})
+//   }
+// })
 
 module.exports = router;

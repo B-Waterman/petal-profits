@@ -19,7 +19,7 @@ const EditGarden = ({ open, onClose, goal, reFetch }) => {
         body: JSON.stringify(body)
 
       })
-      reFetch(response, ...body);
+      reFetch();
     } catch (err) {
       console.error(err.message)
     }
@@ -32,12 +32,15 @@ const EditGarden = ({ open, onClose, goal, reFetch }) => {
         <div className="modalContainer" id={`id$(goals.id)`}>
           <h1 className='popupHeader'>edit</h1>
           <button onClick={onClose} className='closeBtn' >X</button>
-          <p></p>
+          <span className='input'>
           <input type='text' value={name} onChange = {(event) => newName(event.target.value)}></input>
+          </span>
           <p></p>
+          <span className='input'>
           <input type='number' value={target} onChange={(event) => newTarget(event.target.value)}></input>
-          <div>
-            <button
+          </span>
+          <div className=''>
+            <button className='outerBTN'
               data-target={`id$(goals.id)`}
               onClick={e => update(e)}
             >
