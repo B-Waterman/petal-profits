@@ -35,6 +35,7 @@ export default function ExpenseList(props) {
     //check user category goal
     const categoryGoal = categoryGoals.find(goal => goal.category_id === obj.id);
     const goalAmount = Number(categoryGoal.amount);
+    console.log('this is the cat goal:', categoryGoal.amount)
 
     let comparison = sum / goalAmount;
     let tracking = ''
