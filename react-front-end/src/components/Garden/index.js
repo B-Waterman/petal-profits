@@ -3,7 +3,7 @@ import Lottie from 'react-lottie-player'
 
 import buttonPulse from '../../button-pulse.json'
 import Popup from '../../hooks/Popup';
-import { useState, onSubmitForm } from 'react';
+import { useState } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import Submit from './Submit';
 import './submit.scss';

@@ -1,4 +1,6 @@
 import {createContext, useState, useEffect} from 'react';
+import Popup from './Popup';
+
 import axios from 'axios'
 
 // Create a Context
@@ -16,6 +18,7 @@ export default function TransactionsProvider(props) {
 
   //to handle delay
   const [loading, setLoading] = useState(true);
+  const [buttonPopup, setbuttonPopup] = useState(false)
 
   // Get transaction/category info and set state item
   useEffect(() => {
@@ -41,12 +44,11 @@ export default function TransactionsProvider(props) {
   const data = { transactions, accounts, categories, categoryGoals, setCategoryGoals }; ///tell Broooke about this line
 
   if (loading) {
-    // You can return a loading indicator here
     return (
-      <div>
+      <Popup>
+        <h1 className='popupHeader'>One Moment Please</h1>
         <p>Loading...</p>
-      </div>
-
+      </Popup>
     );
   }
 
