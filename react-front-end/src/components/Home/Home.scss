@@ -18,6 +18,16 @@ $icons: #05648A;
     flex-direction: column;
     justify-content: space-between;
 
+    .status {
+      position: absolute;
+      top: 14px; right: 14px;
+      border-radius: 15px;
+      padding: 20px 40px;
+      margin: 50px 50px;
+      background: $maincolor;
+      color: whitesmoke;
+    }
+
     div {
       border-radius: 15px;
       padding: 20px 40px;
