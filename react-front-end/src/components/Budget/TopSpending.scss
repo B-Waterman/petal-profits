@@ -5,12 +5,16 @@ $icons: #05648A;
 
 .top-spending {
   display: flex;
-  width: 70%;
+  width: 50%;
   padding-bottom: 30px;
-  padding-top: 20px;
+  padding-top: 30px;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   color: #8b8b8b;
+  background-color: white;
+  border-radius: 15px;
+  filter: drop-shadow(2px 4px 6px #05648a42);
+
 
   .category {
     display: flex;

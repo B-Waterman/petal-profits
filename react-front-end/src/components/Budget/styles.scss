@@ -11,12 +11,15 @@ $icons: #05648A;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: $icons;
+  
 
   .charts {
     width: 80%;
     background-color: white;
     border-radius: 15px;
     padding-bottom: 20px;
+    margin-top: 10px;
+    filter: drop-shadow(2px 4px 6px #05648a42);
 
     .label {
       text-align: center;
@@ -25,8 +28,8 @@ $icons: #05648A;
     }
 
     button {
-      background-color: $primary;
-      color: $icons;
+      background-color: $icons;
+      color: white;
       border-radius: 10px;
       border: none;
       cursor: pointer;
@@ -36,6 +39,7 @@ $icons: #05648A;
       border: #05648a43 0.5px solid;
       font-weight: bold;
       transition: all 0.5s ease-in-out;
+      border-radius: 10px 0 10px 0;
     }
     button:hover{
       filter: drop-shadow(1px 1px 4px #05648a43);
@@ -66,8 +70,8 @@ $icons: #05648A;
 
   .remainder {
     border-radius: 15px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 80%;
 
     .header {
