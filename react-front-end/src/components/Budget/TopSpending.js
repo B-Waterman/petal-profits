@@ -4,7 +4,7 @@ import { faUtensils,  faCar, faCircleDollarToSlot, faHouse, faPlane, faIcons, fa
 import { useContext } from "react";
 import './TopSpending.scss';
 import { formatTitle } from "./helpers/formatTitle";
-import { transactionsContext } from "../../TransactionsProvider";
+import { transactionsContext } from "../../hooks/TransactionsProvider";
 
 export default function TopSpending(props) {
 

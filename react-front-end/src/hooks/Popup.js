@@ -7,7 +7,7 @@ export default function Popup(props) {
 
   return (props.trigger) ? (
     <div className="popup">
-      <div className="popup-inner">
+      <div className="inner">
         <a href="#" className="close" onClick={()=> props.setTrigger(false)}/>
         {props.children}
       </div>

@@ -81,7 +81,8 @@ const getUsersCategoryGoals = (userId) => {
   };
 
 const getCurrentAccountBalance = (userId) => {
-  const queryString = `SELECT *
+  const queryString =
+  `SELECT *
   FROM accounts
   WHERE user_id = $1;`
 
@@ -98,4 +99,4 @@ const getCurrentAccountBalance = (userId) => {
 
 
 
-module.exports = { getMonthlyTransactions, getMonthlyCategoriesSum, getUsersCategoryGoals, updateCategoryGoals, getCurrentAccountBalance}
+module.exports = { getMonthlyTransactions, getMonthlyCategoriesSum, getUsersCategoryGoals, updateCategoryGoals, getCurrentAccountBalance }
