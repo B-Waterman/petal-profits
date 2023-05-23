@@ -32,7 +32,6 @@ export default function ExpenseList(props) {
     const categoryTitle = formatTitle(obj.name)
     total += sum;
     
-    console.log(categoryGoals)
     //check user category goal
     const categoryGoal = categoryGoals.find(goal => goal.category_id === obj.id);
     const goalAmount = Number(categoryGoal.amount);

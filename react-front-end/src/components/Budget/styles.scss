@@ -21,10 +21,28 @@ $icons: #05648A;
     margin-top: 10px;
     filter: drop-shadow(2px 4px 6px #05648a42);
 
-    .label {
-      text-align: center;
-      color: #8b8b8b;
-      font-size: 12px;
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 40px;
+
+      .info-button {
+        margin: 0px 20px;
+        padding: 0px 10px;
+        border-radius: 100px;
+        min-height: 25px;
+        max-height: 25px;
+      }
+
+      .info-text {
+        text-align: center;
+        color: #8b8b8b;
+        font-size: 12px;
+        padding-right: 20px;
+        padding-top: 8px;
+      }
     }
 
     button {
@@ -45,6 +63,7 @@ $icons: #05648A;
       filter: drop-shadow(1px 1px 4px #05648a43);
       
     }
+
   }
 
   .income {
