@@ -3,7 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 // import { categoriesContext } from "./Budget/providers/CategoriesProvider"; ////tell Broooke about this line
 import { formatTitle } from './Budget/helpers/formatTitle'
 import {Chart, ArcElement, Tooltip, Legend} from 'chart.js'
-import { transactionsContext } from '../TransactionsProvider';///tell Broooke about this line
+import { transactionsContext } from '../hooks/TransactionsProvider';///tell Broooke about this line
 Chart.register(ArcElement, Tooltip, Legend);
 
 export default function DonutChart() {

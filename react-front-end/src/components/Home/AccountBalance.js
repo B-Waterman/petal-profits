@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AccountItem from './AccountItem';
-import { transactionsContext } from '../../TransactionsProvider';
+import { transactionsContext } from '../../hooks/TransactionsProvider';
 
 export default function AccountBalance(props) {
   const { accounts } = useContext(transactionsContext); // Update variable name back to accounts

@@ -8,6 +8,5 @@ export default function Submit() {
           <span className="submit-confirm"><i className="fa fa-check"></i></span>
         </label>
     </div>
-
   )
-}
+};

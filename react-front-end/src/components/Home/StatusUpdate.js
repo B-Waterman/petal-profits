@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { transactionsContext } from '../../TransactionsProvider';
+import { transactionsContext } from '../../hooks/TransactionsProvider';
 
 export default function StatusUpdate(props) {
   // const { idTag } = useContext(RemainderIdContext);

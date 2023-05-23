@@ -4,7 +4,6 @@ import ProgressBar from "./progress-bar";
 import 'font-awesome/css/font-awesome.min.css';
 import Lottie from 'react-lottie-player'
 import EditGarden from './editGarden';
-import Submit from './Submit';
 
 const InputGarden = () => {
   const [openModal, setOpenModal] = useState(false)

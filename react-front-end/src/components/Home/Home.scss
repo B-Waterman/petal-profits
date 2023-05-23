@@ -19,20 +19,20 @@ $icons: #05648A;
     justify-content: space-between;
 
     .status {
-      position: absolute;
+      position: fixed;
       top: 14px; right: 14px;
       border-radius: 15px;
-      padding: 20px 40px;
-      margin: 50px 50px;
+      padding: 20px;
+      margin: 50px;
       background: $maincolor;
       color: whitesmoke;
     }
 
-    div {
+     div {
       border-radius: 15px;
       padding: 20px 40px;
       margin: 50px 50px;
-      background: linear-gradient(0deg, #6a9f7c 0%, #8fd1a5 100%);
+      background: $maincolor;
       color: whitesmoke;
     }
 

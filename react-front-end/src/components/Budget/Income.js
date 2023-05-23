@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 // import { categoriesContext } from './providers/CategoriesProvider';
 import Accordion from './Accordion';
-import { transactionsContext } from '../../TransactionsProvider';
+import { transactionsContext } from '../../hooks/TransactionsProvider';
 
 export default function Income(props) {
 

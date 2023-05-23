@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import { transactionsContext } from "../../TransactionsProvider";
+import { transactionsContext } from "../../hooks/TransactionsProvider";
 
 
 export default function Remainder(props) {
