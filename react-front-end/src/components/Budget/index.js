@@ -1,44 +1,26 @@
 import './styles.scss';
-import React, { useState} from 'react';
+import React from 'react';
 import ExpenseList from './ExpenseList';
 import Income from './Income';
 import Remainder from './Remainder';
-import CategoryGoalsProvider from './providers/CategoryGoalsProvider';
-// import CategoriesProvider from './providers/CategoriesProvider';
-import Sankey from './Sankey';
-import BarChart from './BarChart';
 import TopSpending from './TopSpending';
+import MonthlyCharts from './MonthlyCharts';
 
 export default function Budget(props) {
 
   const date = new Date();
   const monthName = date.toLocaleString('default', { month: 'long' });
 
-  const [sankey, setSankey] = useState(true)
 
-  const handleToggle = () => {
-    if (!sankey) {
-     setSankey(true);
-    } else {
-      setSankey(false)
-    }
-  };
 
   return (
-      // <CategoriesProvider>
         <div className='budget'>
           <h1>{monthName} Summary</h1>
-          <h3>Cash Flow</h3>
-          <button onClick={() => {handleToggle()}}>CHARTS</button>
-          {sankey && <Sankey/>}
-          {!sankey && <BarChart month={monthName}/>}
+          <MonthlyCharts month={monthName}/>
           <Remainder/>
           <TopSpending/>
           <Income/>
-          <CategoryGoalsProvider>
-            <ExpenseList/>
-          </CategoryGoalsProvider>
+          <ExpenseList/>
         </div>
-      // {/* </CategoriesProvider> */}
   )
 }

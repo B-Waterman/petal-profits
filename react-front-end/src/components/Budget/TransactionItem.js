@@ -2,6 +2,9 @@ import './TransactionItem.scss';
 
 export default function TransactionItem(props) {
 
+  const convertedAmnt  = (props.amount * -1).toLocaleString();
+  // const mnt  = (props.amount * -1).toLocaleString();
+
 
   return (
     <div className="transaction">
@@ -10,7 +13,12 @@ export default function TransactionItem(props) {
         {/* <p>{props.type}</p> */}
         <p className='date'>{props.date}</p>
       </div>
-      <p className='amount'>{props.amount}</p>
+      {props.amount < 0 && (
+        <p className='amount'>{`$ ${convertedAmnt}`}</p>
+      )}
+      {props.amount >= 0 && (
+        <p className='amount'>{`$ ${props.amount.toLocaleString()}`}</p>
+      )}
     </div>
   )
 }

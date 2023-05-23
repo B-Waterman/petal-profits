@@ -1,4 +1,6 @@
-#chart {
-  height: 100%;
-  width: 75%;
+#bar-chart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 30px;
 }

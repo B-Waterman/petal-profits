@@ -34,7 +34,7 @@ router.put("/category-goals/:id", (req, res) => {
   .catch(error => console.log(error))
 });
 
-router.get("/", (req, res) => {
+router.get("/accounts", (req, res) => {
   getCurrentAccountBalance(1)
     .then(data => res.json(data))
     .catch(error => console.log(error))
