@@ -31,7 +31,7 @@ html {
   background-color: $primary;
   margin: 5px;
   border-radius: 15px;
-  color: #631515;
+  color: #000000;
 
 }
 
@@ -89,7 +89,8 @@ html {
 }
 
 .innerbutton {
-  font: 60px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
   background-color: $maincolor;
   display: flex;
   align-items: center;
@@ -115,7 +116,7 @@ html {
 .edits {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-size: 20px;
 }
 
@@ -126,13 +127,18 @@ html {
 }
 
 .modalContainer {
-  color: black;
+  color: icons;
   border-radius: 15px;
-  background-color: $maincolor;
+  background-color: $icons;
   width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: $icons;
+  border-style: solid;
+  border-width: 10px;
+  
+    
 }
 
 .closeBtn {
@@ -140,3 +146,4 @@ html {
   right: 350px;
   top: 70px;
 }
+

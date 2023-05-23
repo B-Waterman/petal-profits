@@ -23,7 +23,7 @@ $icons: #05648A;
   max-width: 2000px;
   background-color: $primary;
   border-radius: 15px;
-  height: 850px;
+  height: 390px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +39,7 @@ $icons: #05648A;
 }
 
 .innerbutton{
-  width: 200px;
+  width: 250px;
   height:50px;
   align-content: center;
   border-radius: 15px;
@@ -66,11 +66,12 @@ $icons: #05648A;
   align-content: center;
   justify-content: center;
   width: 800px;
+  margin-bottom: 50px;
 }
 
 
 .input {
-	
+
 	// needs to be relative so the :focus span is positioned correctly
 	position:relative;
 	
@@ -167,8 +168,8 @@ input {
 
 .close {
   position: absolute;
-  right: 32px;
-  top: 32px;
+  right: 10px;
+  top: 10px;
   width: 32px;
   height: 32px;
   opacity: 0.3;
@@ -192,19 +193,15 @@ input {
 }
 
 .section{
-  display: flex;
-  flex-direction: row;
-  width: 1000px;
+display: flex;
+width:600px;
+justify-content: space-evenly;
+margin: 5px;
+
 }
-.section1{
-  display: flex;
-  flex-direction: column;
-  width: 50px;
-  padding-left: 250px;
-}
+
 .section2{
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  padding-left: 300px;
+margin-left: 50px;
+margin: 5px;
+
 }

@@ -13,7 +13,7 @@ import InputGarden from './inputGarden';
 
 //to not show pop up until pressed
 export default function Garden(props) {
-  const [goal, setgoal] = useState("")
+  const [name, setname] = useState("")
   const [amount, setamount] = useState("")
   const [buttonPopup, setbuttonPopup] = useState(false)
 
@@ -21,8 +21,8 @@ export default function Garden(props) {
   //code for post request to the back end.
   const onSubmitForm = async (e) => {
     try {
-      const body = { goal }
-      const response = await fetch("http://localhost:8080/garden", {
+      const body = { name, amount }
+      const response = await fetch("/garden", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -52,7 +52,6 @@ export default function Garden(props) {
         <div className='container'>
           <div>
             <InputGarden />
-
           </div>
 
           <div className='addNew' onClick={() => setbuttonPopup(true)} >
@@ -69,40 +68,36 @@ export default function Garden(props) {
           <form onSubmit={onSubmitForm}>
             <Popup trigger={buttonPopup} setTrigger={setbuttonPopup}>
               <h1 className='popupHeader'> PLANT A GOAL</h1>
-              <div className='section'>
+              {/* <div className='section'>
                 <div className='section1'>
                   <div className='innerbutton'>
                     "saving for a big purchase"
                   </div>
-                  <br></br>
                   <div className='innerbutton'>
                     "Paying off my debt"
                   </div>
-                  <br></br>
                 </div>
                 <div className='section2'>
                   <div className='innerbutton'>
                     "Emergency Fund"
                   </div>
-                  <br></br>
                   <div className='innerbutton'>
                     "Saving for a trip"
                   </div>
                 </div>
-                <br></br>
-              </div>
+              </div> */}
               <p>
                 <span className="input">
-                  <input type="text" placeholder="Give your Goal a name"
-                    value={goal}
-                    onChange={e => setgoal(e.target.value)} />
+                  <input type="text" placeholder="Give your goal a name"
+                    value={name}
+                    onChange={e => setname(e.target.value)} />
                   <span></span>
                 </span>
               </p>
 
               <p>
                 <span className="input">
-                  <input type="text" placeholder="how much would you like to save?"
+                  <input type="number" placeholder="How much would you like to save?"
                     value={amount}
                     onChange={e => setamount(e.target.value)} />
                   <span></span>
