@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Home.scss';
-import { RemainderIdProvider } from "../RemainderIdContext";
+
 import RecentTransactionsList from './RecentTransactionsList';
 import StatusUpdate from './StatusUpdate';
 import AccountBalance from './AccountBalance';
@@ -14,9 +14,7 @@ export default function Home(props) {
         <h1>Home</h1>
       </header>
       <main>
-        <RemainderIdProvider>
-          <StatusUpdate />
-        </RemainderIdProvider>
+        <StatusUpdate />
         <DonutChart />
         <AccountBalance />
         <RecentTransactionsList />

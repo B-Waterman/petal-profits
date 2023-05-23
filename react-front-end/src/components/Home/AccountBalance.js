@@ -1,22 +1,20 @@
 import React, { useContext } from 'react';
-
 import AccountItem from './AccountItem';
 import { transactionsContext } from '../../TransactionsProvider';
 
 export default function AccountBalance(props) {
-  const { accounts } = useContext(transactionsContext);
-  console.log(accounts);
+  const { accounts } = useContext(transactionsContext); // Update variable name back to accounts
 
   const currentBalances = accounts.map((obj) => {
-    const balance = '$' + obj.current_balance.toLocaleString()
+    const balance = '$' + obj.current_balance.toLocaleString();
 
     return (
       <AccountItem
         key={obj.id}
-        name={obj.account_name}
+        type={obj.type}
         balance={balance}
       />
-    )
+    );
   });
 
   return (

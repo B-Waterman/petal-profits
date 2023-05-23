@@ -1,12 +1,10 @@
 import { useEffect, useContext } from "react";
 import { transactionsContext } from "../../TransactionsProvider";
-import { RemainderIdContext } from "../RemainderIdContext";
 
 
 export default function Remainder(props) {
 
   const { transactions } = useContext(transactionsContext);
-  const { setIdTag } = useContext(RemainderIdContext)
 
   let income = 0
   let expense = 0
@@ -23,14 +21,6 @@ export default function Remainder(props) {
   //note: multiply by -1 because in this case income is a negative number and expense is positive
   const remainder = ((income * -1) - expense).toFixed(2)
   // const remainder = -200.00;
-
-   useEffect(() => {
-    if (remainder > 0) {
-      setIdTag('surplus');
-    } else {
-      setIdTag('deficit');
-    }
-  }, [remainder, setIdTag]);
 
   if (remainder > 0) {
     return (
