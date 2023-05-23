@@ -11,6 +11,7 @@ $icons: #05648A;
   justify-content: center;
   align-items: center;
   font-size: 1.7*$multi;
+  margin: 25px;
 
 }
 .check {
@@ -28,6 +29,7 @@ $icons: #05648A;
   height: 4*$multi;
   cursor: pointer;
   transition: all .5s;
+  margin: 5px;
   
 }
 .submit-confirm {
@@ -56,4 +58,8 @@ border: none;
 background-color: $primary;
 
 padding: 0%;
+}
+
+.header{
+  color: $icons;
 }

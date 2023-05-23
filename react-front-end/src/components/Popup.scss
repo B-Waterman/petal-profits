@@ -59,7 +59,7 @@ $icons: #05648A;
 }
 
 .popupHeader{
-  background-color: $maincolor;
+  background-color: $primary;
   color: $icons;
   border-radius: 15px;
   display: flex;
@@ -72,6 +72,7 @@ $icons: #05648A;
 
 .input {
 
+  background-color: $primary;
 	// needs to be relative so the :focus span is positioned correctly
 	position:relative;
 	
@@ -79,7 +80,7 @@ $icons: #05648A;
 	font-size: 1.5em;
 	
 	// the border gradient
-  background: linear-gradient(0deg, rgba(106, 159, 124, 1) 0%, rgba(143, 209, 165, 1) 100%);
+  background: linear-gradient(0deg, rgb(137, 204, 159) 0%, rgba(143, 209, 165, 1) 100%);
 	
 	// the width of the input border
 	padding: 3px;
@@ -154,7 +155,7 @@ input {
 
 .submit{
   display: flex;
-  font-size: 40px;
+  font-size: 32px;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   justify-content: center;
