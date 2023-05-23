@@ -1,6 +1,6 @@
 import { ResponsiveSankey } from '@nivo/sankey'
 import { useEffect, useContext, useState } from 'react';
-import { transactionsContext } from '../../TransactionsProvider';
+import { transactionsContext } from '../../hooks/TransactionsProvider';
 import { formatTitle } from './helpers/formatTitle';
 
 
@@ -49,11 +49,11 @@ const { transactions, categories } = useContext(transactionsContext)
         }
       }, [categories, transactions]);
 
-   
-    
+
+
       return(
         <div id="sankey-wrapper">
-            <ResponsiveSankey 
+            <ResponsiveSankey
             data={data}
                 margin={{ top: 0, right: 165, bottom: 0, left: 160 }}
                 valueFormat=" <-$1,.0f"

@@ -2,7 +2,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { Bar } from "react-chartjs-2";
 import { useContext } from "react";
 import './BarChart.scss'
-import { transactionsContext } from "../../TransactionsProvider";
+import { transactionsContext } from "../../hooks/TransactionsProvider";
 
 export default function BarChart(props) {
   ChartJS.register(
@@ -25,7 +25,7 @@ export default function BarChart(props) {
     } else {
       expensesTotal += Number(obj.sum)
     }
-    
+
   });
 
   const options = {
@@ -64,10 +64,10 @@ export default function BarChart(props) {
       },
     }
   };
-  
-  
+
+
   const labels = [`${props.month} Cash Flow`];
-  
+
   const data = {
     labels,
     datasets: [
@@ -86,7 +86,7 @@ export default function BarChart(props) {
 
   return (
     <div id="bar-chart">
-      <Bar 
+      <Bar
         options={options}
         data={data}
       />

@@ -11,12 +11,12 @@ $icons: #05648A;
   justify-content: center;
   align-items: center;
   font-size: 1.7*$multi;
-  margin: 25px;
+};
 
-}
 .check {
   display: none;
-}
+};
+
 .button {
   display: flex;
   justify-content: center;
@@ -29,12 +29,12 @@ $icons: #05648A;
   height: 4*$multi;
   cursor: pointer;
   transition: all .5s;
-  margin: 5px;
-  
-}
+};
+
 .submit-confirm {
   display: none;
-}
+};
+
 .check:checked + .button {
   border-radius: 100%;
   transform: rotate(360deg);
@@ -47,19 +47,16 @@ $icons: #05648A;
   }
 }
 
-.btnOutline{
+
+.btnOutline {
   padding: 0;
 border: none;
 background: none;
-}
+};
 
-.outerBTN{
+.outerBTN {
 border: none;
 background-color: $primary;
 
 padding: 0%;
-}
-
-.header{
-  color: $icons;
-}
+};

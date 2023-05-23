@@ -42,7 +42,12 @@ export default function TransactionsProvider(props) {
 
   if (loading) {
     // You can return a loading indicator here
-    return <p>Loading...</p>;
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+
+    );
   }
 
   // We can now use this as a component to wrap anything
