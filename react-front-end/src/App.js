@@ -21,8 +21,9 @@ export default function App(props){
           <span className="logo">
             <img src={logo} alt="Petal Profits" />
           </span>
+          <div className='navBar-items'>
           <div className="navButton">
-              <Link to="/">HOMEPAGE</Link>
+              <Link to="/">HOME</Link>
           </div>
           <div className="navButton">
             <Link to="/transactions">MY BUDGET</Link>
@@ -32,6 +33,7 @@ export default function App(props){
           </div>
           <div className="navButton">
             <Link to="/account">MY ACCOUNT</Link>
+          </div>
           </div>
         </nav>
 

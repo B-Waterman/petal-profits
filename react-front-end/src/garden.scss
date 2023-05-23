@@ -13,6 +13,7 @@ html {
   align-items: center;
   padding-bottom: 20px;
   background-color: $primary;
+  width: 100%; //added by TM to center the page
 }
 
 .progressBar {
@@ -59,7 +60,7 @@ html {
 
 .container {
   background-color: $primary;
-  height: 100vh;
+  // height: 100vh; --needs this removed so navbar can go all the way down
   width: 80vw;
   flex-direction: row;
 
