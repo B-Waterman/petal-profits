@@ -15,12 +15,11 @@ export default function Home(props) {
         <h1>Home</h1>
       </header>
       <main>
-        {/* <StatusUpdate /> */}
+        <StatusUpdate />
         <DonutChart />
-        {/* <AccountBalance /> */}
-        {/* <RecentTransactionsList /> */}
+        <AccountBalance />
+        <RecentTransactionsList />
       </main>
     </div>
-    // </GetAccountData>
   )
 };
