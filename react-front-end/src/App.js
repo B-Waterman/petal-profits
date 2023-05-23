@@ -6,7 +6,7 @@ import Budget from './components/Budget';
 import Home from './components/Home';
 import Garden from './components/Garden';
 import Account from './components/Account';
-import PlantGoal from './components/PlantGoal';
+import PlantGoal from './components/Garden/PlantGoal';
 import TransactionsProvider from './TransactionsProvider';
 // import CategoriesProvider from './components/Budget/providers/CategoriesProvider'
 

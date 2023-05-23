@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Submit from './Submit';
 import './submit.scss';
-import Garden from './Garden';
 
 
 const EditGarden = ({ open, onClose, goal, reFetch }) => {

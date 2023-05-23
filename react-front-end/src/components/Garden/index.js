@@ -1,7 +1,7 @@
 // import Lottie from 'lottie-react-native';
 import Lottie from 'react-lottie-player'
 
-import buttonPulse from '../button-pulse.json'
+import buttonPulse from '../../button-pulse.json'
 import Popup from './Popup';
 import { useState, onSubmitForm } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
