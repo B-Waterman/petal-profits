@@ -3,7 +3,7 @@ import axios from 'axios'
 import './EditForm.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from '@fortawesome/free-solid-svg-icons'
-import { transactionsContext } from "../../TransactionsProvider";
+import { transactionsContext } from "../../hooks/TransactionsProvider";
 
 export default function EditForm(props) {
 
@@ -28,7 +28,7 @@ export default function EditForm(props) {
       })
       .catch(error => console.log(error))
     }
-  
+
   return (
     <div className="popup-box">
     <div className="edit-form">

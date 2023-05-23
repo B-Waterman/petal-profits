@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import TransactionItem from "./TransactionItem";
-import { transactionsContext } from "../../TransactionsProvider";
+import { transactionsContext } from "../../hooks/TransactionsProvider";
 import formatDate from "./helpers/formatdate";
-import './Accordion.scss'
+import './AccordionItem.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -12,11 +12,11 @@ export default function AccordionItem(props) {
   //loop to find transaction associated with props.categoryId
   const categoryTransactions = transactions.filter(obj => obj.category_id === props.categoryId);
 
-  //loop through the income transactions and return an item for each one 
+  //loop through the income transactions and return an item for each one
   const transactionItems = categoryTransactions.map((obj) => {
     const amount = obj.transaction_amount;
     const date = formatDate(obj.transaction_date);
-  
+
     return (
       <TransactionItem
         key={obj.id}
@@ -28,13 +28,13 @@ export default function AccordionItem(props) {
     );
   });
 
-  let expense = true; 
+  let expense = true;
   if (props.title === 'Monthly Income') {
     expense = false;
   }
 
   return (
-    <li className={`accordion-item ${props.active ? "active" : ""}`}>
+    <li className={`item ${props.active ? "active" : ""}`}>
       {!expense && (
         <button className="button" onClick={() => props.onToggle()}>
           <h3>{props.title}</h3>

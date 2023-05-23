@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 //bring in budget tools
 import TransactionItem from "../Budget/TransactionItem";
-import { transactionsContext } from "../../TransactionsProvider";
+import { transactionsContext } from "../../hooks/TransactionsProvider";
 import formatDate from '../Budget/helpers/formatdate';
 
 export default function RecentTransactionsList(props) {

@@ -6,7 +6,7 @@ import { formatTitle } from './helpers/formatTitle';
 import Accordion from './Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import { transactionsContext } from '../../TransactionsProvider';
+import { transactionsContext } from '../../hooks/TransactionsProvider';
 
 export default function ExpenseList(props) {
 
@@ -31,7 +31,7 @@ export default function ExpenseList(props) {
     const amount = '$' + sum.toLocaleString();
     const categoryTitle = formatTitle(obj.name)
     total += sum;
-    
+
     //check user category goal
     const categoryGoal = categoryGoals.find(goal => goal.category_id === obj.id);
     const goalAmount = Number(categoryGoal.amount);
