@@ -10,6 +10,9 @@ import DonutChart from './DonutChart';
 export default function Home(props) {
   return (
     <div className='Home'>
+      <header>
+        <h1>Let's Get Growing!</h1>
+      </header>
         <StatusUpdate />
         <DonutChart />
         <AccountBalance />

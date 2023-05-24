@@ -11,6 +11,29 @@ export default function EditFirstName(event) {
   const [buttonPopup, setbuttonPopup] = useState(false)
   const [ first_name, setFirstName ] = useState("");
 
+  const onSubmitForm = async (e) => {
+    try {
+      const body = { first_name }
+      const response = await fetch("/account", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      console.log(body)
+      window.location = '/'
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  const btnEL = document.querySelectorAll('.innerbutton');
+  btnEL.forEach(btnEL => {
+    btnEL.addEventListener('click', () => {
+      document.querySelector('.special')?.classList.remove('special');
+      btnEL.classList.add('special');
+    })
+  })
+
   return (
     <div className="edit">
       <form  autoComplete='off' onSubmit={event => event.preventDefault()}>

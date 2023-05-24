@@ -10,7 +10,7 @@ $icons: #05648A;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: $icons;
-  
+
 
   .charts {
     width: 80%;
@@ -30,7 +30,7 @@ $icons: #05648A;
       .info-button {
         margin: 0px 20px;
         padding: 0px 10px;
-        border-radius: 100px;
+        border-radius: 10px 0 10px 0;
         min-height: 25px;
         max-height: 25px;
       }
@@ -60,7 +60,7 @@ $icons: #05648A;
     }
     button:hover{
       filter: drop-shadow(1px 1px 4px #05648a43);
-      
+
     }
 
   }
@@ -77,7 +77,7 @@ $icons: #05648A;
       margin-bottom: 15px;
       border-bottom: 1px solid #8b8b8b;
       padding-top: 0px;
-      
+
       .button {
         margin: 0px;
         color: $icons;
@@ -87,7 +87,7 @@ $icons: #05648A;
         }
       }
     }
-      
+
   }
 
   .remainder {
@@ -135,7 +135,7 @@ $icons: #05648A;
       color:#df3f27
     }
   }
-  
+
 
 }
 
