@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 // import { categoriesContext } from "./Budget/providers/CategoriesProvider"; ////tell Broooke about this line
-import { formatTitle } from './Budget/helpers/formatTitle'
+import { formatTitle } from '../Budget/helpers/formatTitle'
 import {Chart, ArcElement, Tooltip, Legend} from 'chart.js'
-import { transactionsContext } from '../hooks/TransactionsProvider';///tell Broooke about this line
+import { transactionsContext } from '../../hooks/TransactionsProvider';///tell Broooke about this line
 Chart.register(ArcElement, Tooltip, Legend);
 
 export default function DonutChart() {
@@ -31,34 +31,22 @@ export default function DonutChart() {
           label: 'Expenses',
           data: catData,
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(5, 100, 138, 0.8)',
+            'rgba(0, 135, 161, 0.8)',
+            'rgba(0, 170, 165, 0.8)',
+            'rgba(62, 201, 150, 0.8)',
+            'rgba(156, 229, 127, 0.8)',
+            'rgba(249, 248, 113, 0.8)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 223, 207, 0.5)',
+            'rgba(252, 213, 193, 0.5)',
+            'rgba(249, 203, 178, 0.5)',
+            'rgba(245, 193, 163, 0.5)',
+            'rgba(242, 183, 149, 0.5)',
+            'rgba(238, 173, 134, 0.5)'
           ],
-          borderWidth: 1,
+          borderWidth: 2,
         },
       ],
 
@@ -69,7 +57,7 @@ export default function DonutChart() {
       beforeDatasetsDraw(chart, args, pluginOptions) {
         const { ctx, data } = chart;
         ctx.save();
-        ctx.font = 'bolder 50px sans-serif';
+        ctx.font = 'bolder 20px sans-serif';
         ctx.fillStyle ='#05648A';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';

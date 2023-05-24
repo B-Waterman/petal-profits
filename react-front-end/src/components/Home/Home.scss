@@ -4,7 +4,7 @@ $primary: #E4F9F5;
 $secondarycolor: #FAA381;
 $icons: #05648A;
 
-  .Home {
+.Home {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -28,13 +28,13 @@ $icons: #05648A;
       color: whitesmoke;
     }
 
-     div {
-      border-radius: 15px;
-      padding: 20px 40px;
-      margin: 50px 50px;
-      background: $maincolor;
-      color: whitesmoke;
-    }
+    // .status {
+    //   border-radius: 15px;
+    //   padding: 20px 40px;
+    //   margin: 50px 50px;
+    //   background: $maincolor;
+    //   color: whitesmoke;
+    // }
 
     .h2 {
       justify-self: center;
