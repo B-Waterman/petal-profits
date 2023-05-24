@@ -10,12 +10,13 @@ $icons: #05648A;
   background-color: whitesmoke;
   border-radius: 5px;
   margin: 10px 0px;
-  padding: 0px 20px;
+  padding: 5px;
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.643);
 
 
   .name {
+    text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
     margin: 0px;
@@ -23,8 +24,9 @@ $icons: #05648A;
   }
 
   .balance {
+    text-transform: uppercase;
     margin-top: 5px;
-    color: rgba(0, 0, 0, 0.498);
+    color: rgba(0, 0, 0, 0.842);
     font-size: 14px;
   }
 

@@ -4,10 +4,10 @@ export default function AccountItem(props) {
   return (
     <div className="account">
       <span className='name'>
-        <p>{props.type}</p>
+        {props.type}
       </span>
       <span className='balance'>
-        <p>{props.balance}</p>
+        {props.balance}
       </span>
     </div>
   )

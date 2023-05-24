@@ -31,7 +31,7 @@ export default function RecentTransactionsList(props) {
 
   return (
     <div className="recent">
-      <div className="title">
+      <div className="header">
         <h3>Recent Transactions</h3>
         <div className='info'>
         {infoButton && (
