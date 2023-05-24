@@ -36,7 +36,7 @@ export default function AccordionItem(props) {
   return (
     <li className={`item ${props.active ? "active" : ""}`}>
       {!expense && (
-        <button className="button" onClick={() => props.onToggle()}>
+        <button className="button" id="income-button" onClick={() => props.onToggle()}>
           <h3>{props.title}</h3>
           <div id="income">
             <h3>{props.total}</h3>

@@ -15,7 +15,7 @@ export default function Budget(props) {
 
   return (
         <div className='budget'>
-          <h1>{monthName} Summary</h1>
+          <h1 className="banner">{monthName} Summary</h1>
           <MonthlyCharts month={monthName}/>
           <Remainder/>
           <TopSpending/>
