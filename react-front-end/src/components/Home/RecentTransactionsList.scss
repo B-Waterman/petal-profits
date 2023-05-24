@@ -17,6 +17,7 @@ $icons: #05648A;
   margin-top: 50px;
   width: 80%;
   color: $icons;
+  filter: drop-shadow(2px 4px 6px #05648a42);
 
   .header {
     display: flex;
@@ -73,6 +74,7 @@ $icons: #05648A;
     padding: 0px 20px;
     justify-content: space-between;
     color: rgba(0, 0, 0, 0.643);
+    background-color: white;
 
 
     .title {

@@ -11,6 +11,18 @@ $icons: #05648A;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+  header {
+    width: 25%;
+    h1 {
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      font-size: 32px;
+      color: $icons;
+      border-bottom: $icons solid 3px;
+    }
+  };
+
   .chart {
     display: flex;
     flex: 1 1 15%;

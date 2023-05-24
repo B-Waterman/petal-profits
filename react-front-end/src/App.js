@@ -29,9 +29,9 @@ export default function App(props){
           <div className="navButton">
             <Link to="/garden">MY GARDEN</Link>
           </div>
-          <div className="navButton">
+          {/* <div className="navButton">
             <Link to="/account">MY ACCOUNT</Link>
-          </div>
+          </div> */}
           </div>
         </nav>
 

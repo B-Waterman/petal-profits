@@ -13,6 +13,7 @@ $icons: #05648A;
   margin-top: 50px;
   width: 80%;
   color: $icons;
+  filter: drop-shadow(2px 4px 6px #05648a42);
 
   .title {
     display: flex;
