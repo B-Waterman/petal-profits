@@ -95,9 +95,11 @@ export default function DonutChart() {
         <Doughnut data={data} options={options} plugins ={[textCenter]} />
       </div>
       <div className='info'>
-          <button className='info-button' onMouseEnter={() => {setInfoButton(true)}} onMouseLeave={() => {setInfoButton(false)}}>i</button>
+          <button className='info-button'
+            onMouseEnter={() => {setInfoButton(true)}}
+            onMouseLeave={() => {setInfoButton(false)}}>i</button>
               {infoButton && (
-            <p className='info-text'>This pie chart offers a comprehensive breakdown of your monthly expenses. Hover over a wedge to see the monthly transaction total for each corresponding category. By practicing the habit of monitoring your expenses, you can gain valuable insights into your spending habits and develop a clearer understanding of how your money is being allocated.</p>
+            <p>This pie chart offers a comprehensive breakdown of your monthly expenses. Hover over a wedge to see the monthly transaction total for each corresponding category. By practicing the habit of monitoring your expenses, you can gain valuable insights into your spending habits and develop a clearer understanding of how your money is being allocated.</p>
               )}
         </div>
     </div>
