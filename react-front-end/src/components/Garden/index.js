@@ -28,7 +28,7 @@ export default function Garden(props) {
         body: JSON.stringify(body)
       });
       console.log(body)
-      window.location = '/'
+      window.location = '/garden'
     } catch (err) {
       console.error(err.message)
     }
@@ -65,27 +65,9 @@ export default function Garden(props) {
         </div>
 
         <div>
-          <form onSubmit={onSubmitForm}>
+          <form>
             <Popup trigger={buttonPopup} setTrigger={setbuttonPopup}>
               <h1 className='popupHeader'> PLANT A GOAL</h1>
-              {/* <div className='section'>
-                <div className='section1'>
-                  <div className='innerbutton'>
-                    "saving for a big purchase"
-                  </div>
-                  <div className='innerbutton'>
-                    "Paying off my debt"
-                  </div>
-                </div>
-                <div className='section2'>
-                  <div className='innerbutton'>
-                    "Emergency Fund"
-                  </div>
-                  <div className='innerbutton'>
-                    "Saving for a trip"
-                  </div>
-                </div>
-              </div> */}
               <p>
                 <span className="input">
                   <input type="text" placeholder="Give your goal a name"
