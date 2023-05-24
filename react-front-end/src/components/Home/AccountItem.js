@@ -1,9 +1,14 @@
+import './AccountItem.scss';
+
 export default function AccountItem(props) {
   return (
     <div className="account">
-      <p>{props.name}</p>
-      <p>{props.balance}</p>
-      <p>{props.type}</p>
+      <span className='name'>
+        {props.type}
+      </span>
+      <span className='balance'>
+        {props.balance}
+      </span>
     </div>
   )
 };

@@ -1,46 +1,36 @@
-@import '../../App.scss';
 $maincolor: #A8DCB9;
 $primary: #E4F9F5;
 $secondarycolor: #FAA381;
 $icons: #05648A;
 
-.Home {
+.account-balance {
   display: flex;
-  width: 100%;
   flex-direction: column;
-  align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  align-items: stretch;
+  margin-top: 50px;
+  width: 80%;
+  color: $icons;
 
-  .chart {
+  .title {
     display: flex;
-    flex: 1 1 15%;
-    flex-direction: column;
     justify-content: space-between;
-    width: 50%;
-    border-radius: 15px;
-    padding-bottom: 20px;
-    margin-top: 10px;
-    background-color: white;
-    filter: drop-shadow(2px 4px 6px #05648a42);
+    align-items: center;
+    border-bottom: 1px solid $icons;
     transition: transform 0.3s ease-in-out;
 
-    .donutchart {
-      align-self: center;
-      padding-bottom: 15px;
-      object-fit: contain;
+    h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
     }
 
     .info {
       display: flex;
       flex-direction: row;
-      height: 20px, 5%;
-
-      .info-button {
-        margin: 0px 20px;
-        padding: 0px 10px;
-        min-height: 25px;
-        max-height: 25px;
-      }
+      height: 20px;
+      align-items: center;
 
       p {
         text-align: center;
@@ -51,12 +41,16 @@ $icons: #05648A;
 
       button {
         cursor: pointer;
-        transition: all 0.5s ease-in-out;
-        background-color: $icons;
         border: #05648a43 0.5px solid;
         border-radius: 10px 0 10px 0;
+        padding: 0px 10px;
+        transition: all 0.5s ease-in-out;
+        background-color: $icons;
         color: white;
         font-weight: bold;
+        min-height: 25px;
+        max-height: 25px;
+
 
         &:hover {
           filter: drop-shadow(1px 1px 4px #05648a43);
@@ -64,6 +58,11 @@ $icons: #05648A;
         }
       }
     }
-
   }
-};
+
+  a {
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+}

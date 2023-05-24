@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import Lottie from 'react-lottie-player'
+
+import buttonPulse from '../../button-pulse.json'
+import Popup from '../../hooks/Popup';
+
 
 //edit username, first name
 export default function EditFirstName(event) {
 
+  const [buttonPopup, setbuttonPopup] = useState(false)
   const [ first_name, setFirstName ] = useState("");
 
   return (

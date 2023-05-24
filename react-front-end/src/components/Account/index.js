@@ -3,6 +3,7 @@ import React from 'react';
 import './Account.scss';
 import AccountSettings from './AccountSettings';
 import UserSettings from './UserSettings';
+import Popup from '../../hooks/Popup';
 
 
 

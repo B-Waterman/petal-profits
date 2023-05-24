@@ -6,7 +6,7 @@ app.use(cors())
 app.use(express.json()); //req.body
 
 //add new account ID
-app.post('/account', async (req, res) => {
+app.post('/accounts', async (req, res) => {
   try {
     const { accounts } = req.body
     new accounts = await pool.query(
@@ -22,7 +22,7 @@ app.post('/account', async (req, res) => {
 
 //edit user data
 //**UNSURE ABOUT :ID ASK TARA&MATHEW */
-app.put('/account/:id', async (req, res) =>{
+app.put('/accounts/:id', async (req, res) =>{
   try{
     const { id } = req.params
     const { first_name, last_name, email } = req.body

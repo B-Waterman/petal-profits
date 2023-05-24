@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { transactionsContext } from '../../hooks/TransactionsProvider';
 
+import './StatusUpdate.scss';
+
 export default function StatusUpdate(props) {
   // const { idTag } = useContext(RemainderIdContext);
 
