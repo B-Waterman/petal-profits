@@ -43,14 +43,17 @@ html {
 }
 
 .banner {
-  background-color: $maincolor;
+  // background-color: $maincolor;
   display: flex;
   justify-content: center;
-  width: 800px;
+  // width: 800px;
+  width: 95%;
   height: 50px;
   font-size: 32px;
-  color: white;
-  border-radius: 15px;
+  // color: white;  
+  color: $icons;
+  // border-radius: 15px;
+  border-bottom: $icons solid 1px;
 }
 
 #id {
@@ -106,12 +109,12 @@ html {
 
 .tAmount {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .gAmount {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .edits {
