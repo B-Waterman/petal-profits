@@ -15,23 +15,27 @@ In the other terminal, `cd` into `express-back-end`. Run `npm install` or `yarn`
 
 
 ## Next steps
+Things we would have liked to add to the app included:
+- Being connected to real banks and pulling real-time data, ideally using Plaid's API
+- Create a more complex banking account system where we can have shared bank accounts
+- Have a login and register page
 
 
 
 ## Screenshots
-![Description here](URL here)
-![Description here](URL here)
-![Description here](URL here)
-![Description here](URL here)
+![Home page of Petal Profits](https://github.com/B-Waterman/petal-profits/blob/master/docs/HomePage.png?raw=true)
+![Budget Page 1](https://github.com/B-Waterman/petal-profits/blob/master/docs/BudgetPage1.png?raw=true)
+![Budget Page 2](https://github.com/B-Waterman/petal-profits/blob/master/docs/BudgetPage2.png?raw=true)
+![My Garden Page](https://github.com/B-Waterman/petal-profits/blob/master/docs/GardenPage.png?raw=true)
 
 ---
-### Boilerplate Source
+## Boilerplate Source
 
 This project was built from a ReactJS & Express boilerplate made available by Garrett B, @garrettgsb.
 
 To view this repository template, ![click here.](https://github.com/garrettgsb/react-express-boilerplate)
 
-### Dependencies
+## Dependencies
 
   - NodeJS
   - Express
