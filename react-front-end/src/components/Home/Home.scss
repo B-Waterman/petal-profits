@@ -11,39 +11,75 @@ $icons: #05648A;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  // .header h1 {};
+  .status {
+    position: fixed;
+    top: 14px; right: 14px;
+    width: 10vw;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 50px;
+    background: $maincolor;
+    color: whitesmoke;
+  }
 
-  main {
+  .chart {
     display: flex;
+    flex: 1 1 15%;
     flex-direction: column;
     justify-content: space-between;
+    width: 50%;
+    border-radius: 15px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    background-color: white;
+    filter: drop-shadow(2px 4px 6px #05648a42);
+    transition: all 0.3s ease-in;
 
-    .status {
-      position: fixed;
-      top: 14px; right: 14px;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 50px;
-      background: $maincolor;
-      color: whitesmoke;
+    .donutchart {
+      align-self: center;
+      padding-bottom: 15px;
+      object-fit: contain;
     }
 
-    // .status {
-    //   border-radius: 15px;
-    //   padding: 20px 40px;
-    //   margin: 50px 50px;
-    //   background: $maincolor;
-    //   color: whitesmoke;
-    // }
-
-    .h2 {
-      justify-self: center;
-    }
-
-    .status {
+    .info {
       display: flex;
-      width: 20%
+      flex-direction: row;
+      height: 20px, 5%;
+
+      .info-button {
+        margin: 0px 20px;
+        padding: 0px 10px;
+        border-radius: 100px;
+        min-height: 25px;
+        max-height: 25px;
+      }
+
+      .info-text {
+        text-align: center;
+        color: #8b8b8b;
+        font-size: 12px;
+        padding-right: 20px;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      background-color: $icons;
+      border: #05648a43 0.5px solid;
+      border-radius: 10px 0 10px 0;
+      color: white;
+      font-weight: bold;
+
+      &:hover {
+        filter: drop-shadow(1px 1px 4px #05648a43);
+        transform: scale(1.1);
+      }
     }
   }
-};
+
+  // .h2 {
+  //   justify-self: center;
+  // }
+}
 

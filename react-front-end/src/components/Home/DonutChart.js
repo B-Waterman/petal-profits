@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 // import { categoriesContext } from "./Budget/providers/CategoriesProvider"; ////tell Broooke about this line
 import { formatTitle } from '../Budget/helpers/formatTitle'
@@ -8,7 +8,10 @@ Chart.register(ArcElement, Tooltip, Legend);
 
 export default function DonutChart() {
 
+  const [infoButton, setInfoButton] = useState(false)
+
   // const { categories } = useContext(categoriesContext); ///tell Broooke about this line
+
   const { categories } = useContext(transactionsContext) ///tell Broooke about this line
 
   const catLabels = [] //hold name of categories
@@ -86,12 +89,17 @@ export default function DonutChart() {
     },
   };
 
-
-
-
   return (
     <div className='chart'>
-      <Doughnut data={data} options={options} plugins ={[textCenter]} />
+      <div className='donutchart'>
+        <Doughnut data={data} options={options} plugins ={[textCenter]} />
+      </div>
+      <div className='info'>
+          <button className='info-button' onMouseEnter={() => {setInfoButton(true)}} onMouseLeave={() => {setInfoButton(false)}}>i</button>
+              {infoButton && (
+            <p className='info-text'>This pie chart offers a comprehensive breakdown of your monthly expenses. Hover over a wedge to see the monthly transaction total for each corresponding category. By practicing the habit of monitoring your expenses, you can gain valuable insights into your spending habits and develop a clearer understanding of how your money is being allocated.</p>
+              )}
+        </div>
     </div>
   )
 
