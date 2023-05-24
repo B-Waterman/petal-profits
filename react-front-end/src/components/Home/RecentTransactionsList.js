@@ -34,10 +34,12 @@ export default function RecentTransactionsList(props) {
       <div className="title">
         <h3>Recent Transactions</h3>
         <div className='info'>
-          <button className='info-button' onMouseEnter={() => {setInfoButton(true)}} onMouseLeave={() => {setInfoButton(false)}}>i</button>
-              {infoButton && (
-            <p className='info-text'>Check here to view the last five transactions made across your accounts. </p>
+        {infoButton && (
+            <p>Check here to view the last five transactions made across your accounts.</p>
               )}
+          <button
+            onMouseEnter={() => {setInfoButton(true)}}
+            onMouseLeave={() => {setInfoButton(false)}}>i</button>
         </div>
         </div>
           {recentTransactions}

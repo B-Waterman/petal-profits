@@ -1,0 +1,110 @@
+// CLASSNAME recent
+// h3 title
+//Link
+@import './AccountItem.scss';
+$maincolor: #A8DCB9;
+$primary: #E4F9F5;
+$secondarycolor: #FAA381;
+$icons: #05648A;
+
+.recent {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  align-items: stretch;
+  margin-top: 50px;
+  width: 80%;
+  color: $icons;
+
+  .transaction {
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 0px 20px;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.783);
+
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0px;
+      margin-top: 10px;
+    }
+
+    .type {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0px;
+      margin-top: 10px;
+    }
+
+    .date {
+      margin-top: 5px;
+      color: rgba(0, 0, 0, 0.498);
+      font-size: 14px;
+    }
+
+    .amount{
+      color: rgba(0, 0, 0, 0.842);
+    }
+
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+
+    h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      height: 20px;
+      align-items: center;
+
+      p {
+        text-align: center;
+        color: #8b8b8b;
+        font-size: 12px;
+        padding-right: 20px;
+      }
+
+      button {
+        cursor: pointer;
+        border: #05648a43 0.5px solid;
+        border-radius: 10px 0 10px 0;
+        padding: 0px 10px;
+        transition: all 0.5s ease-in-out;
+        background-color: $icons;
+        color: white;
+        font-weight: bold;
+        min-height: 25px;
+        max-height: 25px;
+
+
+        &:hover {
+          filter: drop-shadow(1px 1px 4px #05648a43);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  a {
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+}
