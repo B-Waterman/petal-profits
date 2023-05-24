@@ -11,17 +11,6 @@ $icons: #05648A;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  .status {
-    position: fixed;
-    top: 14px; right: 14px;
-    width: 10vw;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 50px;
-    background: $maincolor;
-    color: whitesmoke;
-  }
-
   .chart {
     display: flex;
     flex: 1 1 15%;
@@ -33,7 +22,7 @@ $icons: #05648A;
     margin-top: 10px;
     background-color: white;
     filter: drop-shadow(2px 4px 6px #05648a42);
-    transition: all 0.3s ease-in;
+    transition: transform 0.3s ease-in-out;
 
     .donutchart {
       align-self: center;
@@ -77,9 +66,4 @@ $icons: #05648A;
       }
     }
   }
-
-  // .h2 {
-  //   justify-self: center;
-  // }
-}
-
+};
